@@ -7,8 +7,8 @@ import os
 class TaggingTool:
     def __init__(self, root):
         self.root = root
-        self.root.title("Tool Gán Tag Scenario - Hỗ trợ Search Đa Ngôn Ngữ")
-        self.root.geometry("1100x850")
+        self.root.title("Tool Gán Tag Scenario - Hỗ trợ Search & Auto-Select")
+        self.root.geometry("1150x850")
 
         # 1. Đọc dữ liệu Master Tag
         try:
@@ -32,6 +32,7 @@ class TaggingTool:
 
         self.tc_list = self.load_testcases_from_txt('testcase_list.txt')
         self.results = [] 
+        self.search_timer = None # Để quản lý thời gian đợi gõ dấu tiếng Việt
         self.create_widgets()
 
     def load_testcases_from_txt(self, filename):
@@ -69,7 +70,7 @@ class TaggingTool:
             f_col = ttk.Frame(frame_mid)
             f_col.grid(row=0, column=i, padx=5, pady=5)
             ttk.Label(f_col, text=f"Cấp {i+1}").pack()
-            cb = ttk.Combobox(f_col, state="readonly", width=18)
+            cb = ttk.Combobox(f_col, state="readonly", width=20)
             cb.pack()
             cb.bind("<<ComboboxSelected>>", lambda e, idx=i: self.update_next_levels(idx))
             self.levels.append(cb)
@@ -90,36 +91,66 @@ class TaggingTool:
         btn_frame.pack(pady=5)
         ttk.Button(btn_frame, text="THÊM TAG VÀO TC", command=self.add_tag).pack(side="left", padx=5)
         ttk.Button(btn_frame, text="XÓA DÒNG", command=self.delete_tag).pack(side="left", padx=5)
-        self.listbox_tags = tk.Listbox(self.root, height=10, font=("Courier New", 10))
+        
+        self.listbox_tags = tk.Listbox(self.root, height=12, font=("Courier New", 10))
         self.listbox_tags.pack(fill="both", expand=True, padx=10, pady=5)
+        
         ttk.Button(self.root, text="XUẤT FILE MAPPING (.CSV)", command=self.export_to_csv).pack(pady=10)
 
     def on_search(self, event):
-        """Hàm tìm kiếm trong từ điển khi người dùng gõ phím"""
-        query = self.ent_search.get().lower()
-        if len(query) < 2: return # Chỉ tìm khi gõ từ 2 ký tự
+        """Khắc phục lỗi gõ tiếng Việt bằng cơ chế Debounce"""
+        if self.search_timer:
+            self.root.after_cancel(self.search_timer)
+        self.search_timer = self.root.after(400, self.perform_search)
+
+    def perform_search(self):
+        query = self.ent_search.get().lower().strip()
+        if len(query) < 2: 
+            self.cb_search_results['values'] = []
+            return
 
         match_results = []
         for jp, trans in self.translation_dict.items():
-            # Tìm trong cả Tiếng Nhật, Tiếng Việt và Tiếng Anh
             if query in jp.lower() or query in trans['vi'].lower() or query in trans['en'].lower():
                 match_results.append(f"{jp} ({trans['vi']})")
         
         self.cb_search_results['values'] = match_results
         if match_results:
-            self.cb_search_results.event_generate('<Button-1>') # Tự động xổ list
+            self.cb_search_results.event_generate('<Button-1>')
 
     def on_select_search_result(self, event):
-        """Khi chọn từ kết quả tìm kiếm, cập nhật thông tin giải thích"""
+        """Khi chọn từ search, tự động nhảy Dropdown khớp với Master Tag"""
         selected_full = self.cb_search_results.get()
-        selected_jp = selected_full.split(" (")[0] # Lấy lại phần tiếng Nhật gốc
+        if not selected_full: return
+        selected_jp = selected_full.split(" (")[0]
         
+        # 1. Hiển thị dịch
         trans = self.translation_dict.get(selected_jp, {})
         self.txt_vi.delete("1.0", tk.END); self.txt_vi.insert("1.0", trans.get('vi', ''))
         self.txt_en.delete("1.0", tk.END); self.txt_en.insert("1.0", trans.get('en', ''))
         
-        # Lưu ý: Tính năng search này giúp xem giải thích nhanh. 
-        # Để gán tag chính xác phân cấp, người dùng vẫn nên chọn ở các Combobox Bước 2.
+        # 2. Tìm và nhảy Dropdown
+        mask = self.df_tags.apply(lambda row: row.astype(str).str.contains(re.escape(selected_jp)).any(), axis=1)
+        match_rows = self.df_tags[mask]
+
+        if not match_rows.empty:
+            row_data = match_rows.iloc[0]
+            for cb in self.levels: cb.set('')
+
+            for i in range(len(self.levels)):
+                val = str(row_data.iloc[i])
+                if val and val != 'nan' and val.strip() != '':
+                    # Cập nhật list values cho cấp hiện tại để không bị lỗi 'out of list'
+                    if i == 0:
+                        self.levels[i]['values'] = sorted(self.df_tags.iloc[:, 0].unique().tolist())
+                    else:
+                        temp_df = self.df_tags
+                        for j in range(i):
+                            temp_df = temp_df[temp_df.iloc[:, j] == self.levels[j].get()]
+                        self.levels[i]['values'] = sorted([str(v) for v in temp_df.iloc[:, i].unique().tolist() if v])
+                    
+                    self.levels[i].set(val)
+                    if val == selected_jp: break
 
     def update_next_levels(self, current_idx):
         selected_val = self.levels[current_idx].get()
@@ -142,7 +173,9 @@ class TaggingTool:
     def add_tag(self):
         tc = self.cb_tc.get()
         tags = [cb.get() for cb in self.levels if cb.get()]
-        if not tc or not tags: return
+        if not tc or not tags:
+            messagebox.showwarning("Chú ý", "Vui lòng chọn mã TC và ít nhất 1 Tag")
+            return
         tag_path = " | ".join(tags)
         self.results.append({"TC": tc, "Tags": tag_path})
         self.listbox_tags.insert(tk.END, f"{tc.ljust(15)} : {tag_path}")
@@ -155,7 +188,7 @@ class TaggingTool:
 
     def export_to_csv(self):
         if not self.results: return
-        path = filedialog.asksaveasfilename(defaultextension=".csv")
+        path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")])
         if path:
             pd.DataFrame(self.results).to_csv(path, index=False, encoding='utf-8-sig')
             messagebox.showinfo("Xong", "Lưu thành công!")
