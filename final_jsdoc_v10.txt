@@ -55,6 +55,13 @@
  * @function 通常商品複数登録（正常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.PRODUCT_TYPE }
+ * { @link TAGS.CODE_INPUT }
+ * { @link TAGS.NONPLU }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * * ・適正な商品価格を参照している
  * * * * →　通常商品
@@ -109,6 +116,12 @@
  * @function ドラッグ商品複数登録（濫用禁止チェック正常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.PRODUCT_CHECK }
+ * { @link TAGS.PHARMACEUTICALS }
+ * { @link TAGS.NO_ABUSE_ALLOWED }
  * ### テスト観点
  * * 濫用禁止チェックの確認
  * * 同一成分の商品が１取引で2個以上でない場合は販売できる。
@@ -156,6 +169,12 @@
  * @function ドラッグ商品複数登録（濫用禁止チェック異常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.PRODUCT_CHECK }
+ * { @link TAGS.PHARMACEUTICALS }
+ * { @link TAGS.NO_ABUSE_ALLOWED }
  * ### テスト観点
  * * 濫用禁止チェックの確認
  * * 同一成分の商品が１取引で2個以上販売できない。下記商品Cスキャン時エラー
@@ -293,6 +312,12 @@
  * @function 有人POSの医薬品複数登録
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.PRODUCT_CHECK }
+ * { @link TAGS.PHARMACEUTICALS }
+ * { @link TAGS.CATEGORY_1 }
  * ### テスト観点
  * * 有人POSでの医薬品販売チェックの確認
  * * 指定2類医薬品、第2類医薬品、第3類医薬品は販売できる。
@@ -612,6 +637,12 @@
  * @function セルフPOSの医薬品複数登録
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.PRODUCT_CHECK }
+ * { @link TAGS.PHARMACEUTICALS }
+ * { @link TAGS.DESIGNATED_SECOND_CLASS }
  * ### テスト観点
  * * セルフPOSでの医薬品販売チェックの確認
  * * 指定2類医薬品、第2類医薬品、第3類医薬品は販売できる。
@@ -912,6 +943,14 @@
  * @function 一連の商品登録・商品明細取消・売価変更・数量変更
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_TYPE }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.NONPLU }
+ * { @link TAGS.CHANGE_DETAILS }
+ * { @link TAGS.SELLING_PRICE_CHANGE }
+ * { @link TAGS.DELETE_DETAILS }
  * ### テスト観点
  * * 前提：
  * * * ・利用商品は何でもよい。
@@ -1059,6 +1098,11 @@
  * @function 商品売価変更（０円に変更）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.SELLING_PRICE_CHANGE }
+ * { @link TAGS.TAG_0_YEN }
  * ### テスト観点
  * * * ・売価を0円に変更することにより支払登録をせず取引完了できる
  * * * ・レシートnoが確認できる
@@ -1101,6 +1145,13 @@
  * @function 複数の商品登録・単品値引
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.PRODUCT_TYPE }
+ * { @link TAGS.CHANGE_DETAILS }
+ * { @link TAGS.NONPLU }
+ * { @link TAGS.SINGLE_ITEM_DISCOUNT }
  * ### テスト観点
  * * 前提：
  * * * ・操作単品値引がm_unit_discountに設定されている。
@@ -1165,6 +1216,11 @@
  * @function 小計値引の手入力
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.SUBTOTAL_MANUAL_REDUCTION }
+ * { @link TAGS.NO_REASON }
  * ### テスト観点
  * * 前提：
  * * * ・操作小計値引がm_unit_discountに設定されている。
@@ -1221,6 +1277,11 @@
  * @function 小計割引の手入力
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.SUBTOTAL_PROMO_DISCOUNT }
+ * { @link TAGS.NO_REASON }
  * ### テスト観点
  * * 前提：
  * * * ・操作小計値引がm_unit_discountに設定されている。
@@ -1269,6 +1330,11 @@
  * @function 発券～使用（正常系：500円券）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.USE_500_YEN_COUPON }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * 500円券が発券されて即時に500円券が使用できる。
  * * * ・500円以上の買い物を行う。
@@ -1373,6 +1439,11 @@
  * @function 発券～使用（正常系：追加500円券）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.USE_500_YEN_COUPON }
+ * { @link TAGS.ADDITIONAL_500_YEN_COUPON_3_COUPONS_USED }
  * ### テスト観点
  * * 500円券を1取引で3枚使うごとに追加500円券を自動発行＆使用して、合計2000円分の値引がされる。
  * * * ・合計2000円以上の買い物を行う。
@@ -1520,6 +1591,11 @@
  * @function 発券～使用（異常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.USE_500_YEN_COUPON }
+ * { @link TAGS.EXPIRY_DATE_CHECK }
  * ### テスト観点
  * * 使用済の500円券を使用してエラー表示される
  * * 前提：
@@ -1595,6 +1671,11 @@
  * @function 発券～使用（異常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.USE_500_YEN_COUPON }
+ * { @link TAGS.USED_CHECK }
  * ### テスト観点
  * * 使用済の500円券を使用してエラー表示される
  * * 前提：
@@ -1650,6 +1731,11 @@
  * @function 発券～使用（正常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.USE_REPEAT_TICKET }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * りぴーと券をスキャンして割引が適用される
  * * * ・1000円以上の買い物を行う。
@@ -1739,6 +1825,11 @@
 Ticketing ~ Use (abnormal system)
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.USE_REPEAT_TICKET }
+ * { @link TAGS.VALIDITY_PERIOD_CHECK }
  * ### テスト観点
  * * 利用期間外のりぴーと券を使用してエラー表示される
  * * 前提：
@@ -1811,6 +1902,11 @@ Ticketing ~ Use (abnormal system)
 ｎ個購入ごとにX円が成立する。
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.MIX_MATCH }
+ * { @link TAGS.UNLIMITED_NUMBER_OF_POINTS }
  * ### テスト観点
  * * ミックスマッチ企画に設定した商品群の中から一定個数を購入することで値引する
  * * * ・ミックスマッチ企画が販促_ミックスマッチマスタに登録されていること。
@@ -1898,6 +1994,11 @@ Ticketing ~ Use (abnormal system)
 ｎ個購入するとX円が成立する。ｎ個より多く購入した分は通常の価格となる。
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.MIX_MATCH }
+ * { @link TAGS.LIMIT_ON_NUMBER_OF_POINTS_ACHIEVED }
  * ### テスト観点
  * * 企画に設定した商品群の中から一定個数を購入することで値引きする(一定個数以上は通常価格)
  * * * ・ミックスマッチ企画が販促_ミックスマッチマスタに登録されていること。
@@ -1990,6 +2091,11 @@ Ticketing ~ Use (abnormal system)
 　　　　4個からは通常価格100円となる。
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.BUNDLE_MIX }
+ * { @link TAGS.LIMIT_ON_NUMBER_OF_POINTS_ACHIEVED }
  * ### テスト観点
  * * 前提：
  * * * ・m_promotion_limited_quantity_discountに販促A～販促Cが設定されている。
@@ -2122,6 +2228,11 @@ Ticketing ~ Use (abnormal system)
  * @function ひとつの販促コードに紐づく商品が複数商品
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.BUNDLE_MIX }
+ * { @link TAGS.UNLIMITED_NUMBER_OF_POINTS }
  * ### テスト観点
  * * 前提：
  * * * ・m_promotion_limited_quantity_discountに販促A～販促Cが設定されている。
@@ -2358,6 +2469,11 @@ Ticketing ~ Use (abnormal system)
  * @function セルフPOSの社員割引（正常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * 商品登録画面で社員割引バーコードをスキャンし社員割引が反映される。
  * * * → 社員割引バーコードは金券マスタに社員割引レコードが存在すること。
@@ -2451,6 +2567,11 @@ Ticketing ~ Use (abnormal system)
  * @function セルフPOSの社員割引（異常系：有効期限ではない）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
+ * { @link TAGS.EXPIRY_DATE_CHECK }
  * ### テスト観点
  * * 商品登録画面で社員割引バーコードをスキャンし有効期限エラーとなる。
  * * * → 社員割引バーコードは金券マスタに社員割引レコードが存在し、
@@ -2487,6 +2608,10 @@ Ticketing ~ Use (abnormal system)
  * @function セルフPOSの社員割引（異常系：利用可能枚数超過）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
  * ### テスト観点
  * * 商品登録画面で社員割引バーコードをスキャンし利用可能枚数超過エラーとなる。
  * * * → 社員割引バーコードは金券マスタに社員割引レコードが存在し、
@@ -2548,6 +2673,11 @@ Ticketing ~ Use (abnormal system)
  * @function 有人POSの社員割引（正常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * 小計操作後に社員割引バーコードをスキャンし社員割引が反映される。
  * * * → 社員割引バーコードは金券マスタに社員割引レコードが存在すること。
@@ -2637,6 +2767,11 @@ Ticketing ~ Use (abnormal system)
  * @function 有人POSの社員割引（異常系：有効期限ではない）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
+ * { @link TAGS.EXPIRY_DATE_CHECK }
  * ### テスト観点
  * * 小計操作後に社員割引バーコードをスキャンし有効期限エラーとなる。
  * * * → 社員割引バーコードは金券マスタに社員割引レコードが存在し、
@@ -2697,6 +2832,10 @@ Ticketing ~ Use (abnormal system)
  * @function 有人POSの社員割引（異常系：利用可能枚数超過）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
  * ### テスト観点
  * * 小計操作後に社員割引バーコードをスキャンし利用可能枚数超過エラーとなる。
  * * * → 社員割引バーコードは金券マスタに社員割引レコードが存在し、
@@ -2770,6 +2909,11 @@ Ticketing ~ Use (abnormal system)
  * @function セルフPOSの社割・株主優待の併用
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
  * ### テスト観点
  * * 前提：
  * * * ・社員割引バーコードがm_voucherに設定されている。
@@ -2861,6 +3005,11 @@ Ticketing ~ Use (abnormal system)
  * @function 有人POSの社割・株主優待の併用
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
  * ### テスト観点
  * * 前提：
  * * * ・社員割引バーコードがm_voucherに設定されている。
@@ -2952,6 +3101,10 @@ Ticketing ~ Use (abnormal system)
  * @function セルフPOSの株主優待（正常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
  * ### テスト観点
  * * 前提：
  * * * ・株主優待バーコードがm_couponに設定されている。
@@ -3018,6 +3171,11 @@ Ticketing ~ Use (abnormal system)
  * @function セルフPOSの株主優待（異常系：有効期限ではない）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
+ * { @link TAGS.EXPIRY_DATE_CHECK }
  * ### テスト観点
  * * 商品登録画面で株主優待バーコードをスキャンし有効期限エラーとなる。
  * * * → 株主優待バーコードはクーポンマスタに株主優待レコードが存在し、
@@ -3073,6 +3231,10 @@ Ticketing ~ Use (abnormal system)
  * @function セルフPOSの株主優待（異常系：利用可能回数超過）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
  * ### テスト観点
  * * 商品登録画面で株主優待バーコードをスキャンし利用可能回数超過エラーとなる。
  * * * → 株主優待バーコードはクーポンマスタに株主優待レコードが存在し、
@@ -3127,6 +3289,10 @@ Ticketing ~ Use (abnormal system)
  * @function 有人POSの株主優待（正常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
  * ### テスト観点
  * * 前提：
  * * * ・株主優待バーコードがm_couponに設定されている。
@@ -3239,6 +3405,10 @@ Ticketing ~ Use (abnormal system)
  * @function 有人POSの株主優待（異常系：有効期限ではない）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
  * ### テスト観点
  * * 前提：
  * * * ・株主優待バーコードがm_couponに設定されている。
@@ -3287,6 +3457,11 @@ Ticketing ~ Use (abnormal system)
  * @function アオキクーポン（超トク）の値引パターン
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.AFTER_COUPON_DISCOUNT }
  * ### テスト観点
  * * 前提：
  * * * ・アオキクーポン（超トク）がm_promotion_issue_voucherに設定されている。
@@ -3405,6 +3580,11 @@ Ticketing ~ Use (abnormal system)
  * @function 値引JANの割引・値引
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.CLOSEOUT_JAN }
+ * { @link TAGS.SPECIFY_DISCOUNT_RATE }
  * ### テスト観点
  * * 見切りシールのバーコードを読み取り、割引率指定の場合は対象商品の価格に割引率を適用し、売価指定の場合は対象商品の価格を指定された売価とする。
  * * * → 値引JAN-割引：バーコード設定マスタの目的（purpose）が
@@ -3475,6 +3655,12 @@ Ticketing ~ Use (abnormal system)
  * @function エコ・子育て支援ポイント付与の一連操作
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.ECO_POINTS }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.CHILDCARE_SUPPORT_POINTS }
  * ### テスト観点
  * * 前提：
  * * * ・エコポイントと子育て支援ポイントがm_couponに設定されている。
@@ -3588,6 +3774,12 @@ Ticketing ~ Use (abnormal system)
  * @function Aocaポイントのみ
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.POINT }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.GRANT }
  * ### テスト観点
  * * 前提：
  * * * ・Aocaがm_promotion_add_pointに設定されている。
@@ -3671,6 +3863,12 @@ Ticketing ~ Use (abnormal system)
  * @function ｄポイントのみ
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.POINT }
+ * { @link TAGS.D_POINT }
+ * { @link TAGS.GRANT }
  * ### テスト観点
  * * 前提：
  * * * ・dポイントがm_promotion_add_pointに設定されている。
@@ -3756,6 +3954,12 @@ Ticketing ~ Use (abnormal system)
  * @function ポイント〇倍デー（水/日）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.POINT }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.POINT_MULTIPLIER_UP }
  * ### テスト観点
  * * 前提：
  * * * ・ポイント〇倍デー（水/日）が下記のマスタに設定されている
@@ -3844,6 +4048,14 @@ Ticketing ~ Use (abnormal system)
  * @function ブランド属性商品（ボーナスポイントも同様の動き）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.POINT }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.POINT_MULTIPLIER_UP }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
+ * { @link TAGS.PRODUCT_UNIT }
  * ### テスト観点
  * * 前提：
  * * * ・ブランド属性商品が下記のマスタに設定されている
@@ -3940,6 +4152,14 @@ Ticketing ~ Use (abnormal system)
  * @function セット買いポイント（繰返し発生なし）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.RECEIPT_PRINTING }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COUPON_RECEIPT }
+ * { @link TAGS.SET }
+ * { @link TAGS.POINTS_AWARDED }
+ * { @link TAGS.POINT }
  * ### テスト観点
  * * 前提：
  * * * ・セット買いポイントの成立条件
@@ -4019,6 +4239,14 @@ Ticketing ~ Use (abnormal system)
  * @function セット買いポイント（繰返し発生あり）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.RECEIPT_PRINTING }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COUPON_RECEIPT }
+ * { @link TAGS.SET }
+ * { @link TAGS.POINTS_AWARDED }
+ * { @link TAGS.POINT }
  * ### テスト観点
  * * 前提：
  * * * ・セット買いポイントの成立条件
@@ -4109,6 +4337,13 @@ Ticketing ~ Use (abnormal system)
  * @function アプリクーポン
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.POINT }
+ * { @link TAGS.SALES }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
+ * { @link TAGS.USE_APP_COUPON }
  * ### テスト観点
  * * 前提：
  * * * ・アプリクーポンがm_barcodeに設定されている。
@@ -4188,6 +4423,12 @@ Ticketing ~ Use (abnormal system)
  * @function 新店オープン時ポイント○倍
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.POINTS_AWARDED }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.POINT_MULTIPLIER_UP }
  * ### テスト観点
  * * 新店で対象の商品をお買物した場合、自動的にポイントが○倍になる
  * * 前提：
@@ -4271,6 +4512,12 @@ Ticketing ~ Use (abnormal system)
  * @function 新店オープン時ポイント○倍（他のポイント倍率施策と重なる）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.POINTS_AWARDED }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.POINT_MULTIPLIER_UP }
  * ### テスト観点
  * * 前提：
  * * * ・新店および販促対象外店舗で対象対象商品を購入する
@@ -4401,6 +4648,12 @@ Ticketing ~ Use (abnormal system)
  * @function ポイントプラス
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.POINTS_AWARDED }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.GRANT }
  * ### テスト観点
  * * 前提：
  * * * ・m_promotion_detail_itemに設定されている商品→ポイントプラス商品
@@ -4457,6 +4710,13 @@ Ticketing ~ Use (abnormal system)
  * @function ポイントクーポン：販促マスタ企画【発券】
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.RECEIPT_PRINTING }
+ * { @link TAGS.POINTS_PLUS }
+ * { @link TAGS.COUPON_RECEIPT }
+ * { @link TAGS.POINTS_AWARDED }
  * ### テスト観点
  * * 前提：
  * * * ・m_promotion_optional_add_pointにcoupon_cd がされる 
@@ -4523,6 +4783,13 @@ Ticketing ~ Use (abnormal system)
  * @function ポイントクーポン【使用】
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.POINT }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.POINTS_PLUS }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
  * ### テスト観点
  * * 前提：
  * * * ・m_coupon_item_category_detailに設定されている商品 →販促商品
@@ -4579,6 +4846,15 @@ Ticketing ~ Use (abnormal system)
 ・他社金券・地域振興券
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.TMN_PREPAID }
+ * { @link TAGS.COMBINED_USE }
+ * { @link TAGS.CASH }
+ * { @link TAGS.CASH_VOUCHER }
+ * { @link TAGS.MEDICINAL_AOKI_GIFT_CARD }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -4654,6 +4930,14 @@ Ticketing ~ Use (abnormal system)
 ・他社金券・地域振興券
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.TMN_PREPAID }
+ * { @link TAGS.COMBINED_USE }
+ * { @link TAGS.CASH_VOUCHER }
+ * { @link TAGS.MEDICINAL_AOKI_GIFT_CARD }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -4720,6 +5004,15 @@ Ticketing ~ Use (abnormal system)
  * @function WAONと現金
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.COMBINED_USE }
+ * { @link TAGS.WAON }
+ * { @link TAGS.CASH }
+ * { @link TAGS.COMBINED_USE_OF_CASH_INSUFFICIENT_BALANCE }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -4794,6 +5087,15 @@ Ticketing ~ Use (abnormal system)
 (Transportation IC and cash)
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.COMBINED_USE }
+ * { @link TAGS.CASH }
+ * { @link TAGS.TRANSPORTATION_IC }
+ * { @link TAGS.COMBINED_USE_OF_CASH_INSUFFICIENT_BALANCE }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -4866,6 +5168,15 @@ Ticketing ~ Use (abnormal system)
  * @function 楽天Edyと現金
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.COMBINED_USE }
+ * { @link TAGS.CASH }
+ * { @link TAGS.RAKUTEN_EDY }
+ * { @link TAGS.COMBINED_USE_OF_CASH_INSUFFICIENT_BALANCE }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -4943,6 +5254,15 @@ Ticketing ~ Use (abnormal system)
  * @function nanacoと現金
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.COMBINED_USE }
+ * { @link TAGS.CASH }
+ * { @link TAGS.NANACO }
+ * { @link TAGS.COMBINED_USE_OF_CASH_INSUFFICIENT_BALANCE }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5019,6 +5339,13 @@ Ticketing ~ Use (abnormal system)
  * @function Aoca払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.TMN_PREPAID }
+ * { @link TAGS.AOCA }
+ * { @link TAGS.FULL_AMOUNT }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5080,6 +5407,12 @@ Ticketing ~ Use (abnormal system)
  * @function ｄポイント払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.POINT }
+ * { @link TAGS.SALES }
+ * { @link TAGS.D_POINT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.USE }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5141,6 +5474,10 @@ Ticketing ~ Use (abnormal system)
  * @function クレジットカード
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CREDIT }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5202,6 +5539,12 @@ Ticketing ~ Use (abnormal system)
  * @function iD
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.ID }
+ * { @link TAGS.SALES }
+ * { @link TAGS.FULL_AMOUNT }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5262,6 +5605,13 @@ Ticketing ~ Use (abnormal system)
  * @function QUICPay
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.SALES }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.QUICPAY }
+ * { @link TAGS.FULL_AMOUNT }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5322,6 +5672,13 @@ Ticketing ~ Use (abnormal system)
  * @function バーコード決済
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CODE_PAYMENT }
+ * { @link TAGS.DOMESTIC_BRAND }
+ * { @link TAGS.FULL_AMOUNT }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5382,6 +5739,11 @@ Ticketing ~ Use (abnormal system)
  * @function お米券
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CASH_VOUCHER }
+ * { @link TAGS.OTHER_COMPANY_CASH_COUPONS_NO_CHANGE }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5448,6 +5810,12 @@ Ticketing ~ Use (abnormal system)
 (Payment by accounts receivable)
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.CUSTOMER_MANAGEMENT }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CREDIT_CUSTOMER }
+ * { @link TAGS.CREDIT_SALE }
  * ### テスト観点
  * * 前提：
  * * * ・支払方法がm_pos_payment_patternに設定されている。
@@ -5512,6 +5880,15 @@ Ticketing ~ Use (abnormal system)
  * @function 保留一連の操作
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.ON_HOLD }
+ * { @link TAGS.PRODUCT_TYPE }
+ * { @link TAGS.PENDING_REGISTRATION }
+ * { @link TAGS.CALL_ON_HOLD }
+ * { @link TAGS.NONPLU }
+ * { @link TAGS.MULTIPLE_REGISTRATION }
+ * { @link TAGS.SINGLE_CALL }
  * ### テスト観点
  * * 前提：
  * * * ・2つの取引を保留する
@@ -5607,6 +5984,11 @@ Ticketing ~ Use (abnormal system)
  * @function 商品スキャン前
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.ELECTRONIC_JOURNAL_SEARCH }
+ * { @link TAGS.TRANSACTION_SUSPENSION }
+ * { @link TAGS.MANUAL_ABORT }
  * ### テスト観点
  * * 前提：
  * * 取引開始後、商品スキャン前に取引中止を行う。
@@ -5646,6 +6028,14 @@ Ticketing ~ Use (abnormal system)
  * @function 商品スキャン後
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.ELECTRONIC_JOURNAL_SEARCH }
+ * { @link TAGS.TRANSACTION_SUSPENSION }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.MANUAL_ABORT }
+ * { @link TAGS.CODE_INPUT }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * 前提：
  * * 商品スキャン後に取引中止を行う。
@@ -5701,6 +6091,15 @@ Ticketing ~ Use (abnormal system)
  * @function 支払方法選択画面遷移後
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.ELECTRONIC_JOURNAL_SEARCH }
+ * { @link TAGS.TRANSACTION_SUSPENSION }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.MANUAL_ABORT }
+ * { @link TAGS.CODE_INPUT }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * 前提：
  * * 支払方法を選択後に取引中止を行う。
@@ -5762,6 +6161,10 @@ Ticketing ~ Use (abnormal system)
  * @function レシート返品の全商品返品
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：1（通常商品複数登録（正常系））の売上のレシート返品を行う
@@ -5871,6 +6274,11 @@ Ticketing ~ Use (abnormal system)
  * @function 単品返品
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.CODE_INPUT }
+ * { @link TAGS.SINGLE_ITEM }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：1（通常商品複数登録（正常系））の売上のレシート返品を行う
@@ -5917,6 +6325,15 @@ Ticketing ~ Use (abnormal system)
  * @function 一連の返品登録（単品返品）・商品明細取消・売価変更
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.RECEIPT_PRINTING }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.CHANGE_DETAILS }
+ * { @link TAGS.RETURN_RECEIPT }
+ * { @link TAGS.DELETE_DETAILS }
+ * { @link TAGS.SELLING_PRICE_CHANGE }
  * ### テスト観点
  * * 前提：
  * * * ・単品返品をスキャンする。
@@ -6064,6 +6481,12 @@ Ticketing ~ Use (abnormal system)
  * @function 小計値引した売上の返品
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.SUBTOTAL_PROMO_DISCOUNT }
  * ### テスト観点
  * * 前提：
  * * 小計値引した売上のレシート返品を行う
@@ -6165,6 +6588,12 @@ Ticketing ~ Use (abnormal system)
  * @function 500円券を使用した売上の返品
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.USE_500_YEN_COUPON }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：18（発券～使用（正常系：500円券））の売上のレシート返品を行う
@@ -6267,6 +6696,13 @@ Ticketing ~ Use (abnormal system)
  * @function りぴーと券を使用した売上の返品
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.SALES }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.USE_REPEAT_TICKET }
  * ### テスト観点
  * * りぴーと券を使用した売上取引を返品して、りぴーと券適用後の金額が返金される。
  * * 取引①（前提）：発券
@@ -6365,6 +6801,12 @@ Ticketing ~ Use (abnormal system)
 　　→　3個買うごとに500円（100円の値引）が成立
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.BUNDLE_MIX }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
  * ### テスト観点
  * * 前提：
  * * ミックスマッチｎ個ちょうどパターンの売上のレシート返品を行う。
@@ -6467,6 +6909,12 @@ Ticketing ~ Use (abnormal system)
 　　　　4個からは通常価格100円となる。
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.SPECIAL_SALE_POP_PRODUCT_MASTER }
  * ### テスト観点
  * * 前提：
  * * 個数限定割引した売上のレシート返品を行う。
@@ -6564,6 +7012,15 @@ Ticketing ~ Use (abnormal system)
  * @function 有人POSの社員割引
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.CHANGE_DETAILS }
+ * { @link TAGS.COMPANY_DISCOUNT }
+ * { @link TAGS.SINGLE_ITEM_DISCOUNT }
  * ### テスト観点
  * * 前提：
  * * 社員割引した売上のレシート返品を行う。
@@ -6635,6 +7092,12 @@ Ticketing ~ Use (abnormal system)
  * @function 有人POSの株主優待
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_038（有人POSの株主優待）の売上のレシート返品を行う。
@@ -6696,6 +7159,13 @@ Ticketing ~ Use (abnormal system)
  * @function アオキクーポン（超トク）の値引
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.SALES }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.USE_APP_COUPON }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_41（アオキクーポン）の売上のレシート返品を行う。
@@ -6772,6 +7242,13 @@ Ticketing ~ Use (abnormal system)
  * @function エコ・子育てポイント付与の一連操作
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.ECO_POINTS }
+ * { @link TAGS.CHILDCARE_SUPPORT_POINTS }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：44（アオキクーポン）の売上のレシート返品を行う。
@@ -6862,6 +7339,13 @@ Ticketing ~ Use (abnormal system)
  * @function Aocaポイントのみ
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.POINT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
  * ### テスト観点
  * * 前提：
  * * ポイント付与_Aocaポイントの売上のレシート返品を行う。
@@ -6919,6 +7403,13 @@ Ticketing ~ Use (abnormal system)
  * @function ｄポイントのみ
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.POINT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.D_POINT }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
  * ### テスト観点
  * * 前提：
  * * ポイント付与_ｄポイントの売上のレシート返品を行う。
@@ -6977,6 +7468,16 @@ Ticketing ~ Use (abnormal system)
 (Points double day (Wednesday/Sunday))
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.POINT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.POINT_MULTIPLIER_UP }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
+ * { @link TAGS.DAY_OF_THE_WEEK }
  * ### テスト観点
  * * シナリオ番号：TC_048（ポイント〇倍デー（水/日））の売上のレシート返品を行う。
  * * テスト観点：
@@ -7075,6 +7576,16 @@ Ticketing ~ Use (abnormal system)
  * @function 商品ブランド属性（ボーナスポイントも同様の動き）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.POINT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.POINT_MULTIPLIER_UP }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
+ * { @link TAGS.PRODUCT_UNIT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_049（商品ブランド属性ポイント）の売上のレシート返品を行う。
@@ -7159,6 +7670,15 @@ Ticketing ~ Use (abnormal system)
  * @function セット買いポイント
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.POINT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.SET }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_051（セット買いポイント）の売上のレシート返品を行う。
@@ -7242,6 +7762,13 @@ Ticketing ~ Use (abnormal system)
  * @function アプリクーポン
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.SALES }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.USE_APP_COUPON }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_055（アプリクーポン）の売上のレシート返品を行う。
@@ -7323,6 +7850,13 @@ Ticketing ~ Use (abnormal system)
  * @function クスリのアオキ ギフトカード払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.TMN_PREPAID }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.MEDICINAL_AOKI_GIFT_CARD }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_061（併用支払（クスリのアオキギフトカード））の売上のレシート返品を行う。
@@ -7407,6 +7941,15 @@ Ticketing ~ Use (abnormal system)
  * @function ｄポイント払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.POINT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.D_POINT }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
+ * { @link TAGS.USE }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_068（ｄポイント）の売上のレシート返品を行う。
@@ -7464,6 +8007,14 @@ Ticketing ~ Use (abnormal system)
  * @function WAON払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.WAON }
+ * { @link TAGS.CANCELLATION_RETURN }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_063（WAON）の売上のレシート返品を行う。
@@ -7528,6 +8079,13 @@ Ticketing ~ Use (abnormal system)
  * @function クレジットカード払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.CREDIT }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.CANCELLATION_RETURN }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_069（クレジットカード）の売上のレシート返品を行う。
@@ -7585,6 +8143,14 @@ Ticketing ~ Use (abnormal system)
  * @function PayPay払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.CODE_PAYMENT }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.DOMESTIC_BRAND }
+ * { @link TAGS.CANCELLATION_RETURN }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_72（バーコード決済（PayPay））の売上のレシート返品を行う。
@@ -7642,6 +8208,13 @@ Ticketing ~ Use (abnormal system)
  * @function お米券
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.CASH_VOUCHER }
+ * { @link TAGS.OTHER_COMPANY_CASH_COUPONS_NO_CHANGE }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_073（金券（お米券））の売上のレシート返品を行う。
@@ -7707,6 +8280,12 @@ Ticketing ~ Use (abnormal system)
  * @function 売掛
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.CREDIT_SALE }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_074（掛売）の売上のレシート返品を行う。
@@ -7765,6 +8344,11 @@ Ticketing ~ Use (abnormal system)
  * @function 売上～返品の中止
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.CANCELING_RETURNS }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
  * ### テスト観点
  * * レシート返品が途中で中止される
  * * * ・通常商品をスキャンする。
@@ -7812,6 +8396,14 @@ Ticketing ~ Use (abnormal system)
  * @function 現金売上かつAocaポイント付与の誤打訂正
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.POINT }
+ * { @link TAGS.SALES_OPERATIONS }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
+ * { @link TAGS.CASH }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_046（Aocaポイント付与）の売上の誤打訂正を行う。
@@ -7890,6 +8482,14 @@ Ticketing ~ Use (abnormal system)
  * @function TMNプリペのチャージ～誤打訂正の一連動作
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.SALES_OPERATIONS }
+ * { @link TAGS.TMN_PREPAID }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.CHARGE_CANCELLATION }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * クスリのアオキプリペイドカードをチャージした後に、誤打訂正にてチャージの取消ができる。
  * * * ・クスリのアオキプリペイドカードを5000円チャージする
@@ -8035,6 +8635,11 @@ Ticketing ~ Use (abnormal system)
  * @function クスリのアオキ ギフトカード払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.TMN_PREPAID }
+ * { @link TAGS.DRUG_AOKI_GIFT_TEA_CARD }
  * ### テスト観点
  * * クスリのアオキギフトカードの売上を実施して、の誤打訂正を行う。
  * * テスト観点：
@@ -8102,6 +8707,10 @@ Ticketing ~ Use (abnormal system)
  * @function ｄポイント払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.D_POINT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_068（ｄポイント）の売上の誤打訂正を行う。
@@ -8158,6 +8767,11 @@ Ticketing ~ Use (abnormal system)
  * @function WAON払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.WAON }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_063（WAON）の売上の誤打訂正を行う。
@@ -8222,6 +8836,11 @@ Ticketing ~ Use (abnormal system)
  * @function 交通系IC払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.TRANSPORTATION_IC }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_064（交通系IC）の売上の誤打訂正を行う。
@@ -8279,6 +8898,10 @@ Ticketing ~ Use (abnormal system)
  * @function クレジットカード払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CREDIT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_069（クレジットカード）の売上の誤打訂正を行う。
@@ -8336,6 +8959,12 @@ Ticketing ~ Use (abnormal system)
  * @function PayPay払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.RECEIPT_PRINTING }
+ * { @link TAGS.CODE_PAYMENT }
+ * { @link TAGS.MISPRINT_CORRECTION_RECEIPT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_072（バーコード決済（PayPay））の売上の誤打訂正を行う。
@@ -8393,6 +9022,13 @@ Ticketing ~ Use (abnormal system)
  * @function お米券
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.SALES_OPERATIONS }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.CASH_VOUCHER }
+ * { @link TAGS.OTHER_COMPANY_CASH_COUPONS_NO_CHANGE }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_073（金券（お米券））の売上の誤打訂正を行う。
@@ -8453,6 +9089,12 @@ Ticketing ~ Use (abnormal system)
  * @function 売掛による誤打訂正
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.SALES_OPERATIONS }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CREDIT_SALE }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_074（掛売）の売上の誤打訂正を行う。
@@ -8514,6 +9156,13 @@ Ticketing ~ Use (abnormal system)
  * @function 売上～誤打訂正の中止
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.SALES_OPERATIONS }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CASH }
  * ### テスト観点
  * * 前提：
  * * * ・通常商品
@@ -8557,6 +9206,9 @@ Ticketing ~ Use (abnormal system)
  * @function 両替の動き
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MONEY_MANAGEMENT }
+ * { @link TAGS.MONEY_EXCHANGE }
  * ### テスト観点
  * * 金種別に枚数を入力して両替の入力ができる。
  * * * ・50,000円を千円札に両替する。
@@ -8595,6 +9247,13 @@ Ticketing ~ Use (abnormal system)
  * @function 小口入金～誤打訂正の一連操作
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MONEY_MANAGEMENT }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.RETAIL_DEPOSIT }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.THERE_IS_A_REASON_LOGICAL_BALANCE_CHANGE }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * 小口入金から誤打訂正（小口入金）までの一連の確認を行う
  * * 確認ステップ：
@@ -8641,6 +9300,13 @@ Ticketing ~ Use (abnormal system)
  * @function 小口出金～誤打訂正の一連操作
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MONEY_MANAGEMENT }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.RETAIL_WITHDRAWAL }
+ * { @link TAGS.TRADE_CALL }
+ * { @link TAGS.THERE_IS_A_REASON_LOGICAL_BALANCE_CHANGE }
+ * { @link TAGS.BARCODE_SCAN }
  * ### テスト観点
  * * 小口出金から誤打訂正（小口出金）までの一連の確認を行う
  * * * ・小口出金
@@ -8690,6 +9356,10 @@ Ticketing ~ Use (abnormal system)
  * @function 現金回収の動き
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MONEY_MANAGEMENT }
+ * { @link TAGS.COLLECT }
+ * { @link TAGS.BANKNOTE_COLLECTION_RECEIPT }
  * ### テスト観点
  * * 回収した現金が入力できる。
  * * * ・回収金額20,000円を入力する
@@ -8733,6 +9403,10 @@ Ticketing ~ Use (abnormal system)
  * @function 釣銭追加の動き
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.OPENING }
+ * { @link TAGS.CHANGE_RESERVE_SETTING }
+ * { @link TAGS.ADDITION }
  * ### テスト観点
  * * 釣銭追加金額が入力できる。
  * * * ・釣銭追加金額30,000円を入力する
@@ -8825,6 +9499,16 @@ Ticketing ~ Use (abnormal system)
 Terminal settlement - store settlement - automatic opening (normal)
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.CHECKING_THE_AMOUNT_OF_MONEY }
+ * { @link TAGS.TERMINAL_PAYMENT }
+ * { @link TAGS.STORE_PAYMENT }
+ * { @link TAGS.AUTOMATIC_OPENING }
+ * { @link TAGS.AUTOMATIC_PAYMENT }
+ * { @link TAGS.PAYMENT_PROCESSING }
+ * { @link TAGS.STORE_PAYMENT_WHEN_USING_MULTIPLE_TERMINALS }
+ * { @link TAGS.INVENTORY_INVENTORY_CONTROL_YESNO }
+ * { @link TAGS.PENDING_TRANSACTION_CHECK }
  * ### テスト観点
  * * 在高点検～自動開局までの正常系の一連の流れを確認する。
  * * ＜前提条件＞
@@ -8917,6 +9601,13 @@ Terminal settlement - store settlement - automatic opening (normal)
 erminal settlement - store settlement - automatic opening (abnormal)
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.STORE_PAYMENT }
+ * { @link TAGS.CHECKING_THE_AMOUNT_OF_MONEY }
+ * { @link TAGS.TERMINAL_PAYMENT }
+ * { @link TAGS.PAYMENT_PROCESSING }
+ * { @link TAGS.INVENTORY_INVENTORY_CONTROL_YESNO }
+ * { @link TAGS.PENDING_TRANSACTION_CHECK }
  * ### テスト観点
  * * 在高点検～自動開局までの正常系の一連の流れを確認する。
  * * ＜前提条件＞
@@ -8990,6 +9681,16 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 端末精算～店舗精算～手動開局（正常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.STORE_PAYMENT }
+ * { @link TAGS.CHECKING_THE_AMOUNT_OF_MONEY }
+ * { @link TAGS.TERMINAL_PAYMENT }
+ * { @link TAGS.OPENING }
+ * { @link TAGS.AUTOMATIC_PAYMENT }
+ * { @link TAGS.PAYMENT_PROCESSING }
+ * { @link TAGS.STORE_PAYMENT_WHEN_USING_MULTIPLE_TERMINALS }
+ * { @link TAGS.INVENTORY_INVENTORY_CONTROL_YESNO }
+ * { @link TAGS.PENDING_TRANSACTION_CHECK }
  * ### テスト観点
  * * 在高点検～手動開局までの正常系の一連の流れを確認する。
  * * ＜前提条件＞
@@ -9085,6 +9786,14 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 端末精算～店舗精算～手動開局（異常系）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.STORE_PAYMENT }
+ * { @link TAGS.CHECKING_THE_AMOUNT_OF_MONEY }
+ * { @link TAGS.TERMINAL_PAYMENT }
+ * { @link TAGS.OPENING }
+ * { @link TAGS.PAYMENT_PROCESSING }
+ * { @link TAGS.INVENTORY_INVENTORY_CONTROL_YESNO }
+ * { @link TAGS.PENDING_TRANSACTION_CHECK }
  * ### テスト観点
  * * 在高点検～手動開局までの正常系の一連の流れを確認する。
  * * ＜前提条件＞
@@ -9160,6 +9869,9 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 電子ジャーナル検索
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.ELECTRONIC_JOURNAL_SEARCH }
+ * { @link TAGS.ENTER_SEARCH_CONDITIONS }
  * ### テスト観点
  * * 電子ジャーナル検索条件に一致した電子ジャーナルが抽出されること。
  * 
@@ -9208,6 +9920,10 @@ erminal settlement - store settlement - automatic opening (abnormal)
 
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_TYPE }
+ * { @link TAGS.TAG_2_TIERS_OF_BOOKS }
  * ### テスト観点
  * * テスト観点：
  * * * ・適正な商品価格を参照している
@@ -9265,6 +9981,14 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （値引JAN）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.PRODUCT_TYPE }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.CLOSEOUT_JAN }
+ * { @link TAGS.CODE_INPUT }
+ * { @link TAGS.SPECIFY_DISCOUNT_RATE }
+ * { @link TAGS.SINGLE_ITEM }
  * ### テスト観点
  * * 前提：
  * * 値引JAN-割引での単品返品を行う
@@ -9320,6 +10044,15 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （株主優待）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.RECEIPT_PRINTING }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.CODE_INPUT }
+ * { @link TAGS.RETURN_RECEIPT }
+ * { @link TAGS.SHAREHOLDER_BENEFITS }
+ * { @link TAGS.SINGLE_ITEM }
  * ### テスト観点
  * * 前提：
  * * 株主優待割許可商品(対象)の単品返品を行う
@@ -9383,6 +10116,15 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 単品返品（ポイント〇倍デー）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.POINT }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
+ * { @link TAGS.POINT_MULTIPLIER_UP }
+ * { @link TAGS.DAY_OF_THE_WEEK }
  * ### テスト観点
  * * 前提：
  * * ポイント倍対象商品の単品返品を行う（Aocaカード利用）
@@ -9453,6 +10195,12 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 単品返品（ｄポイント）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.POINT }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.D_POINT }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
+ * { @link TAGS.ADDITION_AND_SUBTRACTION }
  * ### テスト観点
  * * 前提：
  * * ポイント対象商品（上位参照）の単品返品を行う（dポイントカード利用）
@@ -9749,6 +10497,9 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （通常商品）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.PRODUCT_DETAILS_REGISTRATION }
  * ### テスト観点
  * * 前提：
  * * 通常商品での単品返品を行う
@@ -9800,6 +10551,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （クレジット）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.CANCELING_RETURNS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.CREDIT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_104（クレジット）のレシート返品を取引中断する。
@@ -9843,6 +10599,12 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （電子マネー）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.CANCELING_RETURNS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.WAON }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_103（WAON）のレシート返品を取引中断する。
@@ -9888,6 +10650,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （TMNプリペ）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.CANCELING_RETURNS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.TMN_PREPAID }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_101（Aocaギフトカード）のレシート返品を取引中断する。
@@ -9960,6 +10727,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （ｄポイント）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.CANCELING_RETURNS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.D_POINT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：102（ｄポイント）のレシート返品を取引中断する。
@@ -10009,6 +10781,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （掛売）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.CANCELING_RETURNS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.CREDIT_SALE }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：107（掛売）のレシート返品を取引中断する。
@@ -10059,6 +10836,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （単品値引）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.CANCELING_RETURNS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.SINGLE_ITEM_DISCOUNT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：15（単品値引）の売上をレシート返品の途中で取引中断する。
@@ -10114,6 +10896,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
 （小計値引）
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.CANCELING_RETURNS }
+ * { @link TAGS.RETURN_OF_ENTIRE_TRANSACTION_RETURN_OF_ENTIRE_RECEIPT }
+ * { @link TAGS.SUBTOTAL_MANUAL_REDUCTION }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：16（小計値引）の売上をレシート返品の途中で取引中断する。
@@ -10172,6 +10959,12 @@ erminal settlement - store settlement - automatic opening (abnormal)
 
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.SALES_OPERATIONS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.PRODUCT_TYPE }
+ * { @link TAGS.TAG_2_TIERS_OF_BOOKS }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：134（書籍販売）の売上の誤打訂正を行う。
@@ -10221,6 +11014,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function ポイント〇倍デー
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.SALES_OPERATIONS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.POINT_MULTIPLIER_UP }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：48（ポイント〇倍デー（水/日））の売上の誤打訂正を行う。
@@ -10295,6 +11093,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 500円券
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.SALES_OPERATIONS }
+ * { @link TAGS.SALES }
+ * { @link TAGS.USE_500_YEN_COUPON }
  * ### テスト観点
  * * 前提：
  * * 取引0: (500円券を発券)
@@ -10373,6 +11176,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function クレジットカード払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CREDIT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_069（クレジットカード）の売上の誤打訂正を途中で中断する。
@@ -10432,6 +11240,12 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 電子マネー払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.ELECTRONIC_MONEY }
+ * { @link TAGS.WAON }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_63（WAON）の売上の誤打訂正を途中で中断する。
@@ -10491,6 +11305,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function TMNプリペ払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.TMN_PREPAID }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_061（クスリのアオキギフトカード）の売上の誤打訂正を途中で中断する。
@@ -10561,6 +11380,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function ｄポイント払い
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.D_POINT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_068（ｄポイント）の売上の誤打訂正を途中で中断する。
@@ -10627,6 +11451,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 掛売
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.PAYMENT }
+ * { @link TAGS.CREDIT_SALE }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_74（掛売）の売上の誤打訂正を途中で中断する。
@@ -10689,6 +11518,10 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 社員割引
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.EMPLOYEE_DISCOUNT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_030（社員割引）の売上の誤打訂正を途中で中断する。
@@ -10747,6 +11580,10 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 単品値引
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.SINGLE_ITEM_DISCOUNT }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_015（単品値引）の売上の誤打訂正を途中で中断する。
@@ -10799,6 +11636,10 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 小計値引
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.SUBTOTAL_MANUAL_REDUCTION }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_016（小計値引）の売上の誤打訂正を途中で中断する。
@@ -10854,6 +11695,10 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 500円券
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.MISPRINT_CORRECTION_CANCELED }
+ * { @link TAGS.USE_500_YEN_COUPON }
  * ### テスト観点
  * * 前提：
  * * シナリオ番号：TC_018（発券～使用（正常系：500円券））の売上の誤打訂正を途中で中断する。
@@ -10966,6 +11811,15 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 売上_プリペポイント付与
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES_INSPECTION }
+ * { @link TAGS.SALES }
+ * { @link TAGS.POINT }
+ * { @link TAGS.REPORT_BY_TRANSACTION }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.JOURNAL_SAVE }
+ * { @link TAGS.TAG_500_YEN_TICKET_ISSUE }
  * ### テスト観点
  * * 表右のテーブル設計書に挙げたトランがすべて保存されているか確認する
  * * トランの値のチェックは下記に対して行う
@@ -11131,6 +11985,15 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 売上_プリペポイント付与失敗
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES_INSPECTION }
+ * { @link TAGS.SALES }
+ * { @link TAGS.POINT }
+ * { @link TAGS.REPORT_BY_TRANSACTION }
+ * { @link TAGS.SUBTOTAL }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.JOURNAL_SAVE }
+ * { @link TAGS.TAG_500_YEN_TICKET_ISSUE }
  * ### テスト観点
  * * ポイント処理失敗トラン
  * * * ・ポイント付与分のレコード
@@ -11243,6 +12106,14 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 売上_領収額_税計算
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES_INSPECTION }
+ * { @link TAGS.SALES }
+ * { @link TAGS.REPORT_BY_TRANSACTION }
+ * { @link TAGS.TAX_CALCULATION }
+ * { @link TAGS.JOURNAL_SAVE }
+ * { @link TAGS.SALES_PROMOTION_PLANNED_SALES }
+ * { @link TAGS.COMPANY_DISCOUNT }
  * ### テスト観点
  * * 併用支払を行う
  * * * ・社割・その他値引券は領収証金額対象外 かつ ポイント対象区分：税額
@@ -11343,6 +12214,14 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 誤打訂正
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES_INSPECTION }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.REPORT_BY_TRANSACTION }
+ * { @link TAGS.JOURNAL_SAVE }
+ * { @link TAGS.AGE_CONFIRMATION_PRODUCT }
+ * { @link TAGS.SELLING_PRICE_CHANGE }
+ * { @link TAGS.DELETE_DETAILS }
  * ### テスト観点
  * * 誤打訂正トラン
  * * 元取引の売上トラン
@@ -11450,6 +12329,14 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 返品
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SALES_INSPECTION }
+ * { @link TAGS.RETURN }
+ * { @link TAGS.REPORT_BY_TRANSACTION }
+ * { @link TAGS.JOURNAL_SAVE }
+ * { @link TAGS.AGE_CONFIRMATION_PRODUCT }
+ * { @link TAGS.SELLING_PRICE_CHANGE }
+ * { @link TAGS.DELETE_DETAILS }
  * ### テスト観点
  * * 返品トラン
  * * 元取引の売上トラン
@@ -11558,6 +12445,13 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 端末精算・開局
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.SETTLEMENT }
+ * { @link TAGS.MONEY_MANAGEMENT }
+ * { @link TAGS.TERMINAL_PAYMENT }
+ * { @link TAGS.OPENING }
+ * { @link TAGS.REPORT_BY_TRANSACTION }
+ * { @link TAGS.JOURNAL_SAVE }
  * ### テスト観点
  * * 開局トラン
  * * * ・釣銭準備金
@@ -11661,6 +12555,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function 現金投入
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MONEY_MANAGEMENT }
+ * { @link TAGS.INPUT }
+ * { @link TAGS.INSERT_ALL_BANKNOTES }
+ * { @link TAGS.JOURNAL_SAVE }
  * ### テスト観点
  * * 現金在高トラン
  * * * ・現金実在高
@@ -11794,6 +12693,13 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function チャージ・チャージ誤打訂正
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.POINT }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.JOURNAL_SAVE }
+ * { @link TAGS.CHARGE }
+ * { @link TAGS.TAG_500_YEN_TICKET_ISSUE }
  * ### テスト観点
  * * チャージトラン
  * * * ・チャージ額
@@ -11918,6 +12824,13 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function チャージ_プリペポイント付与失敗
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.MISPRINT_CORRECTION }
+ * { @link TAGS.POINT }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.JOURNAL_SAVE }
+ * { @link TAGS.CHARGE }
+ * { @link TAGS.TAG_500_YEN_TICKET_ISSUE }
  * ### テスト観点
  * * ポイント処理失敗トラン
  * * * ・ポイント付与分のレコード
@@ -12008,6 +12921,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * @function ポイント訂正
  * @memberof 返品
  * @description
+ * { @link TAGS.POS }
+ * { @link TAGS.POINT }
+ * { @link TAGS.AOCA_POINTS }
+ * { @link TAGS.JOURNAL_SAVE }
+ * { @link TAGS.TAG_500_YEN_TICKET_ISSUE }
  * ### テスト観点
  * * ポイント付与トラン
  * * ポイント_TMNプリペトラン
@@ -12064,4 +12982,3 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * * * *  usage_point_count_sum= point500yen = 500
  * * * *  updated_point_count_sum= pointAmount - point500yen = 543 - 500 = 43
  */
-
