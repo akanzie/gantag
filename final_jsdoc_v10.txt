@@ -1116,8 +1116,7 @@
  * | 2 | 0円商品スキャン | `/sales/cart/barcode` |
  * | 3 | 小計 | `/sales/subtotal` |
  * | 4 | 取引完了 | `/sales/end` |
- * | - | 5.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 5 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -1238,8 +1237,7 @@
  * | 2 | 単品値引商品スキャン | `/sales/cart/barcode` |
  * | 3 | 通常商品スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
- * | - | 5.小計値引ボタンを押下し値引金額入力 | - |
- * | - | `/sales/cart/subtotaldiscount` | - |
+ * | 5 | 小計値引ボタンを押下し値引金額入力 | `/sales/cart/subtotaldiscount` |
  * | 6 | 支払登録 | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
  * 
@@ -1297,8 +1295,7 @@
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 単品値引商品スキャン | `/sales/cart/barcode` |
  * | 3 | 小計 | `/sales/subtotal` |
- * | - | 4.小計割引ボタンを押下し割引率入力 | - |
- * | - | `/sales/cart/subtotaldiscount` | - |
+ * | 4 | 小計割引ボタンを押下し割引率入力 | `/sales/cart/subtotaldiscount` |
  * | 5 | 支払登録 | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
  * 
@@ -1363,7 +1360,7 @@
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | - | 取引①: | - |
- * | - | 0. Aocaカードのポイントを400に設定 | - |
+ * | 0 | Aocaカードのポイントを400に設定 | - |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 3 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
@@ -1378,7 +1375,7 @@
  * | 11 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
  * | 12 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 13 | 小計 | `/sales/subtotal` |
- * | - | 14.500円券スキャン（1枚）`/sales/cart/barcode` | - |
+ * | 14 | 500円券スキャン（1枚）| `/sales/cart/barcode` |
  * | 15 | 支払登録 | `/sales/addpayment` |
  * | 16 | 取引完了 | `/sales/end` |
  * 
@@ -1475,7 +1472,7 @@
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | - | 取引１： | - |
- * | - | 0. Aocaカードのポイントを0に設定 | - |
+ * | 0 | Aocaカードのポイントを0に設定 | - |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 3 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
@@ -1485,7 +1482,7 @@
  * | 6 | 支払登録 | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
  * | - | => ３枚の５００円券 （枚1）,（枚2）,（枚3） | - |
- * | - | 8. getbalanceを呼び出す | - |
+ * | 8 | getbalanceを呼び出す | - |
  * | - | 取引２： | - |
  * | 9 | 取引開始 | `/sales/begin` |
  * | 10 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
@@ -1493,9 +1490,9 @@
  * | 12 | 売価変更 | `/sales/cart/changeitemprice` |
  * | - | => price:1500 | - |
  * | 13 | 小計 | `/sales/subtotal` |
- * | - | 14.500円券スキャン（枚1）`/sales/cart/barcode` | - |
- * | - | 15.500円券スキャン（枚2）`/sales/cart/barcode` | - |
- * | - | 16.500円券スキャン（枚3）`/sales/cart/barcode` | - |
+ * | 14 | 500円券スキャン（枚1）| `/sales/cart/barcode` |
+ * | 15 | 500円券スキャン（枚2）| `/sales/cart/barcode` |
+ * | 15 | 500円券スキャン（枚3）| `/sales/cart/barcode` |
  * | 17 | 支払登録 | `/sales/addpayment` |
  * | 18 | 取引完了 | `/sales/end` |
  * 
@@ -1614,13 +1611,13 @@
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 1. 500円券を作成（有効期限外） | - |
+ * | 1 | 500円券を作成（有効期限外） | - |
  * | 2 | 取引開始 | `/sales/begin` |
  * | 3 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 4 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
  * | 5 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 6 | 小計 | `/sales/subtotal` |
- * | - | 7.利用期間外の500円券スキャン`/sales/cart/barcode`  (ステップ１のバーコードを利用) | - |
+ * | 7 | 利用期間外の500円券スキャン (ステップ１のバーコードを利用) | `/sales/cart/barcode` |
  * | - | →　エラー終了 | - |
  * 
  * ---
@@ -1694,13 +1691,13 @@
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 1.TC_018を再度実行 | - |
+ * | 1 | TC_018を再度実行 | - |
  * | 2 | 取引開始 | `/sales/begin` |
  * | 3 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 4 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
  * | 5 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 6 | 小計 | `/sales/subtotal` |
- * | - | 7.使用済の500円券スキャン`/sales/cart/barcode`  (Step1のバーコードを利用する) | - |
+ * | 7 | 使用済の500円券スキャン (Step1のバーコードを利用する) | `/sales/cart/barcode` |
  * | - | →　エラー終了 | - |
  * 
  * ---
@@ -1774,7 +1771,7 @@
  * | 8 | 取引開始 | `/sales/begin` |
  * | 9 | ポイント対象商品（対象）スキャン | `/sales/cart/barcode` |
  * | 10 | 小計 | `/sales/subtotal` |
- * | - | 11.りぴーと券スキャン（1枚）`/sales/cart/barcode` | - |
+ * | 11 | りぴーと券スキャン（1枚） | `/sales/cart/barcode` |
  * | 12 | 支払登録 | `/sales/addpayment` |
  * | 13 | 取引完了 | `/sales/end` |
  * 
@@ -1855,7 +1852,7 @@ Ticketing ~ Use (abnormal system)
  * | 4 | 売価変更 | `/sales/cart/changeitemprice` |
  * | - | => price: 1000 | - |
  * | 5 | 小計 | `/sales/subtotal` |
- * | - | 6.利用期間外のりぴーと券スキャン`/sales/cart/barcode` | - |
+ * | 6 | 利用期間外のりぴーと券スキャン | `/sales/cart/barcode` |
  * | - | →　エラー終了 | - |
  * 
  * ---
@@ -1937,9 +1934,9 @@ Ticketing ~ Use (abnormal system)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
- * | - | 2.合計500円のミックスマッチの商品1スキャン（1回目）`/sales/cart/barcode` | - |
- * | - | 3.合計500円のミックスマッチの商品1スキャン（2回目）`/sales/cart/barcode` | - |
- * | - | 4.合計500円のミックスマッチの商品1スキャン（3回目）`/sales/cart/barcode` | - |
+ * | 2 | 合計500円のミックスマッチの商品1スキャン（1回目） | `/sales/cart/barcode` |
+ * | 3 | 合計500円のミックスマッチの商品1スキャン（2回目） | `/sales/cart/barcode` |
+ * | 4 | 合計500円のミックスマッチの商品1スキャン（3回目） | `/sales/cart/barcode` |
  * | 5 | 合計500円のミックスマッチの商品2 | `/sales/cart/barcode` |
  * | 6 | まとめ値引対象商品Aスキャン | `/sales/cart/barcode` |
  * | 7 | 通常商品2スキャン | `/sales/cart/barcode` |
@@ -2492,7 +2489,7 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 社割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 社割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.社員割引バーコードスキャン | - |
+ * | 4 | 社員割引バーコードスキャン | - |
  * | 5 | 社割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
  * | 6 | 小計 | `/sales/subtotal` |
  * | 7 | 支払登録 | `/sales/addpayment` |
@@ -2585,7 +2582,7 @@ Ticketing ~ Use (abnormal system)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
- * | - | 2.社員割引バーコードスキャン　→　エラー終了 | - |
+ * | 2 | 社員割引バーコードスキャン　→　エラー終了 | - |
  * 
  * ---
  * ### 前提条件
@@ -2636,8 +2633,8 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 社割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 社割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.社員割引バーコードスキャン (１回目) | - |
- * | - | 5.社員割引バーコードスキャン(２回目)　→　エラー終了 | - |
+ * | 4 | 社員割引バーコードスキャン (１回目) | - |
+ * | 5 | 社員割引バーコードスキャン(２回目)　→　エラー終了 | - |
  * 
  * ---
  * ### 前提条件
@@ -2707,7 +2704,7 @@ Ticketing ~ Use (abnormal system)
  * | 3 | 社割許可商品(対象外)スキャン | `/sales/cart/barcode` |
  * | 4 | 社割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
  * | 5 | 小計 | `/sales/subtotal` |
- * | - | 6.社員割引バーコードスキャン | - |
+ * | 6 | 社員割引バーコードスキャン | - |
  * | 7 | 支払登録 | `/sales/addpayment` |
  * | 8 | 取引完了 | `/sales/end` |
  * 
@@ -2794,7 +2791,7 @@ Ticketing ~ Use (abnormal system)
  * | 2 | 社割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 社割許可商品(対象外)スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
- * | - | 5.社員割引バーコードスキャン　→　エラー終了 | - |
+ * | 5 | 社員割引バーコードスキャン　→　エラー終了 | - |
  * 
  * ---
  * ### 前提条件
@@ -2860,8 +2857,8 @@ Ticketing ~ Use (abnormal system)
  * | 2 | 社割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 社割許可商品(対象外)スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
- * | - | 5.社員割引バーコードスキャン (１回目) | - |
- * | - | 6.社員割引バーコードスキャン　(２回目) →　エラー終了 | - |
+ * | 5 | 社員割引バーコードスキャン (１回目) | - |
+ * | 6 | 社員割引バーコードスキャン　(２回目) →　エラー終了 | - |
  * 
  * ---
  * ### 前提条件
@@ -2939,12 +2936,12 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 社割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 社割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.社員割引バーコードスキャン | - |
+ * | 4 | 社員割引バーコードスキャン | - |
  * | 5 | 社割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
  * | 6 | 株主優待割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 7 | 株主優待割許可商品(対象外)スキャン | `/sales/cart/barcode` |
  * | 8 | 株主優待割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
- * | - | 9.株主優待バーコードスキャン | - |
+ * | 9 | 株主優待バーコードスキャン | - |
  * | 10 | 小計 | `/sales/subtotal` |
  * 
  * ---
@@ -3039,8 +3036,8 @@ Ticketing ~ Use (abnormal system)
  * | 5 | 株主優待割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 6 | 株主優待割許可商品(対象外)スキャン | `/sales/cart/barcode` |
  * | 7 | 株主優待割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
- * | - | 8.株主優待バーコードスキャン | - |
- * | - | 9.社員割引バーコードスキャン | - |
+ * | 8 | 株主優待バーコードスキャン | - |
+ * | 9 | 社員割引バーコードスキャン | - |
  * | 10 | 小計 | `/sales/subtotal` |
  * 
  * ---
@@ -3125,7 +3122,7 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 株主優待割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 株主優待割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.株主優待バーコードスキャン | - |
+ * | 4 | 株主優待バーコードスキャン | - |
  * | 5 | 株主優待割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
  * | 6 | 小計 | `/sales/subtotal` |
  * 
@@ -3200,7 +3197,7 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 株主優待割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 株主優待割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.株主優待バーコードスキャン　→　エラー終了 | - |
+ * | 4 | 株主優待バーコードスキャン　→　エラー終了 | - |
  * 
  * ---
  * ### 前提条件
@@ -3259,8 +3256,8 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 株主優待割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 株主優待割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.株主優待バーコードスキャン (１回目) | - |
- * | - | 5.株主優待バーコードスキャン（２回目） 　→　エラー終了 | - |
+ * | 4 | 株主優待バーコードスキャン (１回目) | - |
+ * | 5 | 株主優待バーコードスキャン（２回目） 　→　エラー終了 | - |
  * 
  * ---
  * ### 前提条件
@@ -3313,7 +3310,7 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 株主優待割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 株主優待割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.株主優待バーコードスキャン | - |
+ * | 4 | 株主優待バーコードスキャン | - |
  * | 5 | 株主優待割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
  * | 6 | 小計 | `/sales/subtotal` |
  * | 7 | 支払登録 | `/sales/addpayment` |
@@ -3383,7 +3380,7 @@ Ticketing ~ Use (abnormal system)
  * | 3 | 商品Bスキャン | `/sales/cart/barcode` |
  * | 4 | 商品Cスキャン | `/sales/cart/barcode` |
  * | 5 | 小計 | `/sales/subtotal` |
- * | - | 6.株主優待バーコードスキャン | - |
+ * | 6 | 株主優待バーコードスキャン | - |
  * | 7 | 支払登録 | `/sales/addpayment` |
  * | 8 | 取引完了 | `/sales/end` |
  * 
@@ -3426,7 +3423,7 @@ Ticketing ~ Use (abnormal system)
  * | 2 | 株主優待割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 株主優待割許可商品(対象外)スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
- * | - | 5.株主優待バーコードスキャン　→　エラー終了 | - |
+ * | 5 | 株主優待バーコードスキャン　→　エラー終了 | - |
  * 
  * ---
  * ### 前提条件
@@ -3686,11 +3683,11 @@ Ticketing ~ Use (abnormal system)
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
- * | - | 3.子育て支援ポイント（タッチパネル）押下 | - |
+ * | 3 | 子育て支援ポイント（タッチパネル）押下 | - |
  * | 4 | ポイント付与専用商品（対象） 1スキャン | `/sales/cart/barcode` |
  * | 5 | ポイント付与専用商品（対象） 2スキャン | `/sales/cart/barcode` |
  * | 6 | ポイント付与専用商品（対象） 3スキャン | `/sales/cart/barcode` |
- * | - | 7.エコポイント（タッチパネル）押下 | - |
+ * | 7 | エコポイント（タッチパネル）押下 | - |
  * | 8 | 小計 | `/sales/subtotal` |
  * | 9 | 支払登録 | `/sales/addpayment` |
  * | 10 | 取引完了 | `/sales/end` |
@@ -3807,7 +3804,7 @@ Ticketing ~ Use (abnormal system)
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 3 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 4 | ポイント対象商品（対象）スキャン | `/sales/cart/barcode` |
- * | - | 5.ポイント付与専用商品（対象外)スキャン | - |
+ * | 5 | ポイント付与専用商品（対象外)スキャン | - |
  * | 6 | 小計 | `/sales/subtotal` |
  * | 7 | 支払登録 | `/sales/addpayment` |
  * | 8 | 取引完了 | `/sales/end` |
@@ -4546,8 +4543,8 @@ Ticketing ~ Use (abnormal system)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | - | 取引1: 店舗01（販促対象） | - |
- * | 0 | 1 | `/authorization` |
- * | 0 | 2 | `/signin` |
+ * | 0.1 | - | `/authorization` |
+ * | 0.2 | - | `/signin` |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 3 | 新店購入・日曜日ポイント倍付商品スキャン | `/sales/cart/barcode` |
@@ -4555,8 +4552,8 @@ Ticketing ~ Use (abnormal system)
  * | 5 | 支払登録 | `/sales/addpayment` |
  * | 6 | 取引完了 | `/sales/end` |
  * | - | 取引2: 店舗02（販促対象外） | - |
- * | 0 | 3 | `/authorization` |
- * | 0 | 4 | `/signin` |
+ * | 0.3 | - | `/authorization` |
+ * | 0.4 | - | `/signin` |
  * | 7 | 取引開始 | `/sales/begin` |
  * | 8 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 9 | 新店購入・日曜日ポイント倍付商品スキャン | `/sales/cart/barcode` |
@@ -4872,10 +4869,8 @@ Ticketing ~ Use (abnormal system)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
- * | - | 2. ポイント付与専用商品（対象外） スキャン | - |
- * | - | `/sales/cart/barcode` | - |
- * | - | 3.通常商品 スキャン | - |
- * | - | `/sales/cart/barcode` | - |
+ * | 2 | ポイント付与専用商品（対象外） スキャン | `/sales/cart/barcode` |
+ * | 3 | 通常商品 スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/tmn-prepaid/value` |
  * | 6 | 支払登録 | `/sales/cart/voucher` |
@@ -4955,10 +4950,8 @@ Ticketing ~ Use (abnormal system)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
- * | - | 2. ポイント付与専用商品（対象外）スキャン | - |
- * | - | `/sales/cart/barcode` | - |
- * | - | 3.通常商品 スキャン | - |
- * | - | `/sales/cart/barcode` | - |
+ * | 2 | ポイント付与専用商品（対象外）スキャン | `/sales/cart/barcode` |
+ * | 3 | 通常商品 スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/tmn-prepaid/value` |
  * | 6 | 支払登録 | `/sales/cart/voucher` |
@@ -5040,8 +5033,7 @@ Ticketing ~ Use (abnormal system)
  * | 5 | 支払登録 (WAON) | `/sales/addpayment` |
  * | 6 | 支払登録 (Cash) | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
- * | - | 8.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 8 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5122,8 +5114,7 @@ Ticketing ~ Use (abnormal system)
  * | 5 | 支払登録 (交通系IC) | `/sales/addpayment` |
  * | 6 | 支払登録 (Cash) | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
- * | - | 8.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 8 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5203,8 +5194,7 @@ Ticketing ~ Use (abnormal system)
  * | 5 | 支払登録 (楽天Edy) | `/sales/addpayment` |
  * | 6 | 支払登録 (Cash) | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
- * | - | 8.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 8 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5289,8 +5279,7 @@ Ticketing ~ Use (abnormal system)
  * | 5 | 支払登録 (nanaco) | `/sales/addpayment` |
  * | 6 | 支払登録 (Cash) | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
- * | - | 8.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 8 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5366,8 +5355,7 @@ Ticketing ~ Use (abnormal system)
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/tmn-prepaid/value` |
  * | 6 | 取引完了 | `/sales/end` |
- * | - | 7.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 7 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5433,8 +5421,7 @@ Ticketing ~ Use (abnormal system)
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/dpoint/usepoint` |
  * | 6 | 取引完了 | `/sales/end` |
- * | - | 7.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 7 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5498,8 +5485,7 @@ Ticketing ~ Use (abnormal system)
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/sales/addpayment` |
  * | 6 | 取引完了 | `/sales/end` |
- * | - | 7.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 7 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5565,7 +5551,7 @@ Ticketing ~ Use (abnormal system)
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/sales/addpayment` |
  * | 6 | 取引完了 | `/sales/end` |
- * | - | 7. 売上ジャーナルトラン SalesData`/tran/getdata` | - |
+ * | 7 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5632,7 +5618,7 @@ Ticketing ~ Use (abnormal system)
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/sales/addpayment` |
  * | 6 | 取引完了 | `/sales/end` |
- * | - | 7. 売上ジャーナルトラン SalesData`/tran/getdata` | - |
+ * | 7 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5699,7 +5685,7 @@ Ticketing ~ Use (abnormal system)
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/sales/addpayment` |
  * | 6 | 取引完了 | `/sales/end` |
- * | - | 7. 売上ジャーナルトラン SalesData`/tran/getdata` | - |
+ * | 7 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5764,7 +5750,7 @@ Ticketing ~ Use (abnormal system)
  * | 3 | 小計 | `/sales/subtotal` |
  * | 4 | 支払登録 | `/sales/cart/voucher` |
  * | 5 | 取引完了 | `/sales/end` |
- * | - | 6. 売上ジャーナルトラン SalesData`/tran/getdata` | - |
+ * | 6 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5839,7 +5825,7 @@ Ticketing ~ Use (abnormal system)
  * | 4 | 掛売客情報検索 | `/accounts-receivable/search` |
  * | 5 | 掛売支払登録 | `/sales/cart/accounts-receivable` |
  * | 6 | 取引完了 | `/sales/end` |
- * | - | 7. 売上ジャーナルトラン SalesData`/tran/getdata` | - |
+ * | 7 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -5905,9 +5891,9 @@ Ticketing ~ Use (abnormal system)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. 準備ステップ | - |
- * | 0 | 1 | `/hold/getList` |
- * | - | 0.2. hold`/remove` (cart_noが存在すれば削除) | - |
+ * | 0 | 準備ステップ | - |
+ * | 0.1 | - | `/hold/getList` |
+ * | 0.2 | - | `hold/remove` (cart_noが存在すれば削除) |
  * | 1 | 取引1開始 | `/sales/begin` |
  * | 2 | 通常商品スキャン | `/sales/cart/barcode` |
  * | 3 | 取引1保留 | `/hold` |
@@ -6003,8 +5989,7 @@ Ticketing ~ Use (abnormal system)
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 取引中止ボタン押下 | `/sales/abort` |
- * | - | 3.電子ジャーナルトラン | - |
- * | - | PosReceiptData`/tran/getdata` | - |
+ * | 3 | 電子ジャーナルトラン | `PosReceiptData`/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -6055,10 +6040,8 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 通常商品スキャン | `/sales/cart/barcode` |
  * | 3 | 取引中止ボタン押下 | `/sales/abort` |
- * | - | 4.電子ジャーナルトラン | - |
- * | - | PosReceiptData`/tran/getdata` | - |
- * | - | 5.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 4 | 電子ジャーナルトラン | `PosReceiptData/tran/getdata` |
+ * | 5 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -6121,10 +6104,8 @@ Ticketing ~ Use (abnormal system)
  * | 3 | 小計 | `/sales/subtotal` |
  * | 4 | 支払登録 (Linepay) | `/sales/addpayment` |
  * | 5 | 取引中止ボタン押下 | `/sales/abort` |
- * | - | 6.電子ジャーナルトラン | - |
- * | - | PosReceiptData`/tran/getdata` | - |
- * | - | 7.売上ジャーナルトラン | - |
- * | - | SalesData`/tran/getdata` | - |
+ * | 6 | 電子ジャーナルトラン | `PosReceiptData/tran/getdata` |
+ * | 7 | 売上ジャーナルトラン | `/salesdata/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -6501,8 +6482,7 @@ Ticketing ~ Use (abnormal system)
  * | 2 | 単品値引商品スキャン | `/sales/cart/barcode` |
  * | 3 | 通常商品スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
- * | - | 5.小計値引ボタンを押下し値引金額入力 | - |
- * | - | `/sales/cart/subtotaldiscount` | - |
+ * | 5 | 小計値引ボタンを押下し値引金額入力 | `/sales/cart/subtotaldiscount` |
  * | 6 | 支払登録 | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
  * | 8 | 【返品】取引開始 | `/refund/begin` |
@@ -6615,14 +6595,14 @@ Ticketing ~ Use (abnormal system)
  * | 5 | 小計 | `/sales/subtotal` |
  * | 6 | 支払登録 | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
- * | - | 8. Gọi hàm common getbalance | - |
+ * | 8 | call common getbalance | - |
  * | - | 取引②:前提（金券利用） | - |
  * | 9 | 取引開始 | `/sales/begin` |
  * | 10 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 11 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
  * | 12 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 13 | 小計 | `/sales/subtotal` |
- * | - | 14.500円券スキャン（1枚）`/sales/cart/barcode` | - |
+ * | 14 | 500円券スキャン（1枚） | `/sales/cart/barcode` |
  * | 15 | 支払登録 | `/sales/addpayment` |
  * | 16 | 取引完了 | `/sales/end` |
  * | - | 取引③:テスト（金券利用取引を返品） | - |
@@ -6737,7 +6717,7 @@ Ticketing ~ Use (abnormal system)
  * | 8 | 取引開始 | `/sales/begin` |
  * | 9 | ポイント対象商品（対象）スキャン | `/sales/cart/barcode` |
  * | 10 | 小計 | `/sales/subtotal` |
- * | - | 11.りぴーと券スキャン（1枚）`/sales/cart/barcode` | - |
+ * | 11 | りぴーと券スキャン（1枚） | `/sales/cart/barcode` |
  * | 12 | 支払登録 | `/sales/addpayment` |
  * | 13 | 取引完了 | `/sales/end` |
  * | - | 取引③:テスト（金券利用取引を返品） | - |
@@ -6824,9 +6804,9 @@ Ticketing ~ Use (abnormal system)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
- * | - | 2.合計500円のミックスマッチの商品1スキャン（1回目）`/sales/cart/barcode` | - |
- * | - | 3.合計500円のミックスマッチの商品1スキャン（2回目）`/sales/cart/barcode` | - |
- * | - | 4.合計500円のミックスマッチの商品1スキャン（3回目）`/sales/cart/barcode` | - |
+ * | 2 | 合計500円のミックスマッチの商品1スキャン（1回目） | `/sales/cart/barcode` |
+ * | 3 | 合計500円のミックスマッチの商品1スキャン（2回目） | `/sales/cart/barcode` |
+ * | 4 | 合計500円のミックスマッチの商品1スキャン（3回目） | `/sales/cart/barcode` |
  * | 5 | 合計500円のミックスマッチの商品2 | `/sales/cart/barcode` |
  * | 6 | まとめ値引対象商品Aスキャン | `/sales/cart/barcode` |
  * | 7 | 通常商品2スキャン | `/sales/cart/barcode` |
@@ -7036,7 +7016,7 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 社割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 社割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.社員割引バーコードスキャン | - |
+ * | 4 | 社員割引バーコードスキャン | - |
  * | 5 | 社割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
  * | 6 | 小計 | `/sales/subtotal` |
  * | 7 | 支払登録 | `/sales/addpayment` |
@@ -7112,7 +7092,7 @@ Ticketing ~ Use (abnormal system)
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 株主優待割許可商品(対象)スキャン | `/sales/cart/barcode` |
  * | 3 | 株主優待割許可商品(対象外)スキャン | `/sales/cart/barcode` |
- * | - | 4.株主優待バーコードスキャン | - |
+ * | 4 | 株主優待バーコードスキャン | - |
  * | 5 | 株主優待割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
  * | 6 | 小計 | `/sales/subtotal` |
  * | 7 | 支払登録 | `/sales/addpayment` |
@@ -7263,11 +7243,11 @@ Ticketing ~ Use (abnormal system)
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
- * | - | 3.子育て支援ポイント（タッチパネル）押下 | - |
+ * | 3 | 子育て支援ポイント（タッチパネル）押下 | - |
  * | 4 | ポイント付与専用商品（対象） 1スキャン | `/sales/cart/barcode` |
  * | 5 | ポイント付与専用商品（対象） 2スキャン | `/sales/cart/barcode` |
  * | 6 | ポイント付与専用商品（対象） 3スキャン | `/sales/cart/barcode` |
- * | - | 7.エコポイント（タッチパネル）押下 | - |
+ * | 7 | エコポイント（タッチパネル）押下 | - |
  * | 8 | 小計 | `/sales/subtotal` |
  * | 9 | 支払登録 | `/sales/addpayment` |
  * | 10 | 取引完了 | `/sales/end` |
@@ -7362,7 +7342,7 @@ Ticketing ~ Use (abnormal system)
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 3 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 4 | ポイント対象商品（対象）スキャン | `/sales/cart/barcode` |
- * | - | 5.ポイント付与専用商品（対象外)スキャン`/sales/cart/barcode` | - |
+ * | 5 | ポイント付与専用商品（対象外)スキャン`/sales/cart/barcode` | - |
  * | 6 | 小計 | `/sales/subtotal` |
  * | 7 | 支払登録 | `/sales/addpayment` |
  * | 8 | 取引完了 | `/sales/end` |
@@ -7867,12 +7847,10 @@ Ticketing ~ Use (abnormal system)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. Aokiギフトカードの金額が支払可能にする | - |
+ * | 0 | Aokiギフトカードの金額が支払可能にする | - |
  * | 1 | 取引開始 | `/sales/begin` |
- * | - | 2. ポイント付与専用商品（対象外） スキャン | - |
- * | - | `/sales/cart/barcode` | - |
- * | - | 3.通常商品 スキャン | - |
- * | - | `/sales/cart/barcode` | - |
+ * | 2 | ポイント付与専用商品（対象外） スキャン | `/sales/cart/barcode` |
+ * | 3 | 通常商品 スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/tmn-prepaid/value` |
  * | 6 | 支払登録 | `/sales/cart/voucher` |
@@ -8416,12 +8394,12 @@ Ticketing ~ Use (abnormal system)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. Aok カードのポイントを0にセット | - |
+ * | 0 | Aok カードのポイントを0にセット | - |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 3 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 4 | ポイント対象商品（対象）スキャン | `/sales/cart/barcode` |
- * | - | 5. ポイント付与専用商品（対象外）スキャン | - |
+ * | 5 | ポイント付与専用商品（対象外）スキャン | - |
  * | 6 | 小計 | `/sales/subtotal` |
  * | 7 | 支払登録 | `/sales/addpayment` |
  * | 8 | 取引完了 | `/sales/end` |
@@ -8500,7 +8478,7 @@ Ticketing ~ Use (abnormal system)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. AOKカードの金額が上限値に達した場合、金額を0に設定する必要 | - |
+ * | 0 | AOKカードの金額が上限値に達した場合、金額を0に設定する必要 | - |
  * | 1 | TMNプリペチャージ開始 | `/tmn-prepaid/charge/begin` |
  * | 2 | TMNプリペチャージ実行 | `/tmn-prepaid/charge` |
  * | 3 | 【誤打訂正】取引開始 | `/void/begin` |
@@ -8649,12 +8627,10 @@ Ticketing ~ Use (abnormal system)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. Aokiギフトカードが支払可能な金額に設定 | - |
+ * | 0 | Aokiギフトカードが支払可能な金額に設定 | - |
  * | 1 | 取引開始 | `/sales/begin` |
- * | - | 2. ポイント付与専用商品（対象外）スキャン | - |
- * | - | `/sales/cart/barcode` | - |
- * | - | 3. 通常商品スキャン | - |
- * | - | `/sales/cart/barcode` | - |
+ * | 2 | ポイント付与専用商品（対象外）スキャン | `/sales/cart/barcode` |
+ * | 3 | 通常商品スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/tmn-prepaid/value` |
  * | 6 | 取引完了 | `/sales/end` |
@@ -9418,7 +9394,7 @@ Ticketing ~ Use (abnormal system)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | - | 該当のAPIが見当たらない？ | - |
- * | 1 |  | `/cash/in` |
+ * | 1 | - | `/cash/in` |
  * 
  * ---
  * ### 前提条件
@@ -9523,24 +9499,24 @@ Terminal settlement - store settlement - automatic opening (normal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. 準備ステップ | - |
- * | 0 | 1 | `/hold/getList` |
- * | - | 0.2. hold`/remove` (cart_noが存在すれば削除) | - |
- * | 1 |  | `/authorization` |
- * | 2 |  | `/signin` |
+ * | 0 | 準備ステップ | - |
+ * | 0.1 | - | `/hold/getList` |
+ * | 0.2 | - | `hold/remove` (cart_noが存在すれば削除) |
+ * | 1 | - | `/authorization` |
+ * | 2 | - | `/signin` |
  * | 3 | 在高点検 | `/cash/inspection` |
  * | 4 | 端末精算 | `/settlement` |
- * | 5 |  | `/authorization` |
- * | 6 |  | `/signin` |
+ * | 5 | - | `/authorization` |
+ * | 6 | - | `/signin` |
  * | 7 | 在高点検 | `/cash/inspection` |
  * | 8 | 端末精算 | `/settlement` |
- * | 9 |  | `/authorization` |
- * | 10 |  | `/signin` |
+ * | 9 | - | `/authorization` |
+ * | 10 | - | `/signin` |
  * | 11 | 在高点検 | `/cash/inspection` |
  * | 12 | 端末精算 | `/settlement` |
- * | - | 13.端末を除外する store`/settlement/exclude-pos` (pos_cd: 04) | - |
+ * | 13 | 端末を除外する store`/settlement/exclude-pos` (pos_cd: 04) | - |
  * | 14 | 店舗精算 | `/store/settlement` |
- * | - | 15. 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
+ * | 15 | 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
  * 
  * ---
  * ### 前提条件
@@ -9624,14 +9600,14 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. 準備ステップ | - |
- * | 0 | 1 | `/hold/getList` |
- * | - | 0.2. hold`/remove` (cart_noが存在すれば削除) | - |
+ * | 0 | 準備ステップ | - |
+ * | 0.1 | - | `/hold/getList` |
+ * | 0.2 | - | `hold/remove` (cart_noが存在すれば削除) | - |
  * | 1 | 在高点検 | `/cash/inspection` |
  * | 2 | 端末精算 | `/settlement` |
- * | - | 3.端末を除外する store`/settlement/exclude-pos` (pos_cd: 04) | - |
+ * | 3 | 端末を除外する store`/settlement/exclude-pos` (pos_cd: 04) | - |
  * | 4 | 店舗精算 | `/store/settlement` |
- * | - | 5. 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
+ * | 5 | 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
  * 
  * ---
  * ### 前提条件
@@ -9704,25 +9680,25 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. 準備ステップ | - |
- * | 0 | 1 | `/hold/getList` |
- * | - | 0.2. hold`/remove` (cart_noが存在すれば削除) | - |
- * | 1 |  | `/authorization` |
- * | 2 |  | `/signin` |
+ * | 0 | 準備ステップ | - |
+ * | 0.1 | - | `/hold/getList` |
+ * | 0.2 | - | `hold/remove` (cart_noが存在すれば削除) | - |
+ * | 1 | - | `/authorization` |
+ * | 2 | - | `/signin` |
  * | 3 | 在高点検 | `/cash/inspection` |
  * | 4 | 端末精算 | `/settlement` |
- * | 5 |  | `/authorization` |
- * | 6 |  | `/signin` |
+ * | 5 | - | `/authorization` |
+ * | 6 | - | `/signin` |
  * | 7 | 在高点検 | `/cash/inspection` |
  * | 8 | 端末精算 | `/settlement` |
- * | 9 |  | `/authorization` |
- * | 10 |  | `/signin` |
+ * | 9 | - | `/authorization` |
+ * | 10 | - | `/signin` |
  * | 11 | 在高点検 | `/cash/inspection` |
  * | 12 | 端末精算 | `/settlement` |
- * | - | 13.端末を除外する store`/settlement/exclude-pos` (pos_cd: 04) | - |
+ * | 13 | 端末を除外する (pos_cd: 04) | `store/settlement/exclude-pos` |
  * | 14 | 店舗精算 | `/store/settlement` |
  * | 15 | 開局 | `/open` |
- * | - | 16. 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
+ * | 16 | 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
  * 
  * ---
  * ### 前提条件
@@ -9810,14 +9786,14 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. 準備ステップ | - |
- * | 0 | 1 | `/hold/getList` |
- * | - | 0.2. hold`/remove` (cart_noが存在すれば削除) | - |
+ * | 0 | 準備ステップ | - |
+ * | 0.1 | - | `/hold/getList` |
+ * | 0.2 | - | `hold/remove` (cart_noが存在すれば削除) |
  * | 1 | 在高点検 | `/cash/inspection` |
  * | 2 | 端末精算 | `/settlement` |
- * | - | 3.端末を除外する store`/settlement/exclude-pos` (pos_cd: 04) | - |
+ * | 3 | 端末を除外する store`/settlement/exclude-pos` (pos_cd: 04) | - |
  * | 4 | 店舗精算 | `/store/settlement` |
- * | - | 5. 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
+ * | 5 | 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
  * 
  * ---
  * ### 前提条件
@@ -10065,7 +10041,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | :-: | :--- | :--- |
  * | 1 | 【返品】取引開始 | `/refund/begin` |
  * | 2 | 株主優待割許可商品(対象)スキャン | `/refund/cart/barcode` |
- * | - | 3.株主優待バーコードスキャン | - |
+ * | 3 | 株主優待バーコードスキャン | - |
  * | 4 | 【返品】小計 | `/refund/subtotal` |
  * | 5 | 【返品】支払登録 | `/refund/addpayment` |
  * | 6 | 【返品】取引完了 | `/refund/end` |
@@ -10915,8 +10891,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | 2 | 単品値引商品スキャン | `/sales/cart/barcode` |
  * | 3 | 通常商品スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
- * | - | 5.小計値引ボタンを押下し値引金額入力 | - |
- * | - | `/sales/cart/subtotaldiscount` | - |
+ * | 5 | 小計値引ボタンを押下し値引金額入力 | `/sales/cart/subtotaldiscount` |
  * | 6 | 支払登録 | `/sales/addpayment` |
  * | 7 | 取引完了 | `/sales/end` |
  * | 8 | 【返品】取引開始 | `/refund/begin` |
@@ -11111,7 +11086,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | - | 取引0: (500円券を発券) | - |
- * | - | 0. Set the point of Aok card to 400 | - |
+ * | 0 | Set the point of Aok card to 400 | - |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 3 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
@@ -11126,15 +11101,15 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | 11 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
  * | 12 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 13 | 小計 | `/sales/subtotal` |
- * | - | 14. 500円券スキャン（1枚）`/sales/cart/barcode` | - |
+ * | 14 | 500円券スキャン（1枚）`/sales/cart/barcode` | - |
  * | 15 | 支払登録 | `/sales/addpayment` |
  * | 16 | 取引完了 | `/sales/end` |
- * | - | 17. Call common function getbalance | - |
+ * | 17 | Call common function getbalance | - |
  * | - | 取引2: (誤打訂正) | - |
  * | 18 | 【誤打訂正】取引開始 | `/void/begin` |
  * | 19 | 【誤打訂正】支払登録 | `/void/addpayment` |
  * | 20 | 【誤打訂正】取引終了 | `/void/end` |
- * | - | 21. Call common function getbalance | - |
+ * | 21 | Call common function getbalance | - |
  * 
  * ---
  * ### 前提条件
@@ -11321,21 +11296,19 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. Aokiギフトカードが支払可能な金額にする | - |
+ * | 0 | Aokiギフトカードが支払可能な金額にする | - |
  * | 1 | 取引開始 | `/sales/begin` |
- * | - | 2. ポイント付与専用商品（対象外）スキャン | - |
- * | - | `/sales/cart/barcode` | - |
- * | - | 3. 通常商品スキャン | - |
- * | - | `/sales/cart/barcode` | - |
+ * | 2 | ポイント付与専用商品（対象外）スキャン | `/sales/cart/barcode` |
+ * | 3 | 通常商品スキャン | `/sales/cart/barcode` |
  * | 4 | 小計 | `/sales/subtotal` |
  * | 5 | 支払登録 | `/tmn-prepaid/value` |
  * | 6 | 取引完了 | `/sales/end` |
- * | - | 7.getbalance | - |
+ * | 7 | getbalance | - |
  * | 8 | 【誤打訂正】取引開始 | `/void/begin` |
  * | 9 | TMNプリペバリュー返金 | `/tmn-prepaid/refund` |
- * | - | 10.getbalance | - |
+ * | 10 | getbalance | - |
  * | 11 | 【誤打訂正】取引中断 | `/void/abort` |
- * | - | 12.getbalance | - |
+ * | 12 | getbalance | - |
  * 
  * ---
  * ### 前提条件
@@ -11403,8 +11376,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | 5 | 取引完了 | `/sales/end` |
  * | 6 | 【誤打訂正】取引開始 | `/void/begin` |
  * | - | → 上記1~5の取引（売上）のレシートをスキャン | - |
- * | - | 7. 【誤打訂正】支払登録 | - |
- * | - | dpoint`/usepointcancel` | - |
+ * | 7 | 【誤打訂正】支払登録 | `dpoint/usepointcancel` |
  * | 8 | 【誤打訂正】取引中断 | `/void/abort` |
  * 
  * ---
@@ -11537,7 +11509,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | 3 | 社割許可商品(対象外)スキャン | `/sales/cart/barcode` |
  * | 4 | 社割許可商品(上位参照)スキャン | `/sales/cart/barcode` |
  * | 5 | 小計 | `/sales/subtotal` |
- * | - | 6.社員割引バーコードスキャン | - |
+ * | 6 | 社員割引バーコードスキャン | - |
  * | 7 | 支払登録 | `/sales/addpayment` |
  * | 8 | 取引完了 | `/sales/end` |
  * | 9 | 【誤打訂正】取引開始 | `/void/begin` |
@@ -11710,7 +11682,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | - | 取引1: | - |
- * | - | 0. Aok card のポイントを400点にセット | - |
+ * | 0 | Aok card のポイントを400点にセット | - |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | Aocaカードスキャン | `/sales/cart/barcode` |
  * | 3 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
@@ -11719,7 +11691,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | 6 | 小計 | `/sales/subtotal` |
  * | 7 | 支払登録 | `/sales/addpayment` |
  * | 8 | 取引完了 | `/sales/end` |
- * | - | 9. 共通メソッドのgetbalanceを実行 | - |
+ * | 9 | 共通メソッドのgetbalanceを実行 | - |
  * | - | 取引2: | - |
  * | 10 | 取引開始 | `/sales/begin` |
  * | 11 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
@@ -11787,7 +11759,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * | :-: | :--- | :--- |
  * | 1 | 小口入金 | `/cash/deposit` |
  * | 2 | 誤打訂正取引開始 | `/void/begin` |
- * | 2 |  | `/employee/checkoperation` |
+ * | 2 | - | `/employee/checkoperation` |
  * | 3 | 誤打訂正小口入金 | `/void/deposit` |
  * | 4 | 【誤打訂正】取引中断 | `/void/abort` |
  * 
@@ -11851,31 +11823,31 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. AOKカードのポイントを0に調整 | - |
- * | - | 1. 取引開始 sales`/begin` | - |
- * | - | 2. 会員登録 sales`/cart/barcode` | - |
- * | - | 3. ポイント1倍商品 sales`/cart/barcode` | - |
- * | - | 4. ポイント3倍商品 sales`/cart/barcode` | - |
- * | - | 5. ポイント対象外商品 sales`/cart/barcode` | - |
- * | - | 6. 通常商品 sales`/cart/barcode` | - |
- * | - | 7. 単品値引 sales`/cart/unitdiscount` | - |
- * | - | 8. 通常商品 sales`/cart/barcode` | - |
- * | - | 9. 売価変更 sales`/cart/changeitemprice` | - |
- * | - | 10. 超トク対象商品 sales`/cart/barcode` | - |
- * | - | 11. ポイント0倍商品 sales`/cart/barcode` | - |
- * | - | 12. 書籍 sales`/cart/barcode` | - |
- * | - | 13. 数量限定値引 sales`/cart/barcode` | - |
- * | - | 14. まとめ値引対象商品A sales`/cart/barcode` | - |
- * | - | 15. まとめ値引対象商品B sales`/cart/barcode` | - |
- * | - | 16. まとめ値引対象商品C sales`/cart/barcode` | - |
- * | - | 17. 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
- * | - | 18. 年齢確認商品 sales`/cart/barcode` | - |
- * | - | 19. 年齢確認 sales`/age-verification` | - |
- * | - | 20. ボーナスポイント対象商品 sales`/cart/barcode` | - |
- * | - | 21. 株主優待 sales`/cart/barcode` | - |
- * | - | 22. 小計 sales`/subtotal` | - |
- * | - | 23. 現金支払 sales`/addpayment` | - |
- * | - | 24. 取引完了 sales`/end` | - |
+ * | 0 | AOKカードのポイントを0に調整 | - |
+ * | 1 |  取引開始 sales`/begin` | - |
+ * | 2 | 会員登録 sales`/cart/barcode` | - |
+ * | 3 | ポイント1倍商品 sales`/cart/barcode` | - |
+ * | 4 | ポイント3倍商品 sales`/cart/barcode` | - |
+ * | 5 | ポイント対象外商品 sales`/cart/barcode` | - |
+ * | 6 | 通常商品 sales`/cart/barcode` | - |
+ * | 7 | 単品値引 sales`/cart/unitdiscount` | - |
+ * | 8 | 通常商品 sales`/cart/barcode` | - |
+ * | 9 | 売価変更 sales`/cart/changeitemprice` | - |
+ * | 10 | 超トク対象商品 sales`/cart/barcode` | - |
+ * | 11 | ポイント0倍商品 sales`/cart/barcode` | - |
+ * | 12 | 書籍 sales`/cart/barcode` | - |
+ * | 13 | 数量限定値引 sales`/cart/barcode` | - |
+ * | 14 | まとめ値引対象商品A sales`/cart/barcode` | - |
+ * | 15 | まとめ値引対象商品B sales`/cart/barcode` | - |
+ * | 16 | まとめ値引対象商品C sales`/cart/barcode` | - |
+ * | 17 | 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
+ * | 18 | 年齢確認商品 sales`/cart/barcode` | - |
+ * | 19 | 年齢確認 sales`/age-verification` | - |
+ * | 20 | ボーナスポイント対象商品 sales`/cart/barcode` | - |
+ * | 21 | 株主優待 sales`/cart/barcode` | - |
+ * | 22 | 小計 sales`/subtotal` | - |
+ * | 23 | 現金支払 sales`/addpayment` | - |
+ * | 24 | 取引完了 sales`/end` | - |
  * 
  * ---
  * ### 前提条件
@@ -12010,34 +11982,34 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0.事前準備 | - |
- * | - | 0.1 プリペのポイント付与を強制的に失敗させる tmn-api-test`/set-api-timeout` | - |
- * | - | 0.2 AOKカードのポイントを0に調整 | - |
- * | - | 1. 取引開始 sales`/begin` | - |
- * | - | 2. 会員登録 sales`/cart/barcode` | - |
- * | - | 3. ポイント1倍商品 sales`/cart/barcode` | - |
- * | - | 4. ポイント3倍商品 sales`/cart/barcode` | - |
- * | - | 5. ポイント対象外商品 sales`/cart/barcode` | - |
- * | - | 6. 通常商品 sales`/cart/barcode` | - |
- * | - | 7. 単品値引 sales`/cart/unitdiscount` | - |
- * | - | 8. 通常商品 sales`/cart/barcode` | - |
- * | - | 9. 売価変更 sales`/cart/changeitemprice` | - |
- * | - | 10. 超トク対象商品 sales`/cart/barcode` | - |
- * | - | 11. ポイント0倍商品 sales`/cart/barcode` | - |
- * | - | 12. 書籍 sales`/cart/barcode` | - |
- * | - | 13. 数量限定値引 sales`/cart/barcode` | - |
- * | - | 14. まとめ値引対象商品A sales`/cart/barcode` | - |
- * | - | 15. まとめ値引対象商品B sales`/cart/barcode` | - |
- * | - | 16. まとめ値引対象商品C sales`/cart/barcode` | - |
- * | - | 17. 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
- * | - | 18. 年齢確認商品 sales`/cart/barcode` | - |
- * | - | 19. 年齢確認 sales`/age-verification` | - |
- * | - | 20. ボーナスポイント対象商品 sales`/cart/barcode` | - |
- * | - | 21. 株主優待 sales`/cart/barcode` | - |
- * | - | 22. 小計 sales`/subtotal` | - |
- * | - | 23. 現金支払 sales`/addpayment` | - |
- * | - | 24. 取引完了 sales`/end` | - |
- * | - | 25. 後片付け | - |
+ * | 0 | 事前準備 | - |
+ * | 0.1 | プリペのポイント付与を強制的に失敗させる tmn-api-test`/set-api-timeout` | - |
+ * | 0.2 | AOKカードのポイントを0に調整 | - |
+ * | 1 | 取引開始 sales`/begin` | - |
+ * | 2 | 会員登録 sales`/cart/barcode` | - |
+ * | 3 | ポイント1倍商品 sales`/cart/barcode` | - |
+ * | 4 |  ポイント3倍商品 sales`/cart/barcode` | - |
+ * | 5 | ポイント対象外商品 sales`/cart/barcode` | - |
+ * | 6 | 通常商品 sales`/cart/barcode` | - |
+ * | 7 | 単品値引 sales`/cart/unitdiscount` | - |
+ * | 8 | 通常商品 sales`/cart/barcode` | - |
+ * | 9 | 売価変更 sales`/cart/changeitemprice` | - |
+ * | 10 | 超トク対象商品 sales`/cart/barcode` | - |
+ * | 11 | ポイント0倍商品 sales`/cart/barcode` | - |
+ * | 12 | 書籍 sales`/cart/barcode` | - |
+ * | 13 | 数量限定値引 sales`/cart/barcode` | - |
+ * | 14 | まとめ値引対象商品A sales`/cart/barcode` | - |
+ * | 15 | まとめ値引対象商品B sales`/cart/barcode` | - |
+ * | 16 | まとめ値引対象商品C sales`/cart/barcode` | - |
+ * | 17 | 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
+ * | 18 | 年齢確認商品 sales`/cart/barcode` | - |
+ * | 19 | 年齢確認 sales`/age-verification` | - |
+ * | 20 | ボーナスポイント対象商品 sales`/cart/barcode` | - |
+ * | 21 | 株主優待 sales`/cart/barcode` | - |
+ * | 22 | 小計 sales`/subtotal` | - |
+ * | 23 | 現金支払 sales`/addpayment` | - |
+ * | 24 | 取引完了 sales`/end` | - |
+ * | 25 | 後片付け | - |
  * | - | 25.1 プリペのポイント付与のタイムアウトを戻す tmn-api-test`/set-api-timeout` | - |
  * 
  * ---
@@ -12132,17 +12104,17 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 1. 取引開始 sales`/begin` | - |
- * | - | 2. 外税8%商品 sales`/cart/barcode` | - |
- * | - | 3. 内税8%商品 sales`/cart/barcode` | - |
- * | - | 4. 外税10%商品 sales`/cart/barcode` | - |
- * | - | 5. 内税10%商品 sales`/cart/barcode` | - |
- * | - | 6. 非課税商品 sales`/cart/barcode` | - |
- * | - | 7. 社割登録 sales`/cart/barcode` | - |
- * | - | 8. 小計 sales`/subtotal` | - |
- * | - | 9. 金券利用（その他値引券） sales`/cart/voucher` | - |
- * | - | 10. 現金支払 sales`/addpayment` | - |
- * | - | 11. 取引完了 sales`/end` | - |
+ * | 1 |  取引開始 sales`/begin` | - |
+ * | 2 | 外税8%商品 sales`/cart/barcode` | - |
+ * | 3 | 内税8%商品 sales`/cart/barcode` | - |
+ * | 4 |  外税10%商品 sales`/cart/barcode` | - |
+ * | 5 | 内税10%商品 sales`/cart/barcode` | - |
+ * | 6 | 非課税商品 sales`/cart/barcode` | - |
+ * | 7 | 社割登録 sales`/cart/barcode` | - |
+ * | 8 | 小計 sales`/subtotal` | - |
+ * | 9 | 金券利用（その他値引券） sales`/cart/voucher` | - |
+ * | 10 | 現金支払 sales`/addpayment` | - |
+ * | 11 | 取引完了 sales`/end` | - |
  * 
  * ---
  * ### 前提条件
@@ -12239,33 +12211,33 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 1. 取引開始 sales`/begin` | - |
- * | - | 2. 会員登録 sales`/cart/barcode` | - |
- * | - | 3. ポイント1倍商品 sales`/cart/barcode` | - |
- * | - | 4. ポイント3倍商品 sales`/cart/barcode` | - |
- * | - | 5. ポイント対象外商品 sales`/cart/barcode` | - |
- * | - | 6. 通常商品 sales`/cart/barcode` | - |
- * | - | 7. 単品値引 sales`/cart/unitdiscount` | - |
- * | - | 8. 通常商品 sales`/cart/barcode` | - |
- * | - | 9. 売価変更 sales`/cart/changeitemprice` | - |
- * | - | 10. 超トク対象商品 sales`/cart/barcode` | - |
- * | - | 11. ポイント0倍商品 sales`/cart/barcode` | - |
- * | - | 12. 書籍 sales`/cart/barcode` | - |
- * | - | 13. 数量限定値引 sales`/cart/barcode` | - |
- * | - | 14. まとめ値引対象商品A sales`/cart/barcode` | - |
- * | - | 15. まとめ値引対象商品B sales`/cart/barcode` | - |
- * | - | 16. まとめ値引対象商品C sales`/cart/barcode` | - |
- * | - | 17. 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
- * | - | 18. 年齢確認商品 sales`/cart/barcode` | - |
- * | - | 19. 年齢確認 sales`/age-verification` | - |
- * | - | 20. ボーナスポイント対象商品 sales`/cart/barcode` | - |
- * | - | 21. 株主優待 sales`/cart/barcode` | - |
- * | - | 22. 小計 sales`/subtotal` | - |
- * | - | 23. 現金支払 sales`/addpayment` | - |
- * | - | 24. 取引完了 sales`/end` | - |
- * | - | 25. 【誤打訂正】取引開始 void`/begin` | - |
- * | - | 26. 【誤打訂正】支払登録 void`/addpayment` | - |
- * | - | 27. 【誤打訂正】取引完了 void`/end` | - |
+ * | 1 |  取引開始 sales`/begin` | - |
+ * | 2 | 会員登録 sales`/cart/barcode` | - |
+ * | 3 | ポイント1倍商品 sales`/cart/barcode` | - |
+ * | 4 |  ポイント3倍商品 sales`/cart/barcode` | - |
+ * | 5 | ポイント対象外商品 sales`/cart/barcode` | - |
+ * | 6 | 通常商品 sales`/cart/barcode` | - |
+ * | 7 | 単品値引 sales`/cart/unitdiscount` | - |
+ * | 8 | 通常商品 sales`/cart/barcode` | - |
+ * | 9 | 売価変更 sales`/cart/changeitemprice` | - |
+ * | 10 | 超トク対象商品 sales`/cart/barcode` | - |
+ * | 11 | ポイント0倍商品 sales`/cart/barcode` | - |
+ * | 12 | 書籍 sales`/cart/barcode` | - |
+ * | 13 | 数量限定値引 sales`/cart/barcode` | - |
+ * | 14 | まとめ値引対象商品A sales`/cart/barcode` | - |
+ * | 15 | まとめ値引対象商品B sales`/cart/barcode` | - |
+ * | 16 | まとめ値引対象商品C sales`/cart/barcode` | - |
+ * | 17 | 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
+ * | 18 | 年齢確認商品 sales`/cart/barcode` | - |
+ * | 19 | 年齢確認 sales`/age-verification` | - |
+ * | 20 | ボーナスポイント対象商品 sales`/cart/barcode` | - |
+ * | 21 | 株主優待 sales`/cart/barcode` | - |
+ * | 22 | 小計 sales`/subtotal` | - |
+ * | 23 | 現金支払 sales`/addpayment` | - |
+ * | 24 | 取引完了 sales`/end` | - |
+ * | 25 | 【誤打訂正】取引開始 void`/begin` | - |
+ * | 26 | 【誤打訂正】支払登録 void`/addpayment` | - |
+ * | 27 | 【誤打訂正】取引完了 void`/end` | - |
  * 
  * ---
  * ### 前提条件
@@ -12354,33 +12326,33 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 1. 取引開始 sales`/begin` | - |
- * | - | 2. 会員登録 sales`/cart/barcode` | - |
- * | - | 3. ポイント1倍商品 sales`/cart/barcode` | - |
- * | - | 4. ポイント3倍商品 sales`/cart/barcode` | - |
- * | - | 5. ポイント対象外商品 sales`/cart/barcode` | - |
- * | - | 6. 通常商品 sales`/cart/barcode` | - |
- * | - | 7. 単品値引 sales`/cart/unitdiscount` | - |
- * | - | 8. 通常商品 sales`/cart/barcode` | - |
- * | - | 9. 売価変更 sales`/cart/changeitemprice` | - |
- * | - | 10. 超トク対象商品 sales`/cart/barcode` | - |
- * | - | 11. ポイント0倍商品 sales`/cart/barcode` | - |
- * | - | 12. 書籍 sales`/cart/barcode` | - |
- * | - | 13. 数量限定値引 sales`/cart/barcode` | - |
- * | - | 14. まとめ値引対象商品A sales`/cart/barcode` | - |
- * | - | 15. まとめ値引対象商品B sales`/cart/barcode` | - |
- * | - | 16. まとめ値引対象商品C sales`/cart/barcode` | - |
- * | - | 17. 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
- * | - | 18. 年齢確認商品 sales`/cart/barcode` | - |
- * | - | 19. 年齢確認 sales`/age-verification` | - |
- * | - | 20. ボーナスポイント対象商品 sales`/cart/barcode` | - |
- * | - | 21. 株主優待 sales`/cart/barcode` | - |
- * | - | 22. 小計 sales`/subtotal` | - |
- * | - | 23. 現金支払 sales`/addpayment` | - |
- * | - | 24. 取引完了 sales`/end` | - |
- * | - | 25. 【返品】取引開始 refund`/begin` | - |
- * | - | 26. 【返品】小計 refund`/subtotal` | - |
- * | - | 27. 【返品】支払登録 refund`/addpayment` | - |
+ * | 1 |  取引開始 sales`/begin` | - |
+ * | 2 | 会員登録 sales`/cart/barcode` | - |
+ * | 3 | ポイント1倍商品 sales`/cart/barcode` | - |
+ * | 4 |  ポイント3倍商品 sales`/cart/barcode` | - |
+ * | 5 | ポイント対象外商品 sales`/cart/barcode` | - |
+ * | 6 | 通常商品 sales`/cart/barcode` | - |
+ * | 7 | 単品値引 sales`/cart/unitdiscount` | - |
+ * | 8 | 通常商品 sales`/cart/barcode` | - |
+ * | 9 | 売価変更 sales`/cart/changeitemprice` | - |
+ * | 10 | 超トク対象商品 sales`/cart/barcode` | - |
+ * | 11 | ポイント0倍商品 sales`/cart/barcode` | - |
+ * | 12 | 書籍 sales`/cart/barcode` | - |
+ * | 13 | 数量限定値引 sales`/cart/barcode` | - |
+ * | 14 | まとめ値引対象商品A sales`/cart/barcode` | - |
+ * | 15 | まとめ値引対象商品B sales`/cart/barcode` | - |
+ * | 16 | まとめ値引対象商品C sales`/cart/barcode` | - |
+ * | 17 | 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
+ * | 18 | 年齢確認商品 sales`/cart/barcode` | - |
+ * | 19 | 年齢確認 sales`/age-verification` | - |
+ * | 20 | ボーナスポイント対象商品 sales`/cart/barcode` | - |
+ * | 21 | 株主優待 sales`/cart/barcode` | - |
+ * | 22 | 小計 sales`/subtotal` | - |
+ * | 23 | 現金支払 sales`/addpayment` | - |
+ * | 24 | 取引完了 sales`/end` | - |
+ * | 25 | 【返品】取引開始 refund`/begin` | - |
+ * | 26 | 【返品】小計 refund`/subtotal` | - |
+ * | 27 | 【返品】支払登録 refund`/addpayment` | - |
  * | - | 28. 【返品】取引完了 refund`/end` | - |
  * 
  * ---
@@ -12575,7 +12547,7 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 1. 現金投入 cash`/in` | - |
+ * | 1 |  現金投入 cash`/in` | - |
  * 
  * ---
  * ### 前提条件
@@ -12720,11 +12692,11 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. AOKカードのポイントを499に調整 | - |
- * | - | 1. TMNプリペチャージ開始 tmn-prepaid`/charge/begin` | - |
- * | - | 2. TMNプリペチャージ実行 tmn-prepaid`/charge` | - |
- * | - | 3. 【誤打訂正】取引開始 void`/begin` | - |
- * | - | 4. 【誤打訂正】TMNプリペチャージ void`/tmn-prepaid/charge` | - |
+ * | 0 | AOKカードのポイントを499に調整 | - |
+ * | 1 |  TMNプリペチャージ開始 tmn-prepaid`/charge/begin` | - |
+ * | 2 | TMNプリペチャージ実行 tmn-prepaid`/charge` | - |
+ * | 3 | 【誤打訂正】取引開始 void`/begin` | - |
+ * | 4 |  【誤打訂正】TMNプリペチャージ void`/tmn-prepaid/charge` | - |
  * 
  * ---
  * ### 前提条件
@@ -12847,17 +12819,17 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0.事前準備 | - |
- * | - | 0.1 プリペのポイント付与を強制的に失敗させる tmn-api-test`/set-api-timeout` | - |
- * | - | 0.2 AOKカードのポイントを499に調整 | - |
- * | - | 0.3 Aocaカードの残高の上限に達成すれば、Aocaカードの残高を０に設定 | - |
- * | - | 1. TMNプリペチャージ開始 tmn-prepaid`/charge/begin` | - |
- * | - | 2. TMNプリペチャージ実行 tmn-prepaid`/charge` | - |
- * | - | 3. プリペのポイント付与のタイムアウトを戻す tmn-api-test`/set-api-timeout` | - |
- * | - | 4. 【誤打訂正】取引開始 void`/begin` | - |
- * | - | 5. 【誤打訂正】TMNプリペチャージ void`/tmn-prepaid/charge` | - |
- * | - | 5. 後片付け | - |
- * | - | 5.1 プリペのポイント付与のタイムアウトを戻す tmn-api-test`/set-api-timeout` | - |
+ * | 0 | 事前準備 | - |
+ * | 0.1 | プリペのポイント付与を強制的に失敗させる tmn-api-test`/set-api-timeout` | - |
+ * | 0.2 | AOKカードのポイントを499に調整 | - |
+ * | 0.3 | Aocaカードの残高の上限に達成すれば、Aocaカードの残高を０に設定 | - |
+ * | 1 |  TMNプリペチャージ開始 | `tmn-prepaid/charge/begin` |
+ * | 2 | TMNプリペチャージ実行  | `tmn-prepaid/charge` |
+ * | 3 | プリペのポイント付与のタイムアウトを戻す | `tmn-api-test/set-api-timeout` |
+ * | 4 |  【誤打訂正】取引開始 | `void/begin` |
+ * | 5 | 【誤打訂正】TMNプリペチャージ | `void/tmn-prepaid/charge` |
+ * | 5 | 後片付け | - |
+ * | 5 | 1 プリペのポイント付与のタイムアウトを戻す | `tmn-api-test/set-api-timeout` |
  * 
  * ---
  * ### 前提条件
@@ -12938,10 +12910,10 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | - | 0. AOKカードのポイントを0に調整 | - |
- * | - | 1. ポイント訂正開始 point`/beginCorrection` | - |
- * | - | 2. ポイントレシートバーコードスキャ point`/barcode` | - |
- * | - | 3. ポイント訂正実行 point`/correct` | - |
+ * | 0 | AOKカードのポイントを0に調整 | - |
+ * | 1 |  ポイント訂正開始 | `point/beginCorrection` |
+ * | 2 | ポイントレシートバーコードスキャ | `point/barcode` |
+ * | 3 | ポイント訂正実行 | `point/correct` |
  * 
  * ---
  * ### 前提条件
