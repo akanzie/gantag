@@ -1173,7 +1173,7 @@ export function TC_011952007_ApplyEmployeeAndShareholderDiscountsSelfPOS() {
  * * * \+ voucher_cd: S01000020W
  * * * \+ voucher_group_cd: 0609
  * * * \+ voucher_group_name: 社員割引券
- * * #### 10.小計 `/sales/subtotal`
+ * * 10.小計 `/sales/subtotal`
  * * \- 株主優待割引の検証は、社割許可商品(対象)、社割許可商品(上位参照)、株主優待割許可商品(対象)、株主優待割許可商品(上位参照)にのみ適用され、社割許可商品(対象外)、株主優待割許可商品(対象外)には適用されないことを確認
  * * * \+ subtotal_discounts.target_items に 社割許可商品(対象)、社割許可商品(上位参照)、株主優待割許可商品(対象)、株主優待割許可商品(上位参照) が含まれること
  * * * \+ subtotal_discounts.non_target_items に 社割許可商品(対象外)、株主優待割許可商品(対象外) が含まれること

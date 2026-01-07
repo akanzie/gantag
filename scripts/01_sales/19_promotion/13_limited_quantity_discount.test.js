@@ -12,8 +12,8 @@ import * as TAGS from "../../../tags/tags_const.js";
 /**
  * @function ひとつの販促コードに紐づく商品が１商品
 例）商品A（単価100円）3点まで90円
-　　→　3個購入までは1点90円
-　　　　4個からは通常価格100円となる。
+  →　3個購入までは1点90円
+    4個からは通常価格100円となる。
  * @memberof 売上.販売促進（企画販売）
  * @description
  * {@link TAGS.POS}
@@ -581,21 +581,21 @@ export function TC_011913001_LimitedQuantityDiscount() {
  * 
  * ---
  * ### テストデータ
- * * 1.販促品（値引額）1 :4500000002505
- * * 2.販促品（値引額）2 :4500000002506
- * * 3.販促品（値引額）3 :4500000002507
- * * 4.販促品（割引率）1 :4500000002508
- * * 5.販促品（割引率）2 :4500000002509
- * * 6.販促品（割引率）3 :4500000002510
- * * 7.販促品（価格）1 :4500000002511
- * * 8.販促品（価格）2 :4500000002512
- * * 9.販促品（価格）3 :4500000002513
- * * 10. 非販促品: 4500000002504
- * * 11. 値引額：100
- * * 12. 割引率：５
- * * 13. 価格：100
- * * 14. 販促値引発生下限点数：2
- * * 15. 販促値引発生上限点数：3
+ * *  1. 販促品（値引額）1        : 4500000002505
+ * *  2. 販促品（値引額）2        : 4500000002506
+ * *  3. 販促品（値引額）3        : 4500000002507
+ * *  4. 販促品（割引率）1        : 4500000002508
+ * *  5. 販促品（割引率）2        : 4500000002509
+ * *  6. 販促品（割引率）3        : 4500000002510
+ * *  7. 販促品（価格）1          : 4500000002511
+ * *  8. 販促品（価格）2          : 4500000002512
+ * *  9. 販促品（価格）3          : 4500000002513
+ * * 10. 非販促品                 : 4500000002504
+ * * 11. 値引額                   : 100
+ * * 12. 割引率                   : 5
+ * * 13. 価格                     : 100
+ * * 14. 販促値引発生下限点数     : 2
+ * * 15. 販促値引発生上限点数     : 3
  * 
  * ---
  * ### 期待結果
@@ -1092,8 +1092,8 @@ export function TC_011913002_LimitedQuantityDiscount() {
           const items = res.result?.cartinfo?.items;
           const discountRate1Idx = items?.findIndex(q => q.barcode === PROD.DISCOUNT_RATE_1);
           const discountRate2Idx = items?.findIndex(q => q.barcode === PROD.DISCOUNT_RATE_2);
-		      const subtotalDiscountRate1 = (discountRate1Price * discountRate / 100) * items?.[discountRate1Idx]?.quantity;
-		      const subtotalDiscountRate2 = (discountRate2Price * discountRate / 100) * items?.[discountRate2Idx]?.quantity;
+          const subtotalDiscountRate1 = (discountRate1Price * discountRate / 100) * items?.[discountRate1Idx]?.quantity;
+          const subtotalDiscountRate2 = (discountRate2Price * discountRate / 100) * items?.[discountRate2Idx]?.quantity;
           discountAmountRateBefore = subtotalDiscountRate1 + subtotalDiscountRate2;
           return discountAmountRateBefore;
         },
