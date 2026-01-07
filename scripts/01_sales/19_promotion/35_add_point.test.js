@@ -2242,7 +2242,7 @@ export function TC_011935012_UsePointCoupon() {
  * {@link TAGS.SALES_PROMOTION_PLANNED_SALES}
  * {@link TAGS.AOCA_POINTS}
  * {@link TAGS.POINT_MULTIPLIER_UP}
- * {@link TAGS.ADDITION_AND_SUBTRACTION}
+ * {@link TAGS.GRANT}
  * {@link TAGS.PRODUCT_UNIT}
  * ### テスト観点
  * * 前提：
@@ -2510,7 +2510,7 @@ export function TC_011935004_BonusBrand() {
  * {@link TAGS.SALES}
  * {@link TAGS.AOCA_POINTS}
  * {@link TAGS.SALES_PROMOTION_PLANNED_SALES}
- * {@link TAGS.ADDITION_AND_SUBTRACTION}
+ * {@link TAGS.GRANT}
  * {@link TAGS.USE_APP_COUPON}
  * ### テスト観点
  * * 前提：

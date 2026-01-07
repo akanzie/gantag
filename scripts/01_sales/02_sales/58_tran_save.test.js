@@ -3746,7 +3746,7 @@ export function TC_032458001_DepositCash() {
             expected: getCashBalanceCurrencyExpectedData({
               currencyType: CASH_TYPE.COIN1.TYPE,
               currencyTypeValue: CASH_TYPE.COIN1.VALUE,
-              drawerCashCount: 0, // 0 because actual_cash_info does not have the CASH_TYPE.COIN1. TYPE
+              drawerCashCount: 0, // 0 because actual_cash_info does not have the CASH_TYPE.COIN1.TYPE
             }),
             actual: (res) => {
               return getCashBalanceCurrencyActualData(res.result?.cashBalanceCurrencies?.[0]);

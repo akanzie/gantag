@@ -826,77 +826,62 @@ export function TC_010101009_RegisterMultipleDrugsForSelfPOS() {
 }
 
 /**
- * @function セルフPOSの医薬品商品複数登録（要指導医薬品販売不可異常系）
- * @memberof 返品
+ * @function 書籍販売
+ * @memberof 返品.商品種類
  * @description
  * {@link TAGS.POS}
- * {@link TAGS.PRODUCT_TYPE}
  * {@link TAGS.SALES}
+ * {@link TAGS.PRODUCT_TYPE}
  * {@link TAGS.TAG_2_TIERS_OF_BOOKS}
  * ### テスト観点
- * * 医薬品販売チェックの確認
- * * 要指導医薬品は販売できない。
- * * * → 通常医薬品
- * * * 第2類医薬品
- * * * 第3類医薬品
- * * * 要指導医薬品
+ * * テスト観点：
+ * * * ・適正な商品価格を参照している
+ * * * * →　書籍商品：書籍（バーコードの価格）
+ * * * *    2段式バーコード or 書籍(JAN13-アドオン5)
+ * * * ・小計には1個の商品と販売価格が確認できる。
+ * * * ・取引完了にはレシートNOが確認できる。
  * 
  * ---
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
- * | 2 | 商品Aスキャン | `/sales/cart/barcode` |
- * | 3 | 商品Cスキャン | `/sales/cart/barcode` |
- * | 4 | 商品Dスキャン | `/sales/cart/barcode` |
- * | 5 | 商品Eスキャン | `/sales/cart/barcode` |
+ * | 2 | 書籍商品スキャン | `/sales/cart/barcode` |
+ * | 3 | 小計 | `/sales/subtotal` |
+ * | 4 | 支払登録 | `/sales/addpayment` |
+ * | 5 | 取引完了 | `/sales/end` |
  * 
  * ---
  * ### 前提条件
- * * Scan item:
- * * item A: m_store_item.medicine_type= 1
- * * item C: m_store_item.medicine_type= 4
- * * item D: m_store_item.medicine_type= 5
- * * item E: m_store_item.medicine_type= 9
- * * →
- * * 1. POS端末へのログインが必要（認可）：Authorization APIを呼び出す
+ * * 特になし
  * 
  * ---
  * ### テストデータ
- * * 商品A：10942208549 (medicine_type= 1)
- * * 商品C：2011010620100 (medicine_type= 4)
- * * 商品D：2011000000028 (medicine_type= 5)
- * * 商品E：4500000000162 (medicine_type= 9)
- * * 1.通常医薬品 : 4500000000025
- * * 2. 第2類医薬品:  4500000000118
- * * 3. 第3類医薬品: 4500000000125
- * * 4. 要指導医薬品: 4500000000162
+ * * 1. 書籍商品
+ * * \- barcode_1: 9784799313282
+ * * \- barcode_2: 1921234010008
  * 
  * ---
  * ### 期待結果
- * * #### 2. 通常医薬品  `/sales/cart/barcode`
- * * カート情報に以下の商品が含まれていることを確認:  
- * * \- 通常医薬品  :
- * * * \+ barcode: 4500000000025
- * * * \+ unit_price: 200
- * * * \+ display_unit_price: 200
- * * #### 3. 第2類医薬品 `/sales/cart/barcode`
- * * カート情報に以下の商品が含まれていることを確認:  
- * * \- 第2類医薬品:
- * * * \+ barcode: 4500000000118
- * * * \+ unit_price: 1000
- * * * \+ display_unit_price: 1000
- * * #### 4. 第3類医薬品 `/sales/cart/barcode`
- * * カート情報に以下の商品が含まれていることを確認:  
- * * \- 第3類医薬品:
- * * * \+ barcode: 4500000000125
- * * * \+ unit_price: 2000
- * * * \+ display_unit_price: 2000
- * * #### 5. 要指導医薬品 `/sales/cart/barcode`
- * * 以下のようなレスポンスが返却されること
- * * * \+ Status: 202
- * * * \+ Error message: "お使いのPOSで販売禁止に指定されている商品です".
- * * * \+ Error code: CAT0017
+ * * #### 2.書籍商品スキャン `/sales/cart/barcode`
+ * * \- カート情報に書籍商品が含まれていることを確認:
+ * * * \+item_cd = 479931328 (バーコード1の 4〜12 桁)
+ * * #### 3. 小計 `/sales/subtotal`
+ * * \- カートに商品が1件のみであることを確認:
+ * * * \+ items.length = 1
+ * * * \+ unit_price = 1000 (バーコード2の 9〜12 桁)
+ * * \- 合計金額を確認
+ * *      = unit_price + unit_price * (tax_rate / 100)
+ * * * \= 1000 + 1000 * 10% = 1100
+ * * #### 4. 支払登録 `/sales/addpayment`
+ * * \- 取消支払（void payment）が現金であることを確認:
+ * * * \+ total_balance_amount = 0
+ * * * \+ void_payment に以下が含まれる:
+ * * * * \.paid_cd = "0101"
+ * * * * \.paid_name = "現金"
+ * * * * \.paid_amount = total_balance_amount (手順3の値)
+ * * #### 6. 取引完了 `/sales/end`
+ * * \- 取得したレシート番号が有効であることを確認 (receipt_no > 0)
  */
 export function TC_010101013_BookSales() {
   group("TC_010101013 書籍販売", () => {

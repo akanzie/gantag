@@ -7,7 +7,6 @@ const data = open('./testcases.json');
 const testcases = JSON.parse(data);
 import { textSummary } from 'https://jslib.k6.io/k6-summary/0.1.0/index.js';
 import { TestHelper } from "../common/test_helper.js";
-import * as TAGS from "../tags/tags_const.js";
 
 export const options = {
   tags: {
