@@ -47,7 +47,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（販売取引 TC_015 にて検証済み）
+ * * * データ取得（販売取引 TC_015 にて検証済み）
  * * #### 4. 通常商品操作値引 `/sales/cart/unitdiscount`
  * * \- 通常商品の unit_discount_amount を取得
  * * \- total_balance_amount を取得
@@ -220,7 +220,7 @@ export function TC_041131001_AbortUnitDiscount() {
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（販売取引 TC_016 にて検証済み）
+ * * * データ取得（販売取引 TC_016 にて検証済み）
  * * #### 5. 小計値引ボタンを押下し値引金額入力 `/sales/cart/subtotaldiscount`
  * * \- 単品値引商品・通常商品の operation_subtotal_discounts_applied.total_amount を取得
  * * \- operation_subtotal_discount.subtotal_discount_amount を取得

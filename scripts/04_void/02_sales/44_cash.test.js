@@ -64,14 +64,14 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（販売取引 TC_046でテスト済み）
+ * * * データ取得（販売取引 TC_046でテスト済み）
  * * #### 6. 小計 `/sales/subtotal`
  * * \- データ取得：sales.cartinfo
  * * #### 7. 支払登録 `/sales/addpayment`
  * * \- データ取得：sales.total_add_point
  * * \- データ取得：aoca_point = sales.point_detail[]（Aoca）
  * * \- データ取得：sales.payments[]
- * *  * 誤打訂正データが販売取引と一致していることを確認
+ * * * 誤打訂正データが販売取引と一致していることを確認
  * * #### 9.【誤打訂正】取引開始 `/void/begin`
  * * \- 合計金額が販売取引と同じであることを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount

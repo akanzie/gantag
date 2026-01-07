@@ -44,9 +44,9 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ### 期待結果
  * * #### 1. `/cash/in` （cash_in_type = 2：POS釣銭機への入金）
  * * \- レシートデータに以下の情報が含まれていることを確認
- * *      ・「追加合計額」
- * *      ・「30,000」（collect_cash_info の total_amount と同じカンマ区切り形式）
- * *      ・「釣銭準備金」
+ * * *  ・「追加合計額」
+ * * *  ・「30,000」（collect_cash_info の total_amount と同じカンマ区切り形式）
+ * * *  ・「釣銭準備金」
  * * \- レシートに出力される金額がテストデータの合計金額以上であること（カンマ区切り形式）
  */
 export function TC_041025001_CashIn() {

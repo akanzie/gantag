@@ -62,7 +62,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * * * \.paid_cd = "0996"
  * * * * \.paid_name = "ギフト"
  * * * * \.paid_amount = sales.cartinfo.total_balance_amount
- * *  * 誤打訂正データが販売取引と一致していることを確認
+ * * * 誤打訂正データが販売取引と一致していることを確認
  * * #### 7.【誤打訂正】取引開始 `/void/begin`
  * * \- 合計金額が販売取引と同じであることを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount

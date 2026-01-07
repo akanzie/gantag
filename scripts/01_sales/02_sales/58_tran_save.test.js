@@ -4811,8 +4811,8 @@ export function TC_072158001_ProcessTMNChargeForPrepaidPoints() {
  * ---
  * ### テストデータ
  * * 0.タイムアウト設定: 
- * *     endpoint: "`/tpi_v1/settlement/addpoint`",
- * *     timeout_milliseconds: 1
+ * * * endpoint: "`/tpi_v1/settlement/addpoint`",
+ * * * timeout_milliseconds: 1
  * * 1.カード番号: 8090227000000006
  * * 2.カード種別: 27
  * * 3.支払グループコード: 0100

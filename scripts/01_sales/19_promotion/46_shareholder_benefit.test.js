@@ -24,7 +24,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * * ・株主優待割許可商品(対象)：m_store_item.allow_shareholder_benefit_type= 1（対象）
  * * * ・株主優待割許可商品(対象外)：m_store_item.allow_shareholder_benefit_type= 2（非対象）
  * * * ・株主優待割許可商品(上位参照)：m_store_item.allow_shareholder_benefit_type= 9（上位参照）
- * * * * 　  かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
+ * * * * かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
  * * テスト観点：
  * * 商品登録画面で株主優待バーコードをスキャンし株主優待が反映される。
  * * * ・小計に社割の金額が表示される。
@@ -300,10 +300,10 @@ export function TC_011946001_ShareholderBenefit() {
  * 
  * ---
  * ### 期待結果
- * * 2.株主優待割許可商品(対象)スキャン `/sales/cart/barcode`
+ * * #### 2.株主優待割許可商品(対象)スキャン `/sales/cart/barcode`
  * * カートInfoにて 株主優待割許可商品(対象)があるか確認
  * * * \+ バーコード : 4931290077013
- * * 3.株主優待割許可商品(対象外)スキャン `/sales/cart/barcode`
+ * * #### 3.株主優待割許可商品(対象外)スキャン `/sales/cart/barcode`
  * * カートInfoにて 株主優待割許可商品(対象外)があるか確認
  * * * \+ バーコード : 2016020000010
  * * 4.株主優待バーコードスキャン　→　エラー終了
@@ -526,7 +526,7 @@ export function TC_011946003_ShareholderBenefitUsageLimitPerson1() {
  * * * ・株主優待割許可商品：m_store_item.allow_shareholder_benefit_type= 1（対象）
  * * * ・株主優待割許可商品(対象外)：m_store_item.allow_shareholder_benefit_type= 2（非対象）
  * * * ・株主優待割許可商品(上位参照)：m_store_item.allow_shareholder_benefit_type= 9（上位参照）
- * * * * 　  かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
+ * * * * かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
  * * テスト観点：
  * * 商品登録画面で株主優待バーコードをスキャンし株主優待が反映される。
  * * * ・小計に社割の金額が表示される。

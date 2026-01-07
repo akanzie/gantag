@@ -292,7 +292,7 @@ export function TC_040250001_VoidMultiplyPoints() {
  * | 11 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
  * | 12 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 13 | 小計 | `/sales/subtotal` |
- * | 14 | 500円券スキャン（1枚）`/sales/cart/barcode` | - |
+ * | 14 | 500円券スキャン（1枚） | `/sales/cart/barcode` |
  * | 15 | 支払登録 | `/sales/addpayment` |
  * | 16 | 取引完了 | `/sales/end` |
  * | 17 | Call common function getbalance | - |
@@ -318,7 +318,7 @@ export function TC_040250001_VoidMultiplyPoints() {
  * * 取引2
  * * 1.Barcode 1 và Barcode 2
  * * 2.ポイント対象商品（対象） : 4520230413001 (point_apply_type_1 = 1)
- * * 3. ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
+ * * 3.ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
  * 
  * ---
  * ### 期待結果
@@ -326,13 +326,13 @@ export function TC_040250001_VoidMultiplyPoints() {
  * * #### 10. Aocaカードスキャン `/sales/cart/barcode`
  * * \- original_point = sales.point_count_sum のデータ取得
  * * * 販売取引で 500円券を使用した場合のデータ確認
- * * 17. 共通関数 getbalance 呼び出し
+ * * #### 17. 共通関数 getbalance 呼び出し
  * * \- 500円券を使用してもポイント数が変わらないことを確認
  * * * \+ card_info.point_count_sum = original_point
  * * * 誤打訂正取引のデータ確認
  * * #### 20.【誤打訂正】取引終了 `/void/end`
  * * \- 500円券が1枚発券されていることを確認（XML に「５００円　お買物券」が含まれていること）
- * * 21. 共通関数 getbalance 呼び出し
+ * * #### 21. 共通関数 getbalance 呼び出し
  * * \- 誤打訂正後にポイントが 500 加算されないことを確認
  * * * \+ card_info.point_count_sum = original_point
  */

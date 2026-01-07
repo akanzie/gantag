@@ -431,7 +431,7 @@ export function TC_041151002_AbortWaonPayment() {
  * * #### 5. 支払登録 `/tmn-prepaid/value`
  * * \- sales.payments[] のデータ取得
  * * * 誤打訂正データが販売取引と一致していることを確認
- * * 7.getbalance
+ * * #### 7.getbalance
  * * \- プリペイドカードの残高（value_amount_sum）の値を記録
  * * #### 8.【誤打訂正】取引開始 `/void/begin`
  * * \- 合計金額が販売取引の金額と一致していることを確認
@@ -442,14 +442,14 @@ export function TC_041151002_AbortWaonPayment() {
  * * * * \. void_payments[].paid_cd = sales.payments[].paid_cd
  * * * * \. void_payments[].paid_name = sales.payments[].paid_name
  * * * * \. void_payments[].paid_amount = sales.payments[].paid_amount
- * * 10. getbalance　（※ Step7の値と同じ想定ですが、誤打訂正キャンセルのあとでポイントは減少されていない）
+ * * #### 10. getbalance　（※ Step7の値と同じ想定ですが、誤打訂正キャンセルのあとでポイントは減少されていない）
  * * \- 現在の残高が、記録していた残高に AOCA 取消支払金額を加算した金額と一致していることを確認
  * * * \+ value_amount_sum = value_amount_sum(Step7の値) + void_payments[].paid_amount
  * * #### 11.【誤打訂正】取引中断 `/void/abort`
  * * \- 中断が正常に完了し、receipt_no が取得できていることを確認
  * * * \+ ステータス: 200
  * * * \+ Receipt_no > 0
- * * 12. getbalance　（※ Step7の値と同じ想定ですが、誤打訂正キャンセルのあとでポイントは減少されていない）
+ * * #### 12. getbalance　（※ Step7の値と同じ想定ですが、誤打訂正キャンセルのあとでポイントは減少されていない）
  * * \- 現在の残高が Step7の値と一致するか確認
  * * * \+ value_amount_sum = value_amount_sum(Step7の値)
  */

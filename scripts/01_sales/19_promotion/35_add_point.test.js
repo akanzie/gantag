@@ -228,7 +228,7 @@ export function TC_011935010_PointPlus() {
  * * * ① 基準ポイントの計算式（Aocaの基準ポイント）
  * * *  ポイント対象額÷Aocaのm_promotion_add_standard_point.point_standard_amount
  * * * × Aocaのm_promotion_add_standard_point.point_standard_point
- * *     ② 付与ポイントの計算式
+ * * * ② 付与ポイントの計算式
  * * *   基準ポイント（①）
  * * *  × ポイント〇倍デーのm_promotion_all_add_standard_rate_point.point_standard_rate
  * * テスト観点：
@@ -261,7 +261,7 @@ export function TC_011935010_PointPlus() {
  * 
  * ---
  * ### 期待結果
- * * #### 2. Aocaカードスキャン `/sales/cart/barcode`
+ * * #### "2. Aocaカードスキャン `/sales/cart/barcode`
  * * \- カート情報にAocaカードが含まれていることを確認
  * * * \+ customer_cd: 8090227000000006
  * * * \+ point_card_name: "Aoca"
@@ -511,10 +511,10 @@ export function TC_011935003_BonusPointsDay() {
  * * * m_store_item.point_apply_type_1～5の番号と紐づく。
  * * * ・Aocaがm_promotion_add_standard_pointに設定されている。
  * * * ポイント基準額：m_promotion_add_standard_point.point_standard_amount
- * *     付与されるポイント：m_promotion_add_standard_point.add_standard_point
+ * * * 付与されるポイント：m_promotion_add_standard_point.add_standard_point
  * * * ・Aocaがm_promotion_detail_point_card_classに設定されている。
  * * * ・ポイント対象商品（上位参照）：m_store_item.point_apply_type_1～5 = 9（対象）
- * * * * 　  かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
+ * * * * かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
  * * * ・ポイント対象商品（対象）：m_store_item.point_apply_type_1～5 = 1（対象）
  * * * ・ポイント付与専用商品（対象外)：m_store_item.point_apply_type_1～5 = 2（非対象）
  * * * ・支払は現金支払いする。
@@ -793,7 +793,7 @@ export function TC_011935001_OnlyAddPointAoca() {
  * ### テスト観点
  * * 前提：
  * * * ・セット買いポイントの成立条件
- * *     →　セット買いポイントがm_promotion_set_optional_add_po_pointに設定されている。
+ * * * →　セット買いポイントがm_promotion_set_optional_add_po_pointに設定されている。
  * * * *  セット買い繰返し発生フラグ（成立条件ごとに繰返し）：
  * * * * 　 →　m_promotion_set_optional_add_po_point.buy_set_coupon_multiple_times_flg = True
  * * * * →　セット買いポイントの成立条件がm_promotion_detail_conditionに設定されている。
@@ -801,7 +801,7 @@ export function TC_011935001_OnlyAddPointAoca() {
  * * * * 　　　　　　　　　　　　　　　　　　　　　　　　　　　　  通常商品は設定なし（対象外商品）
  * * * * →　販促が成立する対象商品の合計額が設定されている。
  * * * * m_promotion_detail_promotion_amount.promotion_amount　＜　対象商品の合計額
- * *     →　販促が成立する対象のカードが設定されている。
+ * * * →　販促が成立する対象のカードが設定されている。
  * * * * m_promotion_detail_point_card_class.point_card_type = 1：Aocaカード
  * * * ・付与するポイントの情報　　　
  * * * * →　セット買いポイントがm_couponに設定されている。
@@ -1106,10 +1106,10 @@ export function TC_011935006_BuyComboRepeat() {
  * * * m_store_item.point_apply_type_1～5の番号と紐づく。
  * * * ・dポイントがm_promotion_add_standard_pointに設定されている。
  * * * ポイント基準額：m_promotion_add_standard_point.point_standard_amount
- * *     付与されるポイント：m_promotion_add_standard_point.add_standard_point
+ * * * 付与されるポイント：m_promotion_add_standard_point.add_standard_point
  * * * ・dポイントがm_promotion_detail_point_card_classに設定されている。
  * * * ・ポイント対象商品（上位参照）：m_store_item.point_apply_type_1～5 = 9（対象）
- * * * * 　  かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
+ * * * * かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
  * * * ・ポイント付与専用商品（対象）：m_store_item.point_apply_type_1～5 = 1（対象）
  * * * ・ポイント付与専用商品（対象外）：m_store_item.point_apply_type_1～5 = 2（非対象）
  * * テスト観点：
@@ -1143,7 +1143,7 @@ export function TC_011935006_BuyComboRepeat() {
  * 
  * ---
  * ### 期待結果
- * * #### 2. dポイントカードスキャン `/sales/cart/barcode`
+ * * #### "2. dポイントカードスキャン `/sales/cart/barcode`
  * * \- カート情報にdポイントカードスキャンが登録されていることを確認する
  * * * \+ customer_cd: 100000006699030
  * * * \+ point_card_name: "dポイントカード"
@@ -1405,7 +1405,7 @@ export function TC_011935002_OnlyAddDPoint() {
  * ### テスト観点
  * * 前提：
  * * * ・セット買いポイントの成立条件
- * *     →　セット買いポイントがm_promotion_set_optional_add_po_pointに設定されている。
+ * * * →　セット買いポイントがm_promotion_set_optional_add_po_pointに設定されている。
  * * * *  セット買い繰返し発生フラグ（成立条件で1回のみ）：
  * * * * 　 →　m_promotion_set_optional_add_point.buy_set_coupon_multiple_times_flg = False
  * * * * →　セット買いポイントの成立条件がm_promotion_detail_conditionに設定されている。
@@ -1413,7 +1413,7 @@ export function TC_011935002_OnlyAddDPoint() {
  * * * * 　　　　　　　　　　　　　　　　　　　　　　　　　　　　  通常商品は設定なし（対象外商品）
  * * * * →　販促が成立する対象商品の合計額が設定されている。
  * * * * m_promotion_detail_promotion_amount.promotion_amount　＜　対象商品の合計額
- * *     →　販促が成立する対象のカードが設定されている。
+ * * * →　販促が成立する対象のカードが設定されている。
  * * * * m_promotion_detail_point_card_class.point_card_type = 1：Aocaカード
  * * * ・付与するポイントの情報　　　
  * * * * →　セット買いポイントがm_couponに設定されている。
@@ -2263,13 +2263,13 @@ export function TC_011935012_UsePointCoupon() {
  * * * m_coupon.coupon_cd = m_promotion_prt_add_standard_rate_point.coupon_cd
  * * * ・ブランド属性商品がm_coupon_issueに設定されている。
  * * * m_coupon.coupon_cd_issue = m_promotion_prt_add_standard_rate_point.coupon_cd
- * *     →　クーポンの発券（印字の有無）を判断
+ * * * →　クーポンの発券（印字の有無）を判断
  * * * * m_coupon.issue_handling_type ＝ ２:クーポン発券時に印字なしで即時利用
  * * * ・計算式
  * * * ① 基準ポイントの計算式（Aocaの基準ポイント）
  * * *  ポイント対象額÷Aocaのm_promotion_add_standard_point.point_standard_amount
  * * * × Aocaのm_promotion_add_standard_point.point_standard_point
- * *     ② 付与ポイントの計算式
+ * * * ② 付与ポイントの計算式
  * * *   基準ポイント（①）
  * * *  × ブランド属性商品のm_coupon.point_standard_rate
  * * テスト観点：

@@ -33,7 +33,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * * ・社割許可商品(対象)：m_store_item.allow_employee_discount_type= 1（対象）
  * * * ・社割許可商品(対象外)：m_store_item.allow_employee_discount_type= 2（非対象）
  * * * ・社割許可商品(上位参照)：m_store_item.allow_employee_discount_type= 9（上位参照）
- * * * * 　  かつ、m_item_category.allow_employee_discount_type= 1（対象）
+ * * * * かつ、m_item_category.allow_employee_discount_type= 1（対象）
  * * テスト観点：
  * * * ・小計に社割の金額が表示される。
  * * * ・商品AとCが割引される。
@@ -788,11 +788,11 @@ export function TC_011952001_CheckSelfPOSDiscountForEmployee() {
  * * * ・社割許可商品(対象)：m_store_item.allow_employee_discount_type= 1（対象）
  * * * ・社割許可商品(対象外)：m_store_item.allow_employee_discount_type= 2（非対象）
  * * * ・社割許可商品(上位参照)：m_store_item.allow_employee_discount_type= 9（上位参照）
- * * * * 　  かつ、m_item_category.allow_employee_discount_type= 1（対象）
+ * * * * かつ、m_item_category.allow_employee_discount_type= 1（対象）
  * * * ・株主優待割許可商品(対象)：m_store_item.allow_shareholder_benefit_type= 1（対象）
  * * * ・株主優待割許可商品(対象外)：m_store_item.allow_shareholder_benefit_type= 2（非対象）
  * * * ・株主優待割許可商品(上位参照)：m_store_item.allow_shareholder_benefit_type= 9（上位参照）
- * * * * 　  かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
+ * * * * かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
  * * テスト観点：
  * * 商品登録画面で社員割引と株主優待のバーコードをスキャンし社員割引と株主優待の両方が反映される。
  * * * ・小計に社員割引と株主優待の金額が表示される。
@@ -1120,11 +1120,11 @@ export function TC_011952007_ApplyEmployeeAndShareholderDiscountsSelfPOS() {
  * * * ・社割許可商品(対象)：m_store_item.allow_employee_discount_type= 1（対象）
  * * * ・社割許可商品(対象外)：m_store_item.allow_employee_discount_type= 2（非対象）
  * * * ・社割許可商品(上位参照)：m_store_item.allow_employee_discount_type= 9（上位参照）
- * * * * 　  かつ、m_item_category.allow_employee_discount_type= 1（対象）
+ * * * * かつ、m_item_category.allow_employee_discount_type= 1（対象）
  * * * ・株主優待割許可商品(対象)：m_store_item.allow_shareholder_benefit_type= 1（対象）
  * * * ・株主優待割許可商品(対象外)：m_store_item.allow_shareholder_benefit_type= 2（非対象）
  * * * ・株主優待割許可商品(上位参照)：m_store_item.allow_shareholder_benefit_type= 9（上位参照）
- * * * * 　  かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
+ * * * * かつ、m_item_category.allow_shareholder_benefit_type= 1（対象）
  * * テスト観点：
  * * 商品登録画面で社員割引と株主優待のバーコードをスキャンし社員割引と株主優待の両方が反映される。
  * * * ・小計に社員割引と株主優待の金額が表示される。
@@ -1173,7 +1173,7 @@ export function TC_011952007_ApplyEmployeeAndShareholderDiscountsSelfPOS() {
  * * * \+ voucher_cd: S01000020W
  * * * \+ voucher_group_cd: 0609
  * * * \+ voucher_group_name: 社員割引券
- * * 10.小計 `/sales/subtotal`
+ * * #### 10.小計 `/sales/subtotal`
  * * \- 株主優待割引の検証は、社割許可商品(対象)、社割許可商品(上位参照)、株主優待割許可商品(対象)、株主優待割許可商品(上位参照)にのみ適用され、社割許可商品(対象外)、株主優待割許可商品(対象外)には適用されないことを確認
  * * * \+ subtotal_discounts.target_items に 社割許可商品(対象)、社割許可商品(上位参照)、株主優待割許可商品(対象)、株主優待割許可商品(上位参照) が含まれること
  * * * \+ subtotal_discounts.non_target_items に 社割許可商品(対象外)、株主優待割許可商品(対象外) が含まれること

@@ -48,12 +48,12 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（売上取引 TC_072 にて確認済）
+ * * * データ取得（売上取引 TC_072 にて確認済）
  * * #### 3. 小計 `/sales/subtotal`
  * * \- sales.cartinfo を取得
  * * #### 4. 支払登録 (PayPay) `/sales/addpayment`
  * * \- sales.payments[] を取得
- * *  * 誤打訂正データが売上取引と一致することを確認
+ * * * 誤打訂正データが売上取引と一致することを確認
  * * #### 6.【誤打訂正】取引開始 `/void/begin`
  * * \- 合計金額が売上取引の金額と一致することを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount

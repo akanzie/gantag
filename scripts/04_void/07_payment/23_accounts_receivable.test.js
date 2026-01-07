@@ -50,12 +50,12 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（売上取引 TC_074 にて確認済）
+ * * * データ取得（売上取引 TC_074 にて確認済）
  * * #### 3. 小計 `/sales/subtotal`
  * * \- sales.cartinfo を取得する
  * * #### 5. 掛売支払登録 `/sales/cart/accounts-receivable`
  * * \- sales.payments[] を取得する
- * *  * 誤打訂正データが売上取引と一致することを確認
+ * * * 誤打訂正データが売上取引と一致することを確認
  * * #### 7.【誤打訂正】取引開始 `/void/begin`
  * * \- 売上取引と同じ金額であることを確認する
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount

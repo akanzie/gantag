@@ -517,7 +517,7 @@ export function TC_021935002_DPoints() {
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（販売取引 TC_055でテスト済み）
+ * * * データ取得（販売取引 TC_055でテスト済み）
  * * #### 5. 小計 `/sales/subtotal`
  * * \- データ取得：sales.cartinfo
  * * #### 6. 支払登録 `/sales/addpayment`
@@ -525,7 +525,7 @@ export function TC_021935002_DPoints() {
  * * \- データ取得：aoca_point = sales.point_detail[]（Aoca）
  * * \- データ取得：appcoupon_point = sales.point_detail[]（10000020308）
  * * \- データ取得：sales.payments[]
- * *  * 返品データが販売取引と一致していることを確認
+ * * * 返品データが販売取引と一致していることを確認
  * * #### 9.【返品】小計 `/refund/subtotal`
  * * \- 合計金額が販売取引と同じであることを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount
@@ -818,7 +818,7 @@ export function TC_021935006_RefundApplyAppCoupon() {
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（販売取引 TC_051でテスト済み）
+ * * * データ取得（販売取引 TC_051でテスト済み）
  * * #### 6. 小計 `/sales/subtotal`
  * * \- データ取得：sales.cartinfo
  * * #### 7. 支払登録 `/sales/addpayment`
@@ -826,7 +826,7 @@ export function TC_021935006_RefundApplyAppCoupon() {
  * * \- データ取得：aoca_point = sales.point_detail[]（Aoca）
  * * \- データ取得：combonorepeat_point = sales.point_detail[]（combonorepeat）
  * * \- データ取得：sales.payments[]
- * *  * 返品データが販売取引と一致していることを確認
+ * * * 返品データが販売取引と一致していることを確認
  * * #### 10.【返品】小計 `/refund/subtotal`
  * * \- 合計金額が販売取引と同じであることを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount
@@ -1157,7 +1157,7 @@ export function TC_021935005_RefundBuyComboNoRepeat() {
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（販売取引 TC_049でテスト済み）
+ * * * データ取得（販売取引 TC_049でテスト済み）
  * * #### 4. 小計 `/sales/subtotal`
  * * \- データ取得：sales.cartinfo
  * * #### 5. 支払登録 `/sales/addpayment`
@@ -1165,7 +1165,7 @@ export function TC_021935005_RefundBuyComboNoRepeat() {
  * * \- データ取得：aoca_point = sales.point_detail[]（Aoca）
  * * \- データ取得：brand_attribute_point = sales.point_detail[]（brand_attribute）
  * * \- データ取得：sales.payments[]
- * *  * 返品データが販売取引と一致していることを確認
+ * * * 返品データが販売取引と一致していることを確認
  * * #### 8.【返品】小計 `/refund/subtotal`
  * * \- 合計金額が販売取引と同じであることを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount
@@ -1459,7 +1459,7 @@ export function TC_021935004_RefundBonusBrand() {
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（販売取引 TC_048でテスト済み）
+ * * * データ取得（販売取引 TC_048でテスト済み）
  * * #### 6. 小計 `/sales/subtotal`
  * * \- データ取得：sales.cartinfo
  * * #### 7. 支払登録 `/sales/addpayment`
@@ -1467,7 +1467,7 @@ export function TC_021935004_RefundBonusBrand() {
  * * \- データ取得：aoca_point = sales.point_detail[]（Aoca）
  * * \- データ取得：5x_point = sales.point_detail[]（5x_point_allday）
  * * \- データ取得：sales.payments[]
- * *  * 返品データが販売取引と一致していることを確認
+ * * * 返品データが販売取引と一致していることを確認
  * * #### 10.【返品】小計 `/refund/subtotal`
  * * \- 合計金額が販売取引と同じであることを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount

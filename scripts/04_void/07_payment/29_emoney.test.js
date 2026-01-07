@@ -47,10 +47,10 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（売上取引 TC_063 にて確認済）
+ * * * データ取得（売上取引 TC_063 にて確認済）
  * * #### 4. 小計 `/sales/subtotal`
  * * \- sales.cartinfo を取得
- * *  * WAON 支払データ検証
+ * * * WAON 支払データ検証
  * * #### 5. 支払登録 (WAON) `/sales/addpayment`
  * * \- 支払後の合計残高金額が 0 であることを確認
  * * * \+ total_balance_amount: 0
@@ -59,7 +59,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * * * \.paid_cd = "0307"
  * * * * \.paid_name = "WAON"
  * * * * \.paid_amount = sales.cartinfo.total_balance_amount
- * *  * 誤打訂正データが売上取引と一致することを確認
+ * * * 誤打訂正データが売上取引と一致することを確認
  * * #### 7.【誤打訂正】取引開始 `/void/begin`
  * * \- 合計金額が売上取引の金額と一致することを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount
@@ -273,10 +273,10 @@ export function TC_040729001_VoidWaonPayment() {
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（売上取引 TC_064 にて確認済）
+ * * * データ取得（売上取引 TC_064 にて確認済）
  * * #### 4. 小計 `/sales/subtotal`
  * * \- sales.cartinfo を取得
- * *  * 交通系IC 支払データ検証
+ * * * 交通系IC 支払データ検証
  * * #### 5. 支払登録 (交通系IC) `/sales/addpayment`
  * * \- 支払後の合計残高金額が 0 であることを確認
  * * * \+ total_balance_amount: 0
@@ -287,7 +287,7 @@ export function TC_040729001_VoidWaonPayment() {
  * * * * \.paid_amount = sales.cartinfo.total_balance_amount
  * * #### 6. 取引完了 `/sales/end`
  * * \- レシートが正常に印字され、決済方法として 1 つの支払種別（交通系IC）が含まれていることを確認
- * *  * 誤打訂正取引データ検証
+ * * * 誤打訂正取引データ検証
  * * #### 7.【誤打訂正】取引開始 `/void/begin`
  * * \- レスポンスを確認
  * * * \+ Status: 220

@@ -31,7 +31,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * | :-: | :--- | :--- |
  * | 1 | 取引開始 | `/sales/begin` |
  * | 2 | 取引中止ボタン押下 | `/sales/abort` |
- * | 3 | 電子ジャーナルトラン | `PosReceiptData`/tran/getdata` |
+ * | 3 | 電子ジャーナルトラン | `PosReceiptData/tran/getdata` |
  * 
  * ---
  * ### 前提条件
@@ -43,7 +43,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * * #### 3. 電子ジャーナルトラン PosReceiptData`/tran/getdata`
+ * * #### 3. 電子ジャーナルトラン `PosReceiptData/tran/getdata`
  * * \- 以下のトランデータを確認:
  * * * \+ 電子ジャーナルトラン
  * * * \+ 電子ジャーナル_売上トラン constains:
@@ -151,7 +151,7 @@ export function TC_011730001_AbortBeforeProductScan() {
  * 
  * ---
  * ### 期待結果
- * * #### 4. 電子ジャーナルトラン PosReceiptData`/tran/getdata`
+ * * #### 4. 電子ジャーナルトラン `PosReceiptData/tran/getdata`
  * * \- 以下のトランデータを確認:
  * * * \+ 電子ジャーナルトラン
  * * * \+ 電子ジャーナル_売上トラン constains:
@@ -328,7 +328,7 @@ export function TC_011730002_AbortAfterProductScan() {
  * 
  * ---
  * ### 期待結果
- * * #### 6. 電子ジャーナルトラン PosReceiptData`/tran/getdata`
+ * * #### 6. 電子ジャーナルトラン `PosReceiptData/tran/getdata`
  * * \- 以下のトランデータを確認:
  * * * \+ 電子ジャーナルトラン
  * * * \+ 電子ジャーナル_売上トラン constains:

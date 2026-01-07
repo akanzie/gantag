@@ -871,7 +871,7 @@ export function TC_010101009_RegisterMultipleDrugsForSelfPOS() {
  * * * \+ items.length = 1
  * * * \+ unit_price = 1000 (バーコード2の 9〜12 桁)
  * * \- 合計金額を確認
- * *      = unit_price + unit_price * (tax_rate / 100)
+ * * *  = unit_price + unit_price * (tax_rate / 100)
  * * * \= 1000 + 1000 * 10% = 1100
  * * #### 4. 支払登録 `/sales/addpayment`
  * * \- 取消支払（void payment）が現金であることを確認:

@@ -36,7 +36,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * | 5 | 取引完了 | `/sales/end` |
  * | 6 | 【誤打訂正】取引開始 | `/void/begin` |
  * | 7 | 【誤打訂正】支払登録  (お米券) | `/void/addpayment` |
- * | 8 | 【誤打訂正】取引終了 | `/void/end"` |
+ * | 8 | 【誤打訂正】取引終了 | `/void/end` |
  * 
  * ---
  * ### 前提条件
@@ -46,19 +46,19 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ### テストデータ
  * * 1.通常商品: 4500000000121
  * * 2.お米券
- * * voucher_code: "0612"
- * * voucher_name: "お米券"
- * * change_type: 1 (お釣り無し)
- * * coupon_amount: 440
+ * * * \- voucher_code: "0612"
+ * * * \- voucher_name: "お米券"
+ * * * \- change_type: 1 (お釣り無し)
+ * * * \- coupon_amount: 440
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（売上取引 TC_073 にて確認済）
+ * * * データ取得（売上取引 TC_073 にて確認済）
  * * #### 3. 小計 `/sales/subtotal`
  * * \- sales.cartinfo を取得
  * * #### 4. 支払登録 `/sales/cart/voucher`
  * * \- sales.payments[] を取得
- * *  * 誤打訂正データが売上取引と一致することを確認
+ * * * 誤打訂正データが売上取引と一致することを確認
  * * #### 6.【誤打訂正】取引開始 `/void/begin`
  * * \- 合計金額が売上取引の金額と一致することを確認
  * * * \+ total_balance_amount = sales.cartinfo.total_balance_amount

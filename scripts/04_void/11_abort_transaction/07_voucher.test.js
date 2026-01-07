@@ -42,7 +42,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * | 11 | ポイント対象商品（対象） スキャン | `/sales/cart/barcode` |
  * | 12 | ポイント対象商品（上位参照）スキャン | `/sales/cart/barcode` |
  * | 13 | 小計 | `/sales/subtotal` |
- * | - | 14.500円券スキャン（1枚）`/sales/cart/barcode` | - |
+ * | 14 | 500円券スキャン（1枚） | `/sales/cart/barcode` |
  * | 15 | 支払登録 | `/sales/addpayment` |
  * | 16 | 取引完了 | `/sales/end` |
  * | 17 | 【誤打訂正】取引開始 | `/void/begin` |
@@ -65,11 +65,11 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * 取引2:
  * * 1.バーコード1 とバーコード2
  * * 2.ポイント対象商品（対象） : 4520230413001 (point_apply_type_1 = 1)
- * * 3. ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
+ * * 3.ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
  * 
  * ---
  * ### 期待結果
- * *  * データ取得（販売取引 TC_018 にて検証済み）
+ * * * データ取得（販売取引 TC_018 にて検証済み）
  * * #### 13.小計 `/sales/subtotal`
  * * \- payments を取得
  * * \- total_balance_amount を取得
