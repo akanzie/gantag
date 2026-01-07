@@ -190,7 +190,7 @@ export function TC_011905001_EcoChildcarePointsGrantProcess() {
         name: "Verify total sales amount < 1000",
         expected: true,
         actual: (res) =>
-          res.result?.cartinfo?.total_sales_amount === Formular.calcTotalSalesAmount(res.result?.cartinfo?.items) &&
+          res.result?.cartinfo?.total_sales_amount === Formular.calcTotalSalesAmount(res.result?.cartinfo?.items) && 
           res.result?.cartinfo?.total_sales_amount < childCoupon.couponAmount,
       }),
       CHECK.createEqualsCheck({
@@ -200,7 +200,7 @@ export function TC_011905001_EcoChildcarePointsGrantProcess() {
           couponCd: COUPON.CHILD.CD,
           couponName: COUPON.CHILD.NAME,
         },
-        actual: (res) => {
+        actual: (res)  => {
           const pointDetail = res.result?.cartinfo?.customer?.planning_add_points?.point_detail?.find(p => p.coupon_cd === COUPON.CHILD.CD);
           return {
             addPoint: pointDetail?.add_point,
@@ -239,7 +239,7 @@ export function TC_011905001_EcoChildcarePointsGrantProcess() {
         name: "Verify total sales amount > 1000",
         expected: true,
         actual: (res) =>
-          res.result?.cartinfo?.total_sales_amount === Formular.calcTotalSalesAmount(res.result?.cartinfo?.items) &&
+          res.result?.cartinfo?.total_sales_amount === Formular.calcTotalSalesAmount(res.result?.cartinfo?.items) && 
           res.result?.cartinfo?.total_sales_amount > childCoupon.couponAmount,
       }),
       CHECK.createEqualsCheck({

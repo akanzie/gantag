@@ -58,30 +58,30 @@ import * as TAGS from "../../../tags/tags_const.js";
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
  * | 0 | AOKカードのポイントを0に調整 | - |
- * | 1 |  取引開始 sales`/begin` | - |
- * | 2 | 会員登録 sales`/cart/barcode` | - |
- * | 3 | ポイント1倍商品 sales`/cart/barcode` | - |
- * | 4 | ポイント3倍商品 sales`/cart/barcode` | - |
- * | 5 | ポイント対象外商品 sales`/cart/barcode` | - |
- * | 6 | 通常商品 sales`/cart/barcode` | - |
- * | 7 | 単品値引 sales`/cart/unitdiscount` | - |
- * | 8 | 通常商品 sales`/cart/barcode` | - |
- * | 9 | 売価変更 sales`/cart/changeitemprice` | - |
- * | 10 | 超トク対象商品 sales`/cart/barcode` | - |
- * | 11 | ポイント0倍商品 sales`/cart/barcode` | - |
- * | 12 | 書籍 sales`/cart/barcode` | - |
- * | 13 | 数量限定値引 sales`/cart/barcode` | - |
- * | 14 | まとめ値引対象商品A sales`/cart/barcode` | - |
- * | 15 | まとめ値引対象商品B sales`/cart/barcode` | - |
- * | 16 | まとめ値引対象商品C sales`/cart/barcode` | - |
- * | 17 | 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
- * | 18 | 年齢確認商品 sales`/cart/barcode` | - |
- * | 19 | 年齢確認 sales`/age-verification` | - |
- * | 20 | ボーナスポイント対象商品 sales`/cart/barcode` | - |
- * | 21 | 株主優待 sales`/cart/barcode` | - |
- * | 22 | 小計 sales`/subtotal` | - |
- * | 23 | 現金支払 sales`/addpayment` | - |
- * | 24 | 取引完了 sales`/end` | - |
+ * | 1 |  取引開始 | `sales/begin` |
+ * | 2 | 会員登録 | `sales/cart/barcode` |
+ * | 3 | ポイント1倍商品 | `sales/cart/barcode` |
+ * | 4 | ポイント3倍商品 | `sales/cart/barcode` |
+ * | 5 | ポイント対象外商品 | `sales/cart/barcode` |
+ * | 6 | 通常商品 | `sales/cart/barcode` |
+ * | 7 | 単品値引 | `sales/cart/unitdiscount` |
+ * | 8 | 通常商品 | `sales/cart/barcode` |
+ * | 9 | 売価変更 | `sales/cart/changeitemprice` |
+ * | 10 | 超トク対象商品 | `sales/cart/barcode` |
+ * | 11 | ポイント0倍商品 | `sales/cart/barcode` |
+ * | 12 | 書籍 | `sales/cart/barcode` |
+ * | 13 | 数量限定値引 | `sales/cart/barcode` |
+ * | 14 | まとめ値引対象商品A | `sales/cart/barcode` |
+ * | 15 | まとめ値引対象商品B | `sales/cart/barcode` |
+ * | 16 | まとめ値引対象商品C | `sales/cart/barcode` |
+ * | 17 | 明細削除（まとめ値引対象商品B） `sales/cart/deleteitem` | - |
+ * | 18 | 年齢確認商品 | `sales/cart/barcode` |
+ * | 19 | 年齢確認 `sales/age-verification` | - |
+ * | 20 | ボーナスポイント対象商品 | `sales/cart/barcode` |
+ * | 21 | 株主優待 | `sales/cart/barcode` |
+ * | 22 | 小計 `sales/subtotal` | - |
+ * | 23 | 現金支払 `sales/addpayment` | - |
+ * | 24 | 取引完了 `sales/end` | - |
  * 
  * ---
  * ### 前提条件
@@ -123,7 +123,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * 4.t_payment.paid_amountのデータ
  * * 5.t_payment.payment_free_areaのデータ
  * * 6.target_amountのデータ
- * * #### 24. 取引完了 sales`/end`
+ * * #### 24. 取引完了 `sales/end`
  * * \- トランザクションデータは以下のテーブルに保存できたか確認する(store_cd, pos_cd, response.receipt_no と response.business_day フィールドで確認する)
  * * * \+ ms-sales.t_sales
  * * * \+ ms-sales.t_sales_detail_item
@@ -927,30 +927,30 @@ export function TC_010258001_AwardPrepaidPointsForSales() {
  * | 0 | 事前準備 | - |
  * | 0.1 | プリペのポイント付与を強制的に失敗させる tmn-api-test`/set-api-timeout` | - |
  * | 0.2 | AOKカードのポイントを0に調整 | - |
- * | 1 | 取引開始 sales`/begin` | - |
- * | 2 | 会員登録 sales`/cart/barcode` | - |
- * | 3 | ポイント1倍商品 sales`/cart/barcode` | - |
- * | 4 |  ポイント3倍商品 sales`/cart/barcode` | - |
- * | 5 | ポイント対象外商品 sales`/cart/barcode` | - |
- * | 6 | 通常商品 sales`/cart/barcode` | - |
- * | 7 | 単品値引 sales`/cart/unitdiscount` | - |
- * | 8 | 通常商品 sales`/cart/barcode` | - |
- * | 9 | 売価変更 sales`/cart/changeitemprice` | - |
- * | 10 | 超トク対象商品 sales`/cart/barcode` | - |
- * | 11 | ポイント0倍商品 sales`/cart/barcode` | - |
- * | 12 | 書籍 sales`/cart/barcode` | - |
- * | 13 | 数量限定値引 sales`/cart/barcode` | - |
- * | 14 | まとめ値引対象商品A sales`/cart/barcode` | - |
- * | 15 | まとめ値引対象商品B sales`/cart/barcode` | - |
- * | 16 | まとめ値引対象商品C sales`/cart/barcode` | - |
- * | 17 | 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
- * | 18 | 年齢確認商品 sales`/cart/barcode` | - |
- * | 19 | 年齢確認 sales`/age-verification` | - |
- * | 20 | ボーナスポイント対象商品 sales`/cart/barcode` | - |
- * | 21 | 株主優待 sales`/cart/barcode` | - |
- * | 22 | 小計 sales`/subtotal` | - |
- * | 23 | 現金支払 sales`/addpayment` | - |
- * | 24 | 取引完了 sales`/end` | - |
+ * | 1 | 取引開始 | `sales/begin` |
+ * | 2 | 会員登録 | `sales/cart/barcode` |
+ * | 3 | ポイント1倍商品 | `sales/cart/barcode` |
+ * | 4 |  ポイント3倍商品 | `sales/cart/barcode` |
+ * | 5 | ポイント対象外商品 | `sales/cart/barcode` |
+ * | 6 | 通常商品 | `sales/cart/barcode` |
+ * | 7 | 単品値引 `sales/cart/unitdiscount` | - |
+ * | 8 | 通常商品 | `sales/cart/barcode` |
+ * | 9 | 売価変更 `sales/cart/changeitemprice` | - |
+ * | 10 | 超トク対象商品 | `sales/cart/barcode` |
+ * | 11 | ポイント0倍商品 | `sales/cart/barcode` |
+ * | 12 | 書籍 | `sales/cart/barcode` |
+ * | 13 | 数量限定値引 | `sales/cart/barcode` |
+ * | 14 | まとめ値引対象商品A | `sales/cart/barcode` |
+ * | 15 | まとめ値引対象商品B | `sales/cart/barcode` |
+ * | 16 | まとめ値引対象商品C | `sales/cart/barcode` |
+ * | 17 | 明細削除（まとめ値引対象商品B） `sales/cart/deleteitem` | - |
+ * | 18 | 年齢確認商品 | `sales/cart/barcode` |
+ * | 19 | 年齢確認 `sales/age-verification` | - |
+ * | 20 | ボーナスポイント対象商品 | `sales/cart/barcode` |
+ * | 21 | 株主優待 | `sales/cart/barcode` |
+ * | 22 | 小計 `sales/subtotal` | - |
+ * | 23 | 現金支払 `sales/addpayment` | - |
+ * | 24 | 取引完了 `sales/end` | - |
  * | 25 | 後片付け | - |
  * | - | 25.1 プリペのポイント付与のタイムアウトを戻す tmn-api-test`/set-api-timeout` | - |
  * 
@@ -995,7 +995,7 @@ export function TC_010258001_AwardPrepaidPointsForSales() {
  * * 以下の処理に間違いがあると思います。
  * * ms_sales.t_point_failure_tmn_prepaidテーブルにポイント付与（１）とポイント利用（３）のレコードがある
  * * ポイント付与（２）とポイント利用（３）が正しいと思います。
- * * #### '24. 取引完了 sales`/end`
+ * * #### '24. 取引完了 `sales/end`
  * * \- トランザクションデータは以下のテーブルに保存できたか確認する  (corporate_cd, store_cd, pos_cd, receipt_no と business_day フィールドで確認する)
  * * * \+ ms_sales.t_point_failre_tmn_prepaid
  * * * \+ ms_sales.t_point_failre_tmn_prepaid_plan
@@ -1358,13 +1358,13 @@ export function TC_010258002_AwardPrepaidPointsForSalesFailed() {
     ]);
     try {
       // APIタイムアウト設定 /tmn-api-test/set-api-timeout
-      TestHelper.setTMNServerApiTimeout(step.setTimeout, {
+      TestHelper.setTMNServerApiTimeout (step.setTimeout, {
         endpoint: ENDPOINT.SETTLEMENT_ADD_POINT.path,
         timeoutMilliseconds: 1,
       }, [
         CHECK.createStatusCodeCheck(),
       ]);
-
+      
       // 取引完了 sales/end
       salesEndResponse = TestHelper.salesEnd(step.end, {
         cartNo,
@@ -1374,7 +1374,7 @@ export function TC_010258002_AwardPrepaidPointsForSalesFailed() {
       ]);
     } finally {
       // APIタイムアウト設定 /tmn-api-test/set-api-timeout
-      TestHelper.setTMNServerApiTimeout(step.resetTimeout, {
+      TestHelper.setTMNServerApiTimeout (step.resetTimeout, {
         endpoint: ENDPOINT.SETTLEMENT_ADD_POINT.path,
         timeoutMilliseconds: -1,
       }, [
@@ -1532,17 +1532,17 @@ export function TC_010258002_AwardPrepaidPointsForSalesFailed() {
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | 1 |  取引開始 sales`/begin` | - |
- * | 2 | 外税8%商品 sales`/cart/barcode` | - |
- * | 3 | 内税8%商品 sales`/cart/barcode` | - |
- * | 4 |  外税10%商品 sales`/cart/barcode` | - |
- * | 5 | 内税10%商品 sales`/cart/barcode` | - |
- * | 6 | 非課税商品 sales`/cart/barcode` | - |
- * | 7 | 社割登録 sales`/cart/barcode` | - |
- * | 8 | 小計 sales`/subtotal` | - |
- * | 9 | 金券利用（その他値引券） sales`/cart/voucher` | - |
- * | 10 | 現金支払 sales`/addpayment` | - |
- * | 11 | 取引完了 sales`/end` | - |
+ * | 1 |  取引開始 | `sales/begin` |
+ * | 2 | 外税8%商品 | `sales/cart/barcode` |
+ * | 3 | 内税8%商品 | `sales/cart/barcode` |
+ * | 4 |  外税10%商品 | `sales/cart/barcode` |
+ * | 5 | 内税10%商品 | `sales/cart/barcode` |
+ * | 6 | 非課税商品 | `sales/cart/barcode` |
+ * | 7 | 社割登録 | `sales/cart/barcode` |
+ * | 8 | 小計 `sales/subtotal` | - |
+ * | 9 | 金券利用（その他値引券） `sales/cart/voucher` | - |
+ * | 10 | 現金支払 `sales/addpayment` | - |
+ * | 11 | 取引完了 `sales/end` | - |
  * 
  * ---
  * ### 前提条件
@@ -1565,7 +1565,7 @@ export function TC_010258002_AwardPrepaidPointsForSalesFailed() {
  * * ※　実行結果と期待値が一致しない
  * * 以下の処理に間違いがあると思います。
  * * 支払トラン自由項目
- * * #### 11. 取引完了 sales`/end`
+ * * #### 11. 取引完了 `sales/end`
  * * \- トランザクションデータは以下のテーブルに保存できたか確認する (store_cd, pos_cd, response.receipt_noと response.business_dayで特定)
  * * * \+ ms-sales.t_payment
  * * * \+ ms_sales.t_payment_voucher
@@ -1935,7 +1935,7 @@ export function TC_010258003_SalesReceiptAmountWithTax() {
           }),
           CHECK.createEqualsCheck({
             name: "Verify data: 税額",
-            expected: {
+            expected:  {
               FirstData: Formular.calcTaxAmount(taxExcluded8),
               SecondData: Formular.calcTaxAmount(taxIncluded8),
               ThirdData: Formular.calcTaxAmount(taxExcluded10),
@@ -1987,30 +1987,30 @@ export function TC_010258003_SalesReceiptAmountWithTax() {
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | 1 |  取引開始 sales`/begin` | - |
- * | 2 | 会員登録 sales`/cart/barcode` | - |
- * | 3 | ポイント1倍商品 sales`/cart/barcode` | - |
- * | 4 |  ポイント3倍商品 sales`/cart/barcode` | - |
- * | 5 | ポイント対象外商品 sales`/cart/barcode` | - |
- * | 6 | 通常商品 sales`/cart/barcode` | - |
- * | 7 | 単品値引 sales`/cart/unitdiscount` | - |
- * | 8 | 通常商品 sales`/cart/barcode` | - |
- * | 9 | 売価変更 sales`/cart/changeitemprice` | - |
- * | 10 | 超トク対象商品 sales`/cart/barcode` | - |
- * | 11 | ポイント0倍商品 sales`/cart/barcode` | - |
- * | 12 | 書籍 sales`/cart/barcode` | - |
- * | 13 | 数量限定値引 sales`/cart/barcode` | - |
- * | 14 | まとめ値引対象商品A sales`/cart/barcode` | - |
- * | 15 | まとめ値引対象商品B sales`/cart/barcode` | - |
- * | 16 | まとめ値引対象商品C sales`/cart/barcode` | - |
- * | 17 | 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
- * | 18 | 年齢確認商品 sales`/cart/barcode` | - |
- * | 19 | 年齢確認 sales`/age-verification` | - |
- * | 20 | ボーナスポイント対象商品 sales`/cart/barcode` | - |
- * | 21 | 株主優待 sales`/cart/barcode` | - |
- * | 22 | 小計 sales`/subtotal` | - |
- * | 23 | 現金支払 sales`/addpayment` | - |
- * | 24 | 取引完了 sales`/end` | - |
+ * | 1 |  取引開始 | `sales/begin` |
+ * | 2 | 会員登録 | `sales/cart/barcode` |
+ * | 3 | ポイント1倍商品 | `sales/cart/barcode` |
+ * | 4 |  ポイント3倍商品 | `sales/cart/barcode` |
+ * | 5 | ポイント対象外商品 | `sales/cart/barcode` |
+ * | 6 | 通常商品 | `sales/cart/barcode` |
+ * | 7 | 単品値引 `sales/cart/unitdiscount` | - |
+ * | 8 | 通常商品 | `sales/cart/barcode` |
+ * | 9 | 売価変更 `sales/cart/changeitemprice` | - |
+ * | 10 | 超トク対象商品 | `sales/cart/barcode` |
+ * | 11 | ポイント0倍商品 | `sales/cart/barcode` |
+ * | 12 | 書籍 | `sales/cart/barcode` |
+ * | 13 | 数量限定値引 | `sales/cart/barcode` |
+ * | 14 | まとめ値引対象商品A | `sales/cart/barcode` |
+ * | 15 | まとめ値引対象商品B | `sales/cart/barcode` |
+ * | 16 | まとめ値引対象商品C | `sales/cart/barcode` |
+ * | 17 | 明細削除（まとめ値引対象商品B） `sales/cart/deleteitem` | - |
+ * | 18 | 年齢確認商品 | `sales/cart/barcode` |
+ * | 19 | 年齢確認 `sales/age-verification` | - |
+ * | 20 | ボーナスポイント対象商品 | `sales/cart/barcode` |
+ * | 21 | 株主優待 | `sales/cart/barcode` |
+ * | 22 | 小計 `sales/subtotal` | - |
+ * | 23 | 現金支払 `sales/addpayment` | - |
+ * | 24 | 取引完了 `sales/end` | - |
  * | 25 | 【誤打訂正】取引開始 void`/begin` | - |
  * | 26 | 【誤打訂正】支払登録 void`/addpayment` | - |
  * | 27 | 【誤打訂正】取引完了 void`/end` | - |
@@ -2043,7 +2043,7 @@ export function TC_010258003_SalesReceiptAmountWithTax() {
  * 
  * ---
  * ### 期待結果
- * * #### 24. sales`/end`
+ * * #### 24. `sales/end`
  * * sale_receipt_no = receipts.receipt_no
  * * #### 27. void`/end`
  * * void_receipt_no = receipts.receipt_no
@@ -2539,34 +2539,34 @@ export function TC_040258001_Void() {
  * ### テスト方法/シナリオ
  * | Step | 手順 | エンドポイント |
  * | :-: | :--- | :--- |
- * | 1 |  取引開始 sales`/begin` | - |
- * | 2 | 会員登録 sales`/cart/barcode` | - |
- * | 3 | ポイント1倍商品 sales`/cart/barcode` | - |
- * | 4 |  ポイント3倍商品 sales`/cart/barcode` | - |
- * | 5 | ポイント対象外商品 sales`/cart/barcode` | - |
- * | 6 | 通常商品 sales`/cart/barcode` | - |
- * | 7 | 単品値引 sales`/cart/unitdiscount` | - |
- * | 8 | 通常商品 sales`/cart/barcode` | - |
- * | 9 | 売価変更 sales`/cart/changeitemprice` | - |
- * | 10 | 超トク対象商品 sales`/cart/barcode` | - |
- * | 11 | ポイント0倍商品 sales`/cart/barcode` | - |
- * | 12 | 書籍 sales`/cart/barcode` | - |
- * | 13 | 数量限定値引 sales`/cart/barcode` | - |
- * | 14 | まとめ値引対象商品A sales`/cart/barcode` | - |
- * | 15 | まとめ値引対象商品B sales`/cart/barcode` | - |
- * | 16 | まとめ値引対象商品C sales`/cart/barcode` | - |
- * | 17 | 明細削除（まとめ値引対象商品B） sales`/cart/deleteitem` | - |
- * | 18 | 年齢確認商品 sales`/cart/barcode` | - |
- * | 19 | 年齢確認 sales`/age-verification` | - |
- * | 20 | ボーナスポイント対象商品 sales`/cart/barcode` | - |
- * | 21 | 株主優待 sales`/cart/barcode` | - |
- * | 22 | 小計 sales`/subtotal` | - |
- * | 23 | 現金支払 sales`/addpayment` | - |
- * | 24 | 取引完了 sales`/end` | - |
- * | 25 | 【返品】取引開始 refund`/begin` | - |
- * | 26 | 【返品】小計 refund`/subtotal` | - |
- * | 27 | 【返品】支払登録 refund`/addpayment` | - |
- * | - | 28. 【返品】取引完了 refund`/end` | - |
+ * | 1 |  取引開始 | `sales/begin` |
+ * | 2 | 会員登録 | `sales/cart/barcode` |
+ * | 3 | ポイント1倍商品 | `sales/cart/barcode` |
+ * | 4 |  ポイント3倍商品 | `sales/cart/barcode` |
+ * | 5 | ポイント対象外商品 | `sales/cart/barcode` |
+ * | 6 | 通常商品 | `sales/cart/barcode` |
+ * | 7 | 単品値引 `sales/cart/unitdiscount` | - |
+ * | 8 | 通常商品 | `sales/cart/barcode` |
+ * | 9 | 売価変更 `sales/cart/changeitemprice` | - |
+ * | 10 | 超トク対象商品 | `sales/cart/barcode` |
+ * | 11 | ポイント0倍商品 | `sales/cart/barcode` |
+ * | 12 | 書籍 | `sales/cart/barcode` |
+ * | 13 | 数量限定値引 | `sales/cart/barcode` |
+ * | 14 | まとめ値引対象商品A | `sales/cart/barcode` |
+ * | 15 | まとめ値引対象商品B | `sales/cart/barcode` |
+ * | 16 | まとめ値引対象商品C | `sales/cart/barcode` |
+ * | 17 | 明細削除（まとめ値引対象商品B） | `sales/cart/deleteitem` |
+ * | 18 | 年齢確認商品 | `sales/cart/barcode` |
+ * | 19 | 年齢確認 | `sales/age-verification` |
+ * | 20 | ボーナスポイント対象商品 | `sales/cart/barcode` |
+ * | 21 | 株主優待 | `sales/cart/barcode` |
+ * | 22 | 小計 | `sales/subtotal` |
+ * | 23 | 現金支払 | `sales/addpayment` |
+ * | 24 | 取引完了 | `sales/end` |
+ * | 25 | 【返品】取引開始 | `refund/begin` |
+ * | 26 | 【返品】小計 | `refund/subtotal` |
+ * | 27 | 【返品】支払登録 | `refund/addpayment` |
+ * | 28 | 【返品】取引完了 | `refund/end` |
  * 
  * ---
  * ### 前提条件
@@ -2596,9 +2596,9 @@ export function TC_040258001_Void() {
  * 
  * ---
  * ### 期待結果
- * * #### 24. sales`/end`
+ * * #### 24. `sales/end`
  * * sale_receip_no = receipts.receipt_no
- * * #### 28. refund`/end`
+ * * #### 28. `refund/end`
  * * refund_receip_no = receipts.receipt_no
  * * ーーー
  * * \- トランザクションデータは以下のテーブルに保存できたか確認する (refund_receipt_noで特定):

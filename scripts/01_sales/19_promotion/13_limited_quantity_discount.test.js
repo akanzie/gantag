@@ -1092,8 +1092,8 @@ export function TC_011913002_LimitedQuantityDiscount() {
           const items = res.result?.cartinfo?.items;
           const discountRate1Idx = items?.findIndex(q => q.barcode === PROD.DISCOUNT_RATE_1);
           const discountRate2Idx = items?.findIndex(q => q.barcode === PROD.DISCOUNT_RATE_2);
-          const subtotalDiscountRate1 = (discountRate1Price * discountRate / 100) * items?.[discountRate1Idx]?.quantity;
-          const subtotalDiscountRate2 = (discountRate2Price * discountRate / 100) * items?.[discountRate2Idx]?.quantity;
+		      const subtotalDiscountRate1 = (discountRate1Price * discountRate / 100) * items?.[discountRate1Idx]?.quantity;
+		      const subtotalDiscountRate2 = (discountRate2Price * discountRate / 100) * items?.[discountRate2Idx]?.quantity;
           discountAmountRateBefore = subtotalDiscountRate1 + subtotalDiscountRate2;
           return discountAmountRateBefore;
         },
