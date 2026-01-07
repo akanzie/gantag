@@ -70,26 +70,26 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ### 期待結果
  * * #### 2. Aocaカードスキャン `/sales/cart/barcode`
  * * \- total_add_point = 0 であることを確認
- * * 3.子育て支援ポイント（タッチパネル）押下
+ * * #### 3.子育て支援ポイント（タッチパネル）押下
  * * \- 商品が未登録
  * * * \+ cartinfo.items.length = 0
  * * \- 子育て支援ポイントが適用されているが、ポイントが着かないこと
  * * * \+ customer.planning_add_points.point_detail.add_point = 0
  * * * \+ customer.planning_add_points.point_detail.coupon_cd= "Child"
  * * * \+ customer.planning_add_points.point_detail.coupon_name= "子育て支援ポイント"
- * * 4.ポイント付与専用商品（対象） 1スキャン
+ * * #### 4.ポイント付与専用商品（対象） 1スキャン
  * * \- total_sales_amount = 378 (< 1000)
  * * \- 子育て支援ポイントが適用されているが、ポイントが着かないこと
  * * * \+ customer.planning_add_points.point_detail.add_point = 0
  * * * \+ customer.planning_add_points.point_detail.coupon_cd= "Child"
  * * * \+ customer.planning_add_points.point_detail.coupon_name= "子育て支援ポイント"
- * * 6.ポイント付与専用商品（対象） 3スキャン
+ * * #### 6.ポイント付与専用商品（対象） 3スキャン
  * * \- total_sales_amount = 13334 (> 1000)
  * * \- 子育て支援ポイントが適用されているが、10ポイントが着くこと
  * * * \+ customer.planning_add_points.point_detail.add_point = 10
  * * * \+ customer.planning_add_points.point_detail.coupon_cd= "Child"
  * * * \+ customer.planning_add_points.point_detail.coupon_name= "子育て支援ポイント"
- * * 7.エコポイント（タッチパネル）押下
+ * * #### 7.エコポイント（タッチパネル）押下
  * * \- エコポイントが着くこと
  * * * \+ customer.planning_add_points.point_detail.add_point = 1
  * * * \+ customer.planning_add_points.point_detail.coupon_cd = 'eco'
@@ -190,7 +190,7 @@ export function TC_011905001_EcoChildcarePointsGrantProcess() {
         name: "Verify total sales amount < 1000",
         expected: true,
         actual: (res) =>
-          res.result?.cartinfo?.total_sales_amount === Formular.calcTotalSalesAmount(res.result?.cartinfo?.items) && 
+          res.result?.cartinfo?.total_sales_amount === Formular.calcTotalSalesAmount(res.result?.cartinfo?.items) &&
           res.result?.cartinfo?.total_sales_amount < childCoupon.couponAmount,
       }),
       CHECK.createEqualsCheck({
@@ -200,7 +200,7 @@ export function TC_011905001_EcoChildcarePointsGrantProcess() {
           couponCd: COUPON.CHILD.CD,
           couponName: COUPON.CHILD.NAME,
         },
-        actual: (res)  => {
+        actual: (res) => {
           const pointDetail = res.result?.cartinfo?.customer?.planning_add_points?.point_detail?.find(p => p.coupon_cd === COUPON.CHILD.CD);
           return {
             addPoint: pointDetail?.add_point,
@@ -239,7 +239,7 @@ export function TC_011905001_EcoChildcarePointsGrantProcess() {
         name: "Verify total sales amount > 1000",
         expected: true,
         actual: (res) =>
-          res.result?.cartinfo?.total_sales_amount === Formular.calcTotalSalesAmount(res.result?.cartinfo?.items) && 
+          res.result?.cartinfo?.total_sales_amount === Formular.calcTotalSalesAmount(res.result?.cartinfo?.items) &&
           res.result?.cartinfo?.total_sales_amount > childCoupon.couponAmount,
       }),
       CHECK.createEqualsCheck({

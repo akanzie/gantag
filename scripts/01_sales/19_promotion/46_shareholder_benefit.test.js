@@ -61,7 +61,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * #### 3. 株主優待割許可商品(対象外) `/sales/cart/barcode`
  * * \- カートの情報に株主優待割許可商品(対象外)があることを確認
  * * * \+ barcode: 2016020000010
- * * 4.株主優待バーコードスキャン
+ * * #### 4.株主優待バーコードスキャン
  * * \- カートの情報に株主優待があることを確認
  * * * \+ subtotal_discount_cd: 2004
  * * * \+ subtotal_discount_name: 株主優待
@@ -565,7 +565,7 @@ export function TC_011946003_ShareholderBenefitUsageLimitPerson1() {
  * * #### 3.株3.株主優待割許可商品(対象外)スキャン `/sales/cart/barcode`
  * * \- カートInfoに 株主優待割許可商品(対象外)があるか確認
  * * * \+ barcode: 2016020000010
- * * 4.株主優待バーコードスキャン
+ * * #### 4.株主優待バーコードスキャン
  * * \- 株主優待が適用されたか確認
  * * * \+ subtotal_discount_cd: 2004
  * * * \+ subtotal_discount_name: 株主優待
@@ -774,7 +774,7 @@ export function TC_011946004_ShareholderBenefitHasEmployee() {
  * * #### 3.株主優待割許可商品(対象外)スキャン `/sales/cart/barcode`
  * * カート情報には 「株主優待割許可商品(対象外)」が存在すること確認
  * * * \+ barcode : 2016020000010
- * * 5.株主優待バーコードスキャン　→　エラー終了
+ * * #### 5.株主優待バーコードスキャン　→　エラー終了
  * * \- status code: 220
  * * \- error_message: "このクーポンは現在利用できません（利用期間終了）",
  * * \- error_code: "CPN0003",

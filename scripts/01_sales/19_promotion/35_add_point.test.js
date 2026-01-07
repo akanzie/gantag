@@ -261,7 +261,7 @@ export function TC_011935010_PointPlus() {
  * 
  * ---
  * ### 期待結果
- * * #### "2. Aocaカードスキャン `/sales/cart/barcode`
+ * * #### 2. Aocaカードスキャン `/sales/cart/barcode`
  * * \- カート情報にAocaカードが含まれていることを確認
  * * * \+ customer_cd: 8090227000000006
  * * * \+ point_card_name: "Aoca"
@@ -549,7 +549,7 @@ export function TC_011935003_BonusPointsDay() {
  * 
  * ---
  * ### 期待結果
- * * #### "2. Aocaカードスキャン `/sales/cart/barcode`
+ * * #### 2. Aocaカードスキャン `/sales/cart/barcode`
  * * \- カート情報にAocaカードスキャンが登録されていることを確認する
  * * * \+ customer_cd: 8090227000000006
  * * * \+ point_card_name: "Aoca"
@@ -1143,7 +1143,7 @@ export function TC_011935006_BuyComboRepeat() {
  * 
  * ---
  * ### 期待結果
- * * #### "2. dポイントカードスキャン `/sales/cart/barcode`
+ * * #### 2. dポイントカードスキャン `/sales/cart/barcode`
  * * \- カート情報にdポイントカードスキャンが登録されていることを確認する
  * * * \+ customer_cd: 100000006699030
  * * * \+ point_card_name: "dポイントカード"
