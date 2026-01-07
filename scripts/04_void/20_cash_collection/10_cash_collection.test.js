@@ -36,8 +36,8 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ---
  * ### テストデータ
  * * Request データ
- * * 1. collect_type: 2
- * * 2. collect_cash_info:
+ * * 1.collect_type: 2
+ * * 2.collect_cash_info:
  * * * \+ total_amount: 20000
  * * * \+ cash_type: 7
  * * * \+ amount: 20

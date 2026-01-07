@@ -35,13 +35,13 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### テストデータ
- * * 1. 通常商品: 4500000000121
+ * * 1.通常商品: 4500000000121
  * * リクエストデータ:
- * * 2. ejournalを検索
- * *   2.1 result_size:  0より大きい値
- * *   2.2 from_datetime: 2022-06-21T00:00:00
- * *   2.3 receipt_no: ステップ６でのデータ
- * *   2.4 pos_condition
+ * * 2.ejournalを検索
+ * * * 2.1 result_size:  0より大きい値
+ * * * 2.2 from_datetime: 2022-06-21T00:00:00
+ * * * 2.3 receipt_no: ステップ６でのデータ
+ * * * 2.4 pos_condition
  * * * \+ is_all: false,
  * * * \+ pos_cd_list:["01"]
  * 

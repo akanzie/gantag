@@ -46,26 +46,26 @@ erminal settlement - store settlement - automatic opening (abnormal)
  * 
  * ---
  * ### 前提条件
- * * 1. 各POS端末の現金情報は 30,000 円であり、1,000円札が 30 枚含まれていることを前提とする
- * * 2. 保留中の取引がすべて削除されていることを前提とする
- * * 3. store_cd："0080"のPos_cd：01 の端末で精算を実施するが、Pos_cd：02、03、04の端末で精算を実施しない。
+ * * 1.各POS端末の現金情報は 30,000 円であり、1,000円札が 30 枚含まれていることを前提とする
+ * * 2.保留中の取引がすべて削除されていることを前提とする
+ * * 3.store_cd："0080"のPos_cd：01 の端末で精算を実施するが、Pos_cd：02、03、04の端末で精算を実施しない。
  * * #### 4. pos_user_04 を店舗決済計算対象外として、API「store`/settlement/exclude-pos`」を使用して除外する
- * * 5.   テスト開始前に全てのトランを削除する（devtran-cleanerコンテナの起動）
+ * * 5.  テスト開始前に全てのトランを削除する（devtran-cleanerコンテナの起動）
  * * 現状はバックエンドアプリの docker-compose up の時点でdevtran-cleanerが起動されるようになっていますが、テストの連続実行ができない状況
  * 
  * ---
  * ### テストデータ
  * * Requestデータ
- * * 1. cash_info_list:
+ * * 1.cash_info_list:
  * * * \+ total_amount: 30000
  * * * \+ cash_type: 7
  * * * \+ count: 30
- * * 2. storeSettlement
+ * * 2.storeSettlement
  * * * \+ settlement_datetime: step1でのbusiness_day値
- * * 3. storeSettlementExcludePos: 
+ * * 3.storeSettlementExcludePos: 
  * * * \+ pos_cd: "04"
  * * * \+ settlement_business_day: step1でのbusiness_day値
- * * 4. POS精算情報
+ * * 4.POS精算情報
  * * * \+ user_cd:  pos_user_01
  * * * \+ user_password: pos_user_01
  * 

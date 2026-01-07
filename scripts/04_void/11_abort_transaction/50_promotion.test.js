@@ -52,7 +52,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ---
  * ### 期待結果
  * *  * データ取得（販売取引 TC_030 にて検証済み）
- * * 6. 社員割引バーコードスキャン
+ * * 6.社員割引バーコードスキャン
  * * \- 社員割引の支払データを取得（voucher_cd: S01000020W）
  * * \- total_balance_amount を取得
  * * #### 9. 【誤打訂正】取引開始 `/void/begin`

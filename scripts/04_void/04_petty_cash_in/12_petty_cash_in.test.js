@@ -42,9 +42,9 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ---
  * ### テストデータ
  * * リクエストデータ:
- * * 1. amount = 10000
- * * 2. reason_cd = "ドラッグ入金"
- * * 3. sub_reason_cd = "入金その他"
+ * * 1.amount = 10000
+ * * 2.reason_cd = "ドラッグ入金"
+ * * 3.sub_reason_cd = "入金その他"
  * 
  * ---
  * ### 期待結果

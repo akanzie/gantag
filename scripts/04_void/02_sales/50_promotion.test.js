@@ -48,19 +48,19 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### テストデータ
- * * 1. ポイント倍対象商品:  4520230413100
+ * * 1.ポイント倍対象商品:  4520230413100
  * * 購入日にポイント5倍  5x_point_allday 
  * * * \+  sunday_promotion_enabled_flg-> saturday_promotion_enabled_flg : 1
- * * 2. ポイント倍対象外商品: 4520230413101 for
+ * * 2.ポイント倍対象外商品: 4520230413101 for
  * * 購入日にポイント0倍 0x_point_allday:
  * *  sunday_promotion_enabled_flg->  saturday_promotion_enabled_flg : 1
- * * 3. プロモーションの基準ポイント_Aoca: 
+ * * 3.プロモーションの基準ポイント_Aoca: 
  * * * * \+ point_standard_amount: 100
  * * * * \+ add_standard_point: 1
  * * (設定：100円購入ごとで＋1ポイント)
- * * 4. プロモーションの5x_point_allday
+ * * 4.プロモーションの5x_point_allday
  * * point_standard_rate: 5
- * * 5. プロモーションの0x_point_allday
+ * * 5.プロモーションの0x_point_allday
  * * point_standard_rate: 0
  * 
  * ---
@@ -304,21 +304,21 @@ export function TC_040250001_VoidMultiplyPoints() {
  * 
  * ---
  * ### 前提条件
- * * 1. 取引2:
+ * * 1.取引2:
  * *  取引1 の取引完了 `/sales/end`のバーコードを取得
  * * \- バーコード1 は prefix が 31、桁数は 20 桁
  * * \- バーコード2 は prefix が 36、桁数は 20 桁
- * * 2. 販売取引はテストの観点に基づき、TC_018で検証済み。 
+ * * 2.販売取引はテストの観点に基づき、TC_018で検証済み。 
  * 
  * ---
  * ### テストデータ
  * * 取引1
- * * 1. クスリのアオキプリペイドカード: 8090227000000006 (AOCAカード)
- * * 2. ポイント対象商品（対象） : 4520230413001 (point_apply_type_1 = 1)
+ * * 1.クスリのアオキプリペイドカード: 8090227000000006 (AOCAカード)
+ * * 2.ポイント対象商品（対象） : 4520230413001 (point_apply_type_1 = 1)
  * * 取引2
- * * 1. Barcode 1 và Barcode 2
- * * 2. ポイント対象商品（対象） : 4520230413001 (point_apply_type_1 = 1)
- * * 3.  ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
+ * * 1.Barcode 1 và Barcode 2
+ * * 2.ポイント対象商品（対象） : 4520230413001 (point_apply_type_1 = 1)
+ * * 3. ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
  * 
  * ---
  * ### 期待結果

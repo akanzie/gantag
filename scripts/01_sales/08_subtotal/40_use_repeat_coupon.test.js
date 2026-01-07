@@ -51,7 +51,7 @@ Ticketing ~ Use (abnormal system)
  * 
  * ---
  * ### 前提条件
- * * 1. りぴーと券（利用期間外）が以下通り設定される：
+ * * 1.りぴーと券（利用期間外）が以下通り設定される：
  * * m_voucher.start_datetime = "2016-05-02 00:00:00.000000"
  * * m_voucher.end_datetime = "2022-06-30 00:00:00.000000"
  * 
@@ -234,7 +234,7 @@ export function TC_010840002_ReleaseAndUseRepeatVoucher_Abnormal() {
  * 
  * ---
  * ### 前提条件
- * * 1. りぴーと券: トラン１で発行
+ * * 1.りぴーと券: トラン１で発行
  * * \- バーコード 1 ：prefix が 30, 文字長２０文字
  * * \- バーコード2：prefix が 38, 文字長２０文字
  * 

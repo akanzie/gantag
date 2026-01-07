@@ -40,12 +40,12 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### テストデータ
- * * 1. 従業員バーコード: 10000010
+ * * 1.従業員バーコード: 10000010
  * * リクエストデータ
- * * 2. amount = 2000
- * * 3. reason_cd = "ドラッグ出金"
- * * 4. sub_reason_cd = "出金その他"
- * * 5. operation_method = 42
+ * * 2.amount = 2000
+ * * 3.reason_cd = "ドラッグ出金"
+ * * 4.sub_reason_cd = "出金その他"
+ * * 5.operation_method = 42
  * 
  * ---
  * ### 期待結果

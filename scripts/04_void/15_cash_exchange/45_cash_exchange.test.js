@@ -35,8 +35,8 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ---
  * ### テストデータ
  * * リクエストデータ:
- * * 1. exchange_amount = 0 より大きい値
- * * 2. type = 2
+ * * 1.exchange_amount = 0 より大きい値
+ * * 2.type = 2
  * 
  * ---
  * ### 期待結果

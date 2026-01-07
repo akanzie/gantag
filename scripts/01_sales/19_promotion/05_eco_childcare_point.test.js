@@ -62,9 +62,9 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ---
  * ### テストデータ
  * * 1.クスリのアオキプリペイドカード: 8090227000000006
- * * 2. ポイント付与専用商品（対象） 1: 4520230413021
- * * 3. ポイント付与専用商品（対象） 2: 4520230414001
- * * 4. ポイント付与専用商品（対象） 3: 4911110703001
+ * * 2.ポイント付与専用商品（対象） 1: 4520230413021
+ * * 3.ポイント付与専用商品（対象） 2: 4520230414001
+ * * 4.ポイント付与専用商品（対象） 3: 4911110703001
  * 
  * ---
  * ### 期待結果
@@ -89,7 +89,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * * \+ customer.planning_add_points.point_detail.add_point = 10
  * * * \+ customer.planning_add_points.point_detail.coupon_cd= "Child"
  * * * \+ customer.planning_add_points.point_detail.coupon_name= "子育て支援ポイント"
- * * 7. エコポイント（タッチパネル）押下
+ * * 7.エコポイント（タッチパネル）押下
  * * \- エコポイントが着くこと
  * * * \+ customer.planning_add_points.point_detail.add_point = 1
  * * * \+ customer.planning_add_points.point_detail.coupon_cd = 'eco'

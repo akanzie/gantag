@@ -44,8 +44,8 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### テストデータ
- * * 1. 通常商品: 4500000000121
- * * 2. お米券
+ * * 1.通常商品: 4500000000121
+ * * 2.お米券
  * * voucher_code: "0612"
  * * voucher_name: "お米券"
  * * change_type: 1 (お釣り無し)

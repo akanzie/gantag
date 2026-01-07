@@ -34,8 +34,8 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ---
  * ### テストデータ
  * * Request データ
- * * 1. cash_in_type: 2
- * * 2. cash_info:
+ * * 1.cash_in_type: 2
+ * * 2.cash_info:
  * * * \+ total_amount: 30000
  * * * \+ cash_type: 7
  * * * \+ amount: 30
