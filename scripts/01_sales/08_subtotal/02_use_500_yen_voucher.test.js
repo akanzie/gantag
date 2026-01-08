@@ -79,11 +79,11 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * 取引①:
  * * 1.クスリのアオキプリペイドカード: 8090227000000006 (Aok card)
  * * 2.ポイント対象商品（対象） : 4520230413001 (point_apply_type_1 = 1)
- * * 3. ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
+ * * 3.ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
  * * 取引②:
  * * #### 1. 取引①の「 取引完了 `/sales/end`」のレシートより抽出したバーコード
  * * 2.ポイント対象商品（対象） : 4520230413001 (point_apply_type_1 = 1)
- * * 3. ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
+ * * 3.ポイント対象商品（上位参照）: 4500000000056 (point_apply_type_1 = 9)
  * 
  * ---
  * ### 期待結果
@@ -166,10 +166,9 @@ export function TC_010802001_ReleaseAndUse500YenVoucher() {
     }, [
       CHECK.createStatusCodeCheck(),
     ]).result?.card_info?.point_count_sum;
-    
+
     // If point = 400, no need to run this API
-    if (point != pointPrecondition)
-    {
+    if (point != pointPrecondition) {
       // If point = 0, no need to run this API
       if (point > 0) {
         TestHelper.settlementUsePoint(preStep.usePoint, {
@@ -812,7 +811,7 @@ export function TC_010802002_ReleaseAndUseAdditional500YenVoucher() {
       CHECK.createStatusCodeCheck(),
       CHECK.createEqualsCheck({
         name: "Verify the payment method uses a 500円 voucher",
-        expected:  {
+        expected: {
           paidCd: PAID_METHOD.VOUCHER.PAID_ITEMS.VOUCHER_YEN_500.PAID_CODE,
           paidName: PAID_METHOD.VOUCHER.PAID_ITEMS.VOUCHER_YEN_500.PAID_NAME,
           paidAmount: paidAmount500yen,
@@ -849,7 +848,7 @@ export function TC_010802002_ReleaseAndUseAdditional500YenVoucher() {
       CHECK.createStatusCodeCheck(),
       CHECK.createEqualsCheck({
         name: "Verify the payment method uses a 500円 voucher",
-        expected:  {
+        expected: {
           paidCd: PAID_METHOD.VOUCHER.PAID_ITEMS.VOUCHER_YEN_500.PAID_CODE,
           paidName: PAID_METHOD.VOUCHER.PAID_ITEMS.VOUCHER_YEN_500.PAID_NAME,
           paidAmount: paidAmount500yen,
@@ -886,7 +885,7 @@ export function TC_010802002_ReleaseAndUseAdditional500YenVoucher() {
       CHECK.createStatusCodeCheck(),
       CHECK.createEqualsCheck({
         name: "Verify the payment method uses a 500円 voucher",
-        expected:  {
+        expected: {
           paidCd: PAID_METHOD.VOUCHER.PAID_ITEMS.VOUCHER_YEN_500.PAID_CODE,
           paidName: PAID_METHOD.VOUCHER.PAID_ITEMS.VOUCHER_YEN_500.PAID_NAME,
           paidAmount: paidAmount500yen,
@@ -906,7 +905,7 @@ export function TC_010802002_ReleaseAndUseAdditional500YenVoucher() {
       }),
       CHECK.createEqualsCheck({
         name: "Verify the payment method uses a 500円 voucher (additional 500円 voucher)",
-        expected:  {
+        expected: {
           paidCd: PAID_METHOD.VOUCHER.PAID_ITEMS.VOUCHER_YEN_500.PAID_CODE,
           paidName: PAID_METHOD.VOUCHER.PAID_ITEMS.VOUCHER_YEN_500.PAID_NAME,
           paidAmount: paidAmount500yen,

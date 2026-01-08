@@ -810,7 +810,7 @@ export function TC_011935001_OnlyAddPointAoca() {
  * * * * 付与するポイント：m_coupon.bonus_point　
  * * * ・クーポン発券の情報
  * * * * →　セット買いポイントがm_coupon_issueに設定されている。
- * * *  　m_coupon_issue.coupon_cd = m_promotion_set_optional_add_po_point.coupon_cd
+ * * *  　m_coupon_issue.coupon_cd = m_promotion_set_optional_add_point.coupon_cd
  * *      　　m_coupon.issue_handling_type ＝ ２:クーポン発券時に印字なしで即時利用
  * * "テスト観点：
  * * セット買いポイント設定商品をスキャンした時に、セット買いポイント成立条件を満たした場合、条件成立ごとに繰返しポイント付与のクーポンを発券して即時利用できる。
