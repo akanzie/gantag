@@ -74,7 +74,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * * #### "10. Aocaカードスキャン `/sales/cart/barcode`
+ * * #### 10. Aocaカードスキャン `/sales/cart/barcode`
  * * \- カート情報にAocaカードが存在する:
  * * * \+ customer_cd = "8090227000000006"
  * * * \+ point_card_name = "Aoca"
@@ -168,8 +168,7 @@ export function TC_020803001_ReturnsOfSalesUsing500YenVoucher() {
     ]).result?.card_info?.point_count_sum;
 
     // If point = 400, no need to run this API
-    if (point != pointPrecondition)
-    {
+    if (point != pointPrecondition) {
       if (point > 0) {
         TestHelper.settlementUsePoint(preStep.usePoint, {
           cardNo: CARD.AOKI_PREPAID.CODE,

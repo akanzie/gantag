@@ -287,7 +287,7 @@ export function TC_021935001_AocaPoints() {
  * 
  * ---
  * ### 期待結果
- * * #### "6.小計 `/sales/subtotal`
+ * * #### 6.小計 `/sales/subtotal`
  * * sales.cartInfoを法事する
  * * #### 10. 【返品】小計   `/refund/subtotal`
  * * カートInfoに以下が正しいか確認:
@@ -298,7 +298,7 @@ export function TC_021935001_AocaPoints() {
  * * * \+ planning_add_points.total_add_point = sales.cartInfo.customer.planning_add_points.total_add_point
  * * #### 12.【返品】取引完了 `/refund/end`
  * * \- レシートデータに　"-2p"の情報があるか確認
- * * (-sales.cartInfo.customer.planning_add_points.total_add_point )"
+ * * (-sales.cartInfo.customer.planning_add_points.total_add_point )
  */
 export function TC_021935002_DPoints() {
   group("TC_021935002 ｄポイントのみ", () => {
@@ -743,7 +743,7 @@ export function TC_021935006_RefundApplyAppCoupon() {
       cartNo,
     }, [
       CHECK.createStatusCodeCheck(),
-	  CHECK.createEqualsCheck({
+      CHECK.createEqualsCheck({
         name: "Verify total point will be deducted",
         expected: true,
         actual: (res) => CommonFunction.includesItems([
@@ -1366,7 +1366,7 @@ export function TC_021935004_RefundBonusBrand() {
       cartNo,
     }, [
       CHECK.createStatusCodeCheck(),
-	  CHECK.createEqualsCheck({
+      CHECK.createEqualsCheck({
         name: "Verify total point will be deducted",
         expected: true,
         actual: (res) => CommonFunction.includesItems([

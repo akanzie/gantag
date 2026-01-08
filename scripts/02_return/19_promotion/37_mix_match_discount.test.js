@@ -16,7 +16,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * @function ｎ個ちょうどパターン
 ｎ個購入ごとにX円が成立する。
 例）商品A～E（単価200円）3個で500円（100円の値引）
-　　→　3個買うごとに500円（100円の値引）が成立
+  →　3個買うごとに500円（100円の値引）が成立
  * @memberof 返品
  * @description
  * {@link TAGS.POS}
@@ -58,7 +58,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 前提条件
- * * "ｎ個ちょうどパターン"のミックスマッチシナリオに対してレシート返品を実行する
+ * * ｎ個ちょうどパターン"のミックスマッチシナリオに対してレシート返品を実行する
  * 
  * ---
  * ### テストデータ
@@ -383,7 +383,7 @@ export function TC_021937001_ExactlyNItemsPattern() {
       }),
       CHECK.createEqualsCheck({
         name: "Verify the cart info has payment",
-        expected:  {
+        expected: {
           paidGroupCode: PAID_METHOD.QRCODE.GROUP_CODE,
           paidGroupName: PAID_METHOD.QRCODE.GROUP_NAME,
           paidCd: PAID_METHOD.QRCODE.PAID_ITEMS.LINE_PAY.PAID_CODE,

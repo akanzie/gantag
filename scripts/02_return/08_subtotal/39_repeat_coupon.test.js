@@ -79,7 +79,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * * #### "11.りぴーと券スキャン（1枚）`/sales/cart/barcode`
+ * * #### 11.りぴーと券スキャン（1枚）`/sales/cart/barcode`
  * * \- sales.cartinfoを確認
  * * * \+ total_balance_amount =  sales.cartinfo.total_balance_amount
  * * #### 15. 【返品】小計   `/refund/subtotal`

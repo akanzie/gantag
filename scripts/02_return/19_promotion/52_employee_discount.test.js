@@ -60,7 +60,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * 
  * ---
  * ### 期待結果
- * * #### "6.小計 `/sales/subtotal`
+ * * #### 6.小計 `/sales/subtotal`
  * * sales.cartInfo を保持（元取引）
  * * #### 10. 【返品】小計   `/refund/subtotal`
  * * カートInfoを確認:
@@ -293,8 +293,8 @@ export function TC_021952001_CheckSelfPOSDiscountForEmployee() {
           const voidPayment = res.result?.cartinfo?.void_payments?.find(p => p.paid_cd === PAID_METHOD.QRCODE.PAID_ITEMS.LINE_PAY.PAID_CODE);
           return {
             totalBalanceAmount: salesCartInfo?.total_balance_amount - voidPayment?.paid_amount,
-            paymentPaidAmount : salesCartInfo?.total_balance_amount,
-            voidPaymentPaidAmount : salesCartInfo?.total_balance_amount,
+            paymentPaidAmount: salesCartInfo?.total_balance_amount,
+            voidPaymentPaidAmount: salesCartInfo?.total_balance_amount,
           };
         },
         actual: (res) => {
@@ -302,8 +302,8 @@ export function TC_021952001_CheckSelfPOSDiscountForEmployee() {
           const voidPayment = res.result?.cartinfo?.void_payments?.find(p => p.paid_cd === PAID_METHOD.QRCODE.PAID_ITEMS.LINE_PAY.PAID_CODE);
           return {
             totalBalanceAmount: res.result?.cartinfo?.total_balance_amount,
-            paymentPaidAmount : payment?.paid_amount,
-            voidPaymentPaidAmount : voidPayment?.paid_amount,
+            paymentPaidAmount: payment?.paid_amount,
+            voidPaymentPaidAmount: voidPayment?.paid_amount,
           };
         },
       }),
