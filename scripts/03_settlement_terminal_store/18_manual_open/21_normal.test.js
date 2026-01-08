@@ -57,13 +57,13 @@ import * as TAGS from "../../../tags/tags_const.js";
  * ---
  * ### 前提条件
  * * 1.ms-config.c_config_corporate:
- * *    AutoOpenPermissionFlag: false
+ * * * AutoOpenPermissionFlag: false
  * * 2.各POS端末の現金情報は 30,000 円であり、1,000円札が 30 枚含まれていることを前提とする
  * * 3.保留中の取引がすべて削除されていることを前提とする
  * * 4.store_cd："0080"のPos_cd：01、02、03の端末で精算を実施するが、Pos_cd：04の端末で精算を実施しない。
- * * #### 5. pos_user_04 を店舗決済計算対象外として、API「store`/settlement/exclude-pos`」を使用して除外する
- * * 6.  テスト開始前に全てのトランを削除する（devtran-cleanerコンテナの起動）
- * * 現状はバックエンドアプリの docker-compose up の時点でdevtran-cleanerが起動されるようになっていますが、テストの連続実行ができない状況
+ * * 5.pos_user_04 を店舗決済計算対象外として、API「store`/settlement/exclude-pos`」を使用して除外する
+ * * 6.テスト開始前に全てのトランを削除する（devtran-cleanerコンテナの起動）
+ * * * 現状はバックエンドアプリの docker-compose up の時点でdevtran-cleanerが起動されるようになっていますが、テストの連続実行ができない状況
  * 
  * ---
  * ### テストデータ
@@ -107,7 +107,7 @@ import * as TAGS from "../../../tags/tags_const.js";
  * * * \+ is_settlement_exclude: true
  * * #### 14. 店舗精算 `/store/settlement`
  * * \- business_day が step 2 で取得した business_day と一致していることを確認する
- * * 15 開局 `/open`
+ * * #### 15. 開局 `/open`
  * * \- business_day が当日日付であることを確認する
  */
 export function TC_031821001_ManualOpenNormal() {

@@ -86,6 +86,12 @@
  */
 
 /**
+ * 商品明細登録
+ * @namespace 商品明細登録
+ * @memberof 返品
+ */
+
+/**
  * 取引呼出
  * @namespace 取引呼出
  * @memberof 売上
@@ -101,6 +107,12 @@
  * 販売促進（企画販売）
  * @namespace 販売促進（企画販売）
  * @memberof 売上
+ */
+
+/**
+ * 販売促進（企画販売）
+ * @namespace 販売促進（企画販売）
+ * @memberof 返品
  */
 
 /**

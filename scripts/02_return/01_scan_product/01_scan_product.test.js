@@ -928,9 +928,9 @@ export function TC_020101005_ShareholderBenefitSingleRefund() {
  * * \- ポイント倍対象商品がポイント付与対象であることを確認する:
  * * * \+ total_add_point = total_sales_amount_without_tax / point_standard_amount × add_standard_point = 200 / 100 × 1 = 2 （切り捨て）
  * * * \+ 基準ポイント_Aoca:
- * * \- add_point = 2（切り捨て）
- * * \- promotion_cd: 0100
- * * \- promotion_name: 基準ポイント_Aoca
+ * * * * \. add_point = 2（切り捨て）
+ * * * * \. promotion_cd: 0100
+ * * * * \. promotion_name: 基準ポイント_Aoca
  * * #### 4. 【返品】小計 `/refund/subtotal`
  * * \- 売上合計金額を確認する
  * * * * \. tax = 200 × 8 / 100 = 16（切り捨て）

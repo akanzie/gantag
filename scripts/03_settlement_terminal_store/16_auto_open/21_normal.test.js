@@ -9,7 +9,6 @@ import * as TAGS from "../../../tags/tags_const.js";
 
 /**
  * @function 端末精算～店舗精算～自動開局（正常系）
-Terminal settlement - store settlement - automatic opening (normal)
  * @memberof 在高点検
  * @description
  * {@link TAGS.POS}
@@ -51,7 +50,7 @@ Terminal settlement - store settlement - automatic opening (normal)
  * | 10 | - | `/signin` |
  * | 11 | 在高点検 | `/cash/inspection` |
  * | 12 | 端末精算 | `/settlement` |
- * | 13 | 端末を除外する store`/settlement/exclude-pos` (pos_cd: 04) | - |
+ * | 13 | 端末を除外する (pos_cd: 04) | `store/settlement/exclude-pos` |
  * | 14 | 店舗精算 | `/store/settlement` |
  * | 15 | 端末精算関連のトランを削除（開発用のAPIを実装する必要がある） | - |
  * 
@@ -60,9 +59,9 @@ Terminal settlement - store settlement - automatic opening (normal)
  * * 1.各 POS 端末の現金情報は 30,000 円で、1,000 円札が 30 枚含まれているものとする
  * * 2.保留中の取引がすべて削除されていることを前提とする
  * * 3.store_cd："0080"のPos_cd：01、02、03 の端末で精算を実施するが、Pos_cd：04の端末で精算を実施しない。
- * * #### 4. pos_user_04 を店舗決済計算対象外として、API「store`/settlement/exclude-pos`」を使用して除外する
- * * 5.  テスト開始前に全てのトランを削除する（devtran-cleanerコンテナの起動）
- * * 現状はバックエンドアプリの docker-compose up の時点でdevtran-cleanerが起動されるようになっていますが、テストの連続実行ができない状況
+ * * 4.pos_user_04 を店舗決済計算対象外として、API「store`/settlement/exclude-pos`」を使用して除外する
+ * * 5.テスト開始前に全てのトランを削除する（devtran-cleanerコンテナの起動）
+ * * * 現状はバックエンドアプリの docker-compose up の時点でdevtran-cleanerが起動されるようになっていますが、テストの連続実行ができない状況
  * 
  * ---
  * ### テストデータ

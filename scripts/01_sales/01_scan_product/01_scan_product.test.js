@@ -827,7 +827,7 @@ export function TC_010101009_RegisterMultipleDrugsForSelfPOS() {
 
 /**
  * @function 書籍販売
- * @memberof 返品.商品種類
+ * @memberof 売上.商品種類
  * @description
  * {@link TAGS.POS}
  * {@link TAGS.SALES}
