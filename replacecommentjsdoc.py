@@ -2,7 +2,7 @@ import os
 import re
 
 # --- CẤU HÌNH ---
-INPUT_FILE = 'final_jsdoc_v10.txt'
+INPUT_FILE = 'final_jsdoc_v12.txt'
 SCRIPTS_DIR = './scripts'
 FILE_EXTENSION = '.test.js'
 
@@ -49,7 +49,7 @@ def update_test_files(jsdoc_map, root_dir):
                     # 1. Các loại comment cũ (//... hoặc /**...*/) ngay phía trên function
                     # 2. Định danh function bắt đầu bằng scenario_id
                     pattern = re.compile(
-                        r'(?:\/\/[^\n]*\n|\/\*\*.*?\*\/\s*)?' + # Comment cũ (nếu có)
+                        r'(?:(?:\/\/[^\n]*\n)*|\/\*\*.*?\*\/\s*)?' +  # THÊM * sau single-line
                         r'(export\s+function\s+' + re.escape(scenario_id) + r'_[A-Za-z0-9_]+\s*\()',
                         re.DOTALL
                     )

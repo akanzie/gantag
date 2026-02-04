@@ -1,46 +1,39 @@
 import pandas as pd
 import re
 
-def format_line_with_stars_and_escape(line):
+def format_line_with_stars_and_escape(line, is_expected_result=False):
     stripped = line.strip()
     if not stripped:
         return ""
 
-    # Tự động bọc endpoint trong văn bản
-    line = re.sub(r'(/[a-zA-Z0-9/_.-]+)', r'`\1`', line)
+    # 1. Bọc endpoint (linh hoạt: có dấu / và không chứa khoảng trắng)
+    line = re.sub(r'([a-zA-Z0-9_.-]*/[a-zA-Z0-9/_.-]+)', r'`\1`', line)
 
-    # Nếu là dòng tiêu đề kết quả (VD: 4. 小計 `/sales/subtotal`)
-    if re.search(r'\d+\..*`/', line):
+    # 4. Xóa space sau dấu . của bullet số (1.  ABC -> 1. ABC)
+    line = re.sub(r'^(\d+\.)\s+', r'\1', line)
+
+    # 2. Tiêu đề con cho cột Z
+    if is_expected_result and re.search(r'\d+\..*`.*`|/.*', line):
         return f"* #### {line.strip()}"
 
-    # Logic xử lý dấu đầu dòng đặc biệt
+    # Logic thụt lề
     stripped_after_sub = line.strip()
-    if stripped_after_sub.startswith('+'):
-        return f"* * \\{stripped_after_sub}"
-    
-    if stripped_after_sub.startswith('-'):
-        return f"* \\{stripped_after_sub}"
-    
-    if stripped_after_sub.startswith('.'):
-        return f"* * * \\{stripped_after_sub}"
-
-    if stripped_after_sub.startswith('・'):
+    if stripped_after_sub.startswith('+'): return f"* * \\{stripped_after_sub}"
+    if stripped_after_sub.startswith('-'): return f"* \\{stripped_after_sub}"
+    if stripped_after_sub.startswith('.'): return f"* * * \\{stripped_after_sub}"
+    if stripped_after_sub.startswith('・') or stripped_after_sub.startswith('→'):
         return f"* * {stripped_after_sub}"
-
-    if stripped_after_sub.startswith('→'):
-        return f"* * {stripped_after_sub}"
-
     if line.startswith(' ') or line.startswith('\t'):
         return f"* * {stripped_after_sub}"
 
     return f"* {stripped_after_sub}"
 
 def format_scenario_to_table(text):
-    """Xử lý cột N: Tách Step | 手順 | エンドポイント"""
+    """Xử lý cột N: Tách ステップ | 手順 | エンドポイント"""
     if not text or pd.isna(text) or str(text).strip() == "": 
         return "| - | 特になし | - |"
     
-    header = "| Step | 手順 | エンドポイント |\n * | :-: | :--- | :--- |"
+    header = "| ステップ | 手順 | エンドポイント |\n * | :-: | :--- | :--- |"
     rows = []
     lines = str(text).split('\n')
     
@@ -48,46 +41,42 @@ def format_scenario_to_table(text):
         line = line.strip()
         if not line: continue
         
-        match = re.match(r'^(\d+)\.?\s*(.*?)\s+(/\S+)', line)
+        # Bước 1: Tìm xem có endpoint (`/abc`) trong dòng không
+        endpoint_match = re.search(r'([a-zA-Z0-9_.-]*/[a-zA-Z0-9/_.-]+)', line)
+        endpoint = "-"
+        content_clean = line
         
-        if match:
-            step, desc, endpoint = match.groups()
-            rows.append(f"| {step} | {desc.strip()} | `{endpoint.strip()}` |")
+        if endpoint_match:
+            endpoint = f"`{endpoint_match.group(1)}`"
+            # Xóa endpoint khỏi nội dung chính để tránh lặp
+            content_clean = line.replace(endpoint_match.group(1), "").strip()
+
+        # Bước 2: Tách số thứ tự (Step) - Chấp nhận cả số 0
+        step_match = re.match(r'^(\d+)\.?\s*(.*)', content_clean)
+        
+        if step_match:
+            step_num = step_match.group(1)
+            description = step_match.group(2).strip()
+            # Xóa dấu chấm thừa ở cuối description nếu có
+            description = re.sub(r'^[.\s]+', '', description)
+            rows.append(f"| {step_num} | {description} | {endpoint} |")
         else:
-            formatted_line = re.sub(r'(/[a-zA-Z0-9/_.-]+)', r'`\1`', line)
-            rows.append(f"| - | {formatted_line} | - |")
+            rows.append(f"| - | {content_clean} | {endpoint} |")
             
     return header + "\n * " + "\n * ".join(rows)
 
-def format_general_content(text, is_precondition=False):
-    """
-    Format tổng quát. 
-    Nếu is_precondition=True và rỗng thì trả về 特になし.
-    """
+def format_general_content(text, is_precondition=False, is_expected_result=False):
     stripped_text = str(text).strip() if pd.notna(text) else ""
-    
-    # Chỉ xử lý '特になし' cho cột Precondition (Cột W)
-    if is_precondition:
-        if not stripped_text or stripped_text == "" or stripped_text == "'特になし":
-            return "* 特になし"
-    
-    # Nếu rỗng và không phải cột W thì trả về chuỗi rỗng
-    if not stripped_text:
-        return ""
+    if is_precondition and (not stripped_text or stripped_text == "" or stripped_text == "'特になし"):
+        return "* 特になし"
+    if not stripped_text: return ""
     
     lines = str(text).split('\n')
-    formatted = []
-    
-    for line in lines:
-        result = format_line_with_stars_and_escape(line)
-        if result:
-            formatted.append(result)
-            
+    formatted = [format_line_with_stars_and_escape(l, is_expected_result) for l in lines if l.strip()]
     return "\n * ".join(formatted)
 
-def export_jsdoc_final_v10(excel_path, output_file='final_jsdoc_v10.txt'):
+def export_jsdoc_final_v12(excel_path, output_file='final_jsdoc_v12.txt'):
     try:
-        # Đọc C(2), L(11), M(12), N(13), W(22), X(23), Z(25)
         target_cols = [2, 11, 12, 13, 22, 23, 25]
         df = pd.read_excel(excel_path, usecols=target_cols, header=None)
         df.columns = ['C', 'L', 'M', 'N', 'W', 'X', 'Z']
@@ -95,15 +84,13 @@ def export_jsdoc_final_v10(excel_path, output_file='final_jsdoc_v10.txt'):
         with open(output_file, 'w', encoding='utf-8') as f:
             for index, row in df.iterrows():
                 if index == 0: continue 
-
-                scenario_no = str(row['C']).strip() if pd.notna(row['C']) else "N/A"
-
                 jsdoc = (
                     f"/**\n"
-                    f" * シナリオ番号：{scenario_no}\n"
+                    f" * シナリオ番号：{str(row['C']).strip()}\n"
                     f" * @function {row['L']}\n"
                     f" * @memberof 返品\n"
                     f" * @description\n"
+                    f" * ### ステップ\n"
                     f" * ### テスト観点\n"
                     f" * {format_general_content(row['M'])}\n"
                     f" * \n"
@@ -121,13 +108,12 @@ def export_jsdoc_final_v10(excel_path, output_file='final_jsdoc_v10.txt'):
                     f" * \n"
                     f" * ---\n"
                     f" * ### 期待結果\n"
-                    f" * {format_general_content(row['Z'])}\n"
+                    f" * {format_general_content(row['Z'], is_expected_result=True)}\n"
                     f" */\n\n"
                 )
                 f.write(jsdoc)
-        print(f"Hoàn tất! Chỉ cột 前提条件 rỗng mới điền '特になし': {output_file}")
+        print(f"Đã xử lý xong các lỗi hiển thị bảng! File: {output_file}")
     except Exception as e:
         print(f"Lỗi: {e}")
 
-# Chạy code
-export_jsdoc_final_v10('Scenario.xlsx')
+export_jsdoc_final_v12('Scenario.xlsx')
